@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/ui/themes/interaction_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/art/icons/exit-door.svg" type="Texture" id=2]
+
+
+[node name="GoButton" type="Button"]
+margin_bottom = 28.0
+rect_scale = Vector2( 0.2, 0.2 )
+theme = ExtResource( 1 )
+icon = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

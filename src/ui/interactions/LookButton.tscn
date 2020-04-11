@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/ui/themes/interaction_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/art/icons/magnifying-glass.svg" type="Texture" id=2]
+
+
+[node name="LookButton" type="Button"]
+margin_left = 2.05337
+margin_top = -0.513344
+margin_right = 42.0534
+margin_bottom = 39.4867
+rect_scale = Vector2( 0.2, 0.2 )
+theme = ExtResource( 1 )
+icon = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

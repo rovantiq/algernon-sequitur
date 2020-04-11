@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/prologue_planet_ambient.ogg-8e84ecbdcb3a869ab96b2602262ade6c.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sfx/ambient/prologue-planet/prologue_planet_ambient.ogg"
+dest_files=[ "res://.import/prologue_planet_ambient.ogg-8e84ecbdcb3a869ab96b2602262ade6c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

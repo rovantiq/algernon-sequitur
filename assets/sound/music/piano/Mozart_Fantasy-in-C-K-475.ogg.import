@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Mozart_Fantasy-in-C-K-475.ogg-a8101bf85f42f90bd69b3636cc1f1e47.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/piano/Mozart_Fantasy-in-C-K-475.ogg"
+dest_files=[ "res://.import/Mozart_Fantasy-in-C-K-475.ogg-a8101bf85f42f90bd69b3636cc1f1e47.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

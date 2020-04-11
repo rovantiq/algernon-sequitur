@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/ui/themes/interaction_theme.tres" type="Theme" id=1]
+
+[node name="SimpleInteractionUI" type="Control"]
+visible = false
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractionIndicator" type="Label" parent="."]
+margin_top = 10.0
+margin_right = 97.0
+margin_bottom = 78.0
+size_flags_horizontal = 4
+theme = ExtResource( 1 )
+text = "Object"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

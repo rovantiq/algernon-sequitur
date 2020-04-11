@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/ui/themes/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/scripts/StoryRunner.gd" type="Script" id=2]
+[ext_resource path="res://assets/art/characters/portraits/algernon.png" type="Texture" id=3]
+
+
+[node name="StoryRunner" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StoryContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 6.10352e-05
+margin_top = -390.0
+margin_right = 6.10352e-05
+margin_bottom = -390.0
+grow_horizontal = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StoryVBoxContainer" type="VBoxContainer" parent="StoryContainer"]
+grow_horizontal = 2
+alignment = 1
+
+[node name="PlayerPortrait" type="TextureRect" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+
+[node name="NPCPortrait" type="TextureRect" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -200.0
+margin_bottom = 200.0
+
+[node name="TypeTimer" type="Timer" parent="."]
+[connection signal="timeout" from="TypeTimer" to="." method="_on_TypeTimer_timeout"]

@@ -1,0 +1,251 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://src/scripts/scenes/prologue - ship/PrologueShip.gd" type="Script" id=1]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/Starfield1.gd" type="Script" id=2]
+[ext_resource path="res://assets/art/environments/top/backgrounds/starfield/starfield1.png" type="Texture" id=3]
+[ext_resource path="res://src/sets/Ship.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/characters/Enri/EnriTop.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/shaders/InfiniteBackground.shader" type="Shader" id=6]
+[ext_resource path="res://src/templates/InteractionPoint.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/player/PlayerSideScroll.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/characters/Mooney/MooneyTop.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/art/characters/side/ren.png" type="Texture" id=10]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/EndPrologue.gd" type="Script" id=12]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/Starfield2.gd" type="Script" id=13]
+[ext_resource path="res://src/player/PlayerTopDown.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/art/environments/top/backgrounds/starfield/starfield2.png" type="Texture" id=15]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 6 )
+shader_param/direction = Vector2( 0, 0 )
+shader_param/speed_scale = 1.0
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 6 )
+shader_param/direction = Vector2( 0, 0 )
+shader_param/speed_scale = 2.0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 32.4323, 100.333 )
+
+[sub_resource type="Animation" id=4]
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ship/UpperLevel/MooneyTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 6.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 78 ), Vector2( 0, 78 ), Vector2( 0, -574 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ship/UpperLevel/MooneyTop:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 180.0, 270.0 ]
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("Ship/UpperLevel/MooneyTop/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "Idle", "Walk", "Walk", "Walk", "Walk", "Walk", "Idle", "Sit" ),
+"times": PoolRealArray( 0, 0.1, 1.7, 3.3, 4.9, 6.5, 6.9, 7 )
+}
+
+[sub_resource type="Animation" id=5]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ship/UpperLevel/EnriTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 25, 50 ), Vector2( 25, 50 ), Vector2( 0, 78 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ship/UpperLevel/EnriTop:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 132.0, 132.0, 143.8, 180.0 ]
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("Ship/UpperLevel/EnriTop/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "Idle", "Walk", "Idle" ),
+"times": PoolRealArray( 0, 0.1, 0.5 )
+}
+
+[sub_resource type="Animation" id=6]
+length = 12.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ship/UpperLevel/EnriTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 6.1, 6.6, 8, 8.2, 8.3, 8.6, 8.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 78 ), Vector2( 0, 78 ), Vector2( 0, -415 ), Vector2( -20, -431 ), Vector2( -20, -431 ), Vector2( -37, -431 ), Vector2( -42, -431 ), Vector2( -52, -416 ), Vector2( -52, -395 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ship/UpperLevel/EnriTop:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 6.1, 6.2, 6.6, 8.2, 8.3, 8.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 180.0, 270.0, 270.0, 222.9, 180.0, 180.0, 135.0, 90.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Ship/UpperLevel/EnriTop:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "animation"
+tracks/3/path = NodePath("Ship/UpperLevel/EnriTop/AnimationPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": PoolStringArray( "Idle", "Walk", "Walk", "Idle", "Walk" ),
+"times": PoolRealArray( 0, 0.2, 5.5, 6.5, 8 )
+}
+tracks/4/type = "animation"
+tracks/4/path = NodePath("Ship/UpperLevel/DoorToQuarters/Interaction/AnimationPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": PoolStringArray( "open" ),
+"times": PoolRealArray( 6.6 )
+}
+
+[node name="Prologue-Ship" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -750.919 ],
+"_edit_vertical_guides_": [ 341.77, 172.753 ]
+}
+
+[node name="Starfield" type="Node2D" parent="."]
+
+[node name="Base" type="Sprite" parent="Starfield"]
+material = SubResource( 1 )
+position = Vector2( 0, -96 )
+texture = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="Stars" type="Sprite" parent="Starfield"]
+material = SubResource( 2 )
+position = Vector2( 0, -96 )
+texture = ExtResource( 15 )
+script = ExtResource( 13 )
+
+[node name="Ship" parent="." instance=ExtResource( 4 )]
+
+[node name="MooneyTop" parent="Ship/UpperLevel" index="4" instance=ExtResource( 9 )]
+position = Vector2( 0, 78 )
+rotation = 3.14159
+
+[node name="EnriTop" parent="Ship/UpperLevel" index="5" instance=ExtResource( 5 )]
+position = Vector2( 25, 50 )
+rotation = 2.30383
+
+[node name="RensQuarters" parent="Ship" index="5"]
+position = Vector2( 137.704, 575.646 )
+
+[node name="EndPrologue" parent="Ship/RensQuarters" index="4" instance=ExtResource( 7 )]
+position = Vector2( 115.708, 36.5529 )
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" parent="Ship/RensQuarters/EndPrologue" index="0"]
+position = Vector2( 6.10352e-05, 0.664307 )
+shape = SubResource( 3 )
+
+[node name="InteractionIndicator" parent="Ship/RensQuarters/EndPrologue/InteractionUI" index="0"]
+visible = false
+
+[node name="OptionHBoxContainer" parent="Ship/RensQuarters/EndPrologue/InteractionUI" index="1"]
+margin_left = -44.647
+margin_top = -48.9716
+margin_right = 52.353
+margin_bottom = -48.9716
+
+[node name="PlayerSide" parent="Ship/RensQuarters" index="7" instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 16.7454, 29.9588 )
+
+[node name="Sprite" parent="Ship/RensQuarters/PlayerSide" index="1"]
+texture = ExtResource( 10 )
+
+[node name="ShipDrone" parent="Ship/AmbientSound" index="0"]
+volume_db = 3.0
+
+[node name="PlayerTop" parent="." instance=ExtResource( 14 )]
+position = Vector2( -29.3562, 78 )
+
+[node name="Camera2D" parent="PlayerTop" index="2"]
+limit_bottom = 850
+
+[node name="AnimationPlayer1" type="AnimationPlayer" parent="."]
+anims/cap_leaves = SubResource( 4 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/enri_approaches = SubResource( 5 )
+anims/enri_leaves = SubResource( 6 )
+
+[editable path="Ship"]
+
+[editable path="Ship/LowerLevel/RensDoor/InteractionPoint"]
+
+[editable path="Ship/UpperLevel/DoorToQuarters"]
+
+[editable path="Ship/UpperLevel/MooneyTop"]
+
+[editable path="Ship/UpperLevel/EnriTop"]
+
+[editable path="Ship/RensQuarters/EndPrologue"]
+
+[editable path="Ship/RensQuarters/PlayerSide"]
+
+[editable path="PlayerTop"]

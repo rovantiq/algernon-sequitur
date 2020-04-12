@@ -38,8 +38,8 @@ The project itself is licensed under MIT and, additionally, all original assets 
 
 * Font -  [Jost*](https://indestructibletype.com/Jost.html) by [indestructible type*](https://indestructibletype.com/Home.html) (OFL)
 
-* Icons - [Game-icons.net](https://game-icons.net/) (CC-BY-3.0) and [The Cowboy Collective](https://cowboycollective.cc/) for the game's [main icon](https://raw.githubusercontent.com/CowboyCollective/CowboyCollective.github.io/master/Favicon.png) (CC-BY-4.0)
+* Icons - [The Cowboy Collective](https://cowboycollective.cc/) and [Game-icons.net](https://game-icons.net/) (CC-BY-4.0 / CC-BY-3.0, see [full credits](/credits.md) for details)
+
+* SFX - [Freesound.org](https://freesound.org/) (CC0 / CC-BY-3.0, see [full credits](/credits.md) for details)
 
 * Music - [Disklavier World](http://www.kuhmann.com/Yamaha.htm) MIDI, played with [this soundfont](http://sonimusicae.free.fr/matshelgesson-maestro-en.html) and added [effects](https://calf-studio-gear.org/) (CC0)
-
-* SFX - [Freesound.org](https://freesound.org/) (CC0 / CC-BY-3.0, see [full listing](/credits.md))

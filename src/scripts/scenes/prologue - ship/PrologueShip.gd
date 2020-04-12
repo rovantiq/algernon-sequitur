@@ -78,13 +78,15 @@ func _check_story_state() -> void:
 		StoryRunner.ui_active = false
 	else:
 		_set_current_floor("upper")
-		mooney.position = Vector2(0, -764)
+		mooney.position = Vector2(0, -574)
 		mooney.rotation_degrees = 270
+		mooney.get_node("AnimationPlayer").play("Sit")
 		enri.queue_free()
 		enri = Enri.instance()
 		captains_quarters.add_child(enri)
 		enri.position = Vector2(-45, -350)
 		enri.rotation_degrees = 90
+		enri.get_node("AnimationPlayer").play("Sit")
 		StoryRunner.fade_in()
 		StoryRunner.ui_active = false
 

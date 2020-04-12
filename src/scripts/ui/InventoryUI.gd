@@ -16,13 +16,15 @@ var mouse_hover = false
 var combo: Array = []
 
 var item_dict: Dictionary = {
-	"Gun": ["res://assets/art/icons/gun.svg", "Bella."],
+	"Revolver": ["res://assets/art/icons/revolver.svg", "Bella."],
 	"Drugs": ["res://assets/art/icons/drugs.svg", "Not much left..."],
 	"Water": ["res://assets/art/icons/water.svg", "Some water."],
 	"Dirty Orb": ["res://assets/art/icons/gold-shell.svg", "Interesting, but covered in grit."],
 	"Clean Orb": ["res://assets/art/icons/gold-shell.svg", "Maybe some sort of key?"],
-	"Rations": ["", "Ren insisted."],
-	"Gear": ["", "Always be prepared!"]
+	"Rations": ["res://assets/art/icons/opened-food-can.svg", "Ren insisted."],
+	"Gear": ["res://assets/art/icons/backpack.svg", "Always be prepared!"],
+	"M1911": ["res://assets/art/icons/colt-m1911.svg", "Winona."],
+	"Scanner": ["res://assets/art/icons/laser-blast.svg", "Ren's diagnostic scanner. Essential kit."]
 }
 
 

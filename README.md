@@ -27,19 +27,22 @@ This is my first time working on anything resembling an actual project, and I've
 * Press Cancel during text to speed it up
 
 
-### License / Credits
+### License
 
 
-The project itself is licensed under MIT and, additionally, all original assets are licensed under the [Creative Commons](https://creativecommons.org/licenses/by/4.0/) for ease of reuse. All works, original and non-original, are included below with their respective licensing, if applicable.
+This project is licensed under MIT and, additionally, all original assets are licensed under the [Creative Commons](https://creativecommons.org/licenses/by/4.0/) for ease of reuse.
+
+
+### Credits
 
 * Code, writing, sprites - Justin Sheathelm / rovantiq (MIT / [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/))
 
-* Additional art (cover art, backgrounds) -  Alyssa Dobbs ([CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/))
+* Cover art & backgrounds -  Alyssa Dobbs ([CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/))
 
 * Font -  [Jost*](https://indestructibletype.com/Jost.html) by [indestructible type*](https://indestructibletype.com/Home.html) (OFL)
 
-* Icons - [The Cowboy Collective](https://cowboycollective.cc/) and [Game-icons.net](https://game-icons.net/) (CC-BY-4.0 / CC-BY-3.0, see [full credits](/credits.md) for details)
+* Icons - [The Cowboy Collective](https://cowboycollective.cc/) and [Game-icons.net](https://game-icons.net/) (CC-BY-4.0 / CC-BY-3.0, see [details](/CREDITS.md))
 
-* SFX - [Freesound.org](https://freesound.org/) (CC0 / CC-BY-3.0, see [full credits](/credits.md) for details)
+* SFX - [Freesound.org](https://freesound.org/) (CC0 / CC-BY-3.0, see [details](/CREDITS.md))
 
-* Music - [Disklavier World](http://www.kuhmann.com/Yamaha.htm) MIDI, played with [this soundfont](http://sonimusicae.free.fr/matshelgesson-maestro-en.html) and added [effects](https://calf-studio-gear.org/) (CC0)
+* Music - [Disklavier World](http://www.kuhmann.com/Yamaha.htm) public domain MIDI (CC0)

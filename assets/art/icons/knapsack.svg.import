@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gun.svg-8bfb80ca2a31eef2fc0edd483f292b26.stex"
+path="res://.import/knapsack.svg-2df612970b048f04379318baa6268807.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/icons/gun.svg"
-dest_files=[ "res://.import/gun.svg-8bfb80ca2a31eef2fc0edd483f292b26.stex" ]
+source_file="res://assets/art/icons/knapsack.svg"
+dest_files=[ "res://.import/knapsack.svg-2df612970b048f04379318baa6268807.stex" ]
 
 [params]
 

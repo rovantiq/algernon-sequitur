@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/ui/themes/interaction_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/ui/interactions/ItemVBoxContainer.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/art/icons/backpack.svg" type="Texture" id=3]
+[ext_resource path="res://assets/art/icons/knapsack.svg" type="Texture" id=3]
 
 [node name="InvButton" type="Button"]
 margin_right = 50.0

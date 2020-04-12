@@ -5,7 +5,7 @@
 //*****************************    VARIABLES    ********************************
 
 // All possible items
-LIST items = Nothing, Gun, Blaster, Gear, Rations, Water, Drugs, Dirty_Orb, Clean_Orb
+LIST items = Nothing, Revolver, M1911, Scanner, Gear, Rations, Water, Drugs, Dirty_Orb, Clean_Orb
 // Current Player inventory (update from character inventories based on who's currently playable)
 LIST player_inventory = (Nothing)
 // Character Inventories
@@ -109,7 +109,7 @@ VAR welcomed_home = false
 
 == prologue_al ==
 
-    ~ algernon_inventory = (Gun, Gear, Rations, Water, Drugs)
+    ~ algernon_inventory = (Revolver, Gear, Rations, Water, Drugs)
     ~ player_inventory = algernon_inventory
     ~ current_scene = "ProloguePlanet"
     -> start
@@ -276,7 +276,7 @@ VAR welcomed_home = false
 == prologue_ren ==
 
     ~ algernon_inventory = player_inventory
-    ~ ren_inventory = (Blaster)
+    ~ ren_inventory = (M1911, Scanner)
     ~ player_inventory = ren_inventory
     ~ player_speed = 100
     -> start

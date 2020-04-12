@@ -38,7 +38,7 @@ The project itself is licensed under MIT and, additionally, all original assets 
 
 * Font -  [Jost*](https://indestructibletype.com/Jost.html) by [indestructible type*](https://indestructibletype.com/Home.html) (OFL)
 
-* Icons - [Game-icons.net](https://game-icons.net/) (CC-BY-3.0) (and [The Cowboy Collective](https://cowboycollective.cc/) for [this](https://raw.githubusercontent.com/CowboyCollective/CowboyCollective.github.io/master/Favicon.png) (CC-BY-4.0))
+* Icons - [Game-icons.net](https://game-icons.net/) (CC-BY-3.0) and [The Cowboy Collective](https://cowboycollective.cc/) for the game's [main icon](https://raw.githubusercontent.com/CowboyCollective/CowboyCollective.github.io/master/Favicon.png) (CC-BY-4.0)
 
 * Music - [Disklavier World](http://www.kuhmann.com/Yamaha.htm) MIDI, played with [this soundfont](http://sonimusicae.free.fr/matshelgesson-maestro-en.html) and added [effects](https://calf-studio-gear.org/) (CC0)
 
@@ -48,8 +48,16 @@ The project itself is licensed under MIT and, additionally, all original assets 
 
     * [Gunshot](https://freesound.org/people/CJDeets/sounds/476740/) (CC-BY-3.0)
 
-    * Footsteps: [1](https://freesound.org/search/?q=490951) (CC0) and [2](https://freesound.org/people/121053699/sounds/467992/) (CC0)
+    * Footsteps:
+        * [Outdoor](https://freesound.org/search/?q=490951) (CC0)
+        * [Indoor](https://freesound.org/people/121053699/sounds/467992/) (CC0)
 
-    * Ambient - Planet: [1](https://freesound.org/people/kangaroovindaloo/sounds/138288/) (CC-BY-3.0) and [2](https://freesound.org/people/jorge0000/sounds/361053/) (CC0)
+    * Ambient - Planet: 
+        * [Desert Sounds](https://freesound.org/people/kangaroovindaloo/sounds/138288/) (CC-BY-3.0)
+        * [Wind](https://freesound.org/people/jorge0000/sounds/361053/) (CC0)
 
-    * Ambient - Ship: [1](https://freesound.org/people/qubodup/sounds/163117/) (CC0), [2](https://freesound.org/people/qubodup/sounds/171106/) (CC0), [3](https://freesound.org/people/qubodup/sounds/187564/) (CC0), [4](https://freesound.org/people/RenzoGen/sounds/351740/) (CC-BY-3.0)
+    * Ambient - Ship:
+        * [Idle ship](https://freesound.org/people/qubodup/sounds/163117/) (CC0)
+        * [Rocket flight](https://freesound.org/people/qubodup/sounds/171106/) (CC0)
+        * [Truck Engine](https://freesound.org/people/qubodup/sounds/187564/) (CC0)
+        * [Spacecraft](https://freesound.org/people/RenzoGen/sounds/351740/) (CC-BY-3.0)

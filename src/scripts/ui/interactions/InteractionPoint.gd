@@ -44,8 +44,8 @@ var options: Array  = []            # This controls what interaction options app
 
 
 
-func _ready() -> void:               # sets text that appears on the indicator
-	_set_name("name")
+func _ready() -> void:
+#	_set_name("name")                # optionally set text that appears on the indicator in code
 	options = []                     # options = ["look", "talk", "use", "go", "inv"] shows all of them
 
 
@@ -105,8 +105,8 @@ func item_pressed(item) -> void:
 		_show_text(item, ["Doesn't work.", "Nope."])# Fallback text here (remember it needs to be an array)
 
 
-func go_pressed(go) -> void:
-	_transition(go, "new_scene")  # Just the scene name here, no path or filetype since StoryRunner.change_scene() handles that
+#func go_pressed(go) -> void:
+#	_transition(go, "new_scene")  # Just the scene name here, no path or filetype since StoryRunner.change_scene() handles that
 
 
 
@@ -227,9 +227,19 @@ func _play_story(button, text) -> void:
 	button.grab_focus()
 
 
+func _play_story_and_end(button, text) -> void:
+	button.set_focus_mode(0)
+	_clear()
+	z_index = 0
+	StoryRunner.ui_active = false
+	in_control = false
+	StoryRunner.play_story(text)
+
+
 func _play_story_and_destroy(button, text) -> void:
 	button.set_focus_mode(0)
 	StoryRunner.play_story(text)
+	yield(StoryRunner, "end_story")
 	StoryRunner.ui_active = false
 	queue_free()
 

@@ -1,20 +1,24 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/art/characters/side/algernon.png" type="Texture" id=1]
 [ext_resource path="res://src/scripts/scenes/prologue - planet/ProloguePlanet.gd" type="Script" id=2]
 [ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/CelestialBodies.png" type="Texture" id=3]
-[ext_resource path="res://src/templates/InteractionPoint.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/scripts/scenes/prologue - planet/interactions/IntroOrb.gd" type="Script" id=5]
-[ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/Foreground.png" type="Texture" id=6]
+[ext_resource path="res://src/scripts/scenes/prologue - planet/interactions/StonePile.gd" type="Script" id=4]
+[ext_resource path="res://src/templates/InteractionPoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/Foreground2.png" type="Texture" id=6]
 [ext_resource path="res://assets/sound/sfx/ambient/prologue-planet/prologue_planet_ambient.ogg" type="AudioStream" id=7]
 [ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/BackgroundNear.png" type="Texture" id=8]
+[ext_resource path="res://assets/art/characters/side/creatures/wild-beast.png" type="Texture" id=9]
 [ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/Midground.png" type="Texture" id=10]
 [ext_resource path="res://src/player/PlayerSideScroll.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/Sky.png" type="Texture" id=12]
+[ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/Sky2.png" type="Texture" id=12]
+[ext_resource path="res://src/scripts/scenes/prologue - planet/interactions/WildBeast.gd" type="Script" id=13]
 [ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/BackgroundFar.png" type="Texture" id=14]
+[ext_resource path="res://src/ui/themes/interaction_theme.tres" type="Theme" id=15]
+[ext_resource path="res://src/scripts/ui/interactions/InteractionIndicator.gd" type="Script" id=16]
 [ext_resource path="res://assets/sound/sfx/gunshots/FX_gunshot1_session.wav" type="AudioStream" id=17]
-[ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/Structure.png" type="Texture" id=18]
-
+[ext_resource path="res://src/scripts/scenes/prologue - planet/interactions/Ledge.gd" type="Script" id=18]
+[ext_resource path="res://src/scripts/scenes/prologue - planet/interactions/Campsite.gd" type="Script" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -23,12 +27,23 @@
 [sub_resource type="RectangleShape2D" id=3]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 48.0486, 14.5665 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 1400, 1 )
+extents = Vector2( 56, 10 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 32, 25 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 44, 10 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 108, 10 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 40, 40 )
+
+[sub_resource type="Animation" id=9]
 length = 60.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("ParallaxBackground/Sky:modulate")
@@ -127,24 +142,30 @@ tracks/7/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.815686, 0.815686, 0.815686, 1 ), Color( 0.454902, 0.454902, 0.454902, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=10]
 
 [node name="Prologue-Planet" type="Node2D"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_vertical_guides_": [ 1921.0 ]
+}
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
 z_as_relative = false
-motion_scale = Vector2( 0, 1 )
+motion_scale = Vector2( 0, 0.02 )
+motion_offset = Vector2( 0, -150 )
 motion_mirroring = Vector2( 1440, 0 )
 
 [node name="Sky" type="Sprite" parent="ParallaxBackground/Sky"]
+position = Vector2( 0, -81 )
 texture = ExtResource( 12 )
 centered = false
 
 [node name="CelestialBodies" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0, 1 )
+motion_scale = Vector2( 0, 0 )
+motion_offset = Vector2( -200, -100 )
 
 [node name="CelestialBodies" type="Sprite" parent="ParallaxBackground/CelestialBodies"]
 position = Vector2( -199, 0 )
@@ -153,7 +174,8 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="BackgroundFar" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.05, 1 )
+motion_scale = Vector2( 0.05, 0.05 )
+motion_offset = Vector2( 0, -130 )
 motion_mirroring = Vector2( 1440, 0 )
 
 [node name="BackgroundFar" type="Sprite" parent="ParallaxBackground/BackgroundFar"]
@@ -161,7 +183,8 @@ texture = ExtResource( 14 )
 centered = false
 
 [node name="BackgroundNear" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.1, 1 )
+motion_scale = Vector2( 0.1, 0.1 )
+motion_offset = Vector2( 0, -105 )
 motion_mirroring = Vector2( 1440, 0 )
 
 [node name="BackgroundNear" type="Sprite" parent="ParallaxBackground/BackgroundNear"]
@@ -169,7 +192,8 @@ texture = ExtResource( 8 )
 centered = false
 
 [node name="Midground" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.2, 1 )
+motion_scale = Vector2( 0.2, 0.2 )
+motion_offset = Vector2( 0, -100 )
 motion_mirroring = Vector2( 1440, 0 )
 
 [node name="Midground" type="Sprite" parent="ParallaxBackground/Midground"]
@@ -178,72 +202,157 @@ centered = false
 
 [node name="Foreground" type="ParallaxLayer" parent="ParallaxBackground"]
 z_as_relative = false
-motion_mirroring = Vector2( 1440, 0 )
 
 [node name="Foreground" type="Sprite" parent="ParallaxBackground/Foreground"]
 texture = ExtResource( 6 )
 centered = false
 
-[node name="Structure" type="Sprite" parent="."]
-position = Vector2( 2366, 135 )
-texture = ExtResource( 18 )
-
 [node name="Triggers" type="Node" parent="."]
 
 [node name="LookBack" type="Area2D" parent="Triggers"]
 position = Vector2( 43.3018, 233.381 )
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/LookBack"]
 shape = SubResource( 1 )
 
-[node name="TimeAdvance" type="Area2D" parent="Triggers"]
-position = Vector2( 807.343, 221.416 )
+[node name="AnimalEncounter" type="Area2D" parent="Triggers"]
+position = Vector2( 807.343, 243 )
+collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/TimeAdvance"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/AnimalEncounter"]
 shape = SubResource( 2 )
 
 [node name="End" type="Area2D" parent="Triggers"]
-position = Vector2( 2754.04, 230.281 )
+position = Vector2( 2831, 67 )
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/End"]
 shape = SubResource( 3 )
 
-[node name="Interactions" type="Node" parent="."]
+[node name="LedgeApproach" type="Area2D" parent="Triggers"]
+position = Vector2( 1963, 243 )
 
-[node name="Orb" parent="Interactions" instance=ExtResource( 4 )]
-position = Vector2( 459.831, 256.26 )
-script = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Interactions/Orb" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/LedgeApproach"]
+position = Vector2( 0, -1 )
 shape = SubResource( 4 )
 
-[node name="InteractionUI" parent="Interactions/Orb" index="1"]
-margin_left = 5.32196
-margin_top = -34.9207
-margin_right = 5.32196
-margin_bottom = -34.9207
+[node name="Interactions" type="Node" parent="."]
 
-[node name="InteractionIndicator" parent="Interactions/Orb/InteractionUI" index="0"]
-visible = false
+[node name="Stones" parent="Interactions" instance=ExtResource( 5 )]
+position = Vector2( 680, 254 )
+script = ExtResource( 4 )
 
-[node name="OptionHBoxContainer" parent="Interactions/Orb/InteractionUI" index="1"]
-margin_top = -48.4481
-margin_bottom = -48.4481
+[node name="CollisionShape2D" parent="Interactions/Stones" index="0"]
+shape = SubResource( 5 )
+
+[node name="InteractionIndicator" parent="Interactions/Stones/InteractionUI" index="0"]
+text = "Pile of
+Stones"
+
+[node name="Beast" type="StaticBody2D" parent="Interactions"]
+position = Vector2( 991, 236 )
+collision_layer = 8
+
+[node name="Sprite" type="Sprite" parent="Interactions/Beast"]
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Beast"]
+shape = SubResource( 6 )
+
+[node name="Interaction" parent="Interactions/Beast" instance=ExtResource( 5 )]
+position = Vector2( -188, -10 )
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" parent="Interactions/Beast/Interaction" index="0"]
+position = Vector2( 44, 0 )
+shape = SubResource( 7 )
+
+[node name="InteractionUI" parent="Interactions/Beast/Interaction" index="1"]
+margin_left = 144.0
+margin_top = -80.0
+margin_right = 144.0
+margin_bottom = -80.0
+
+[node name="InteractionIndicator" parent="Interactions/Beast/Interaction/InteractionUI" index="0"]
+text = "Wild
+Beast"
+
+[node name="Ledge" type="Area2D" parent="Interactions"]
+position = Vector2( 2004, 241 )
+scale = Vector2( 0.25, 0.25 )
+collision_layer = 2
+script = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Ledge"]
+shape = SubResource( 8 )
+
+[node name="InteractionUI" type="Control" parent="Interactions/Ledge"]
+margin_left = 0.170593
+margin_top = -172.0
+margin_right = 0.170593
+margin_bottom = -172.0
+mouse_filter = 2
+theme = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractionIndicator" type="Label" parent="Interactions/Ledge/InteractionUI"]
+margin_left = -17.7499
+margin_top = 25.0
+margin_right = 18.2501
+margin_bottom = 37.9804
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 40 )
+mouse_filter = 0
+size_flags_horizontal = 4
+theme = ExtResource( 15 )
+text = "Ledge"
+align = 1
+valign = 1
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionHBoxContainer" type="HBoxContainer" parent="Interactions/Ledge/InteractionUI"]
+margin_left = -0.0586395
+margin_top = -6.1311
+margin_right = -0.0586395
+margin_bottom = -6.1311
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camp" parent="Interactions" instance=ExtResource( 5 )]
+position = Vector2( 2743, 77 )
+script = ExtResource( 19 )
+
+[node name="CollisionShape2D" parent="Interactions/Camp" index="0"]
+shape = SubResource( 11 )
+
+[node name="InteractionIndicator" parent="Interactions/Camp/InteractionUI" index="0"]
+text = "Clearing"
 
 [node name="Player" parent="." instance=ExtResource( 11 )]
-position = Vector2( 77.8836, 229 )
+position = Vector2( 83, 229 )
 z_index = 50
 
 [node name="Sprite" parent="Player" index="1"]
 texture = ExtResource( 1 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2( 8, -758.916 )
+position = Vector2( -20, 261 )
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2( 1396.94, 1020.92 )
-shape = SubResource( 5 )
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Ground"]
+scale = Vector2( 3.23689, 7.82711 )
+polygon = PoolVector2Array( 0, 0, 650, 0, 650, -20, 910, -20, 650, 2, 0, 2 )
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
@@ -253,12 +362,23 @@ volume_db = -20.0
 stream = ExtResource( 17 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/TimeAdvances = SubResource( 6 )
-anims/WaitingDarkness = SubResource( 7 )
+anims/TimeAdvances = SubResource( 9 )
+anims/WaitingDarkness = SubResource( 10 )
 [connection signal="body_entered" from="Triggers/LookBack" to="." method="_on_LookBack_body_entered"]
-[connection signal="body_entered" from="Triggers/TimeAdvance" to="." method="_on_TimeAdvance_body_entered"]
+[connection signal="body_entered" from="Triggers/AnimalEncounter" to="." method="_on_AnimalEncounter_body_entered"]
 [connection signal="body_entered" from="Triggers/End" to="." method="_on_End_body_entered"]
+[connection signal="body_entered" from="Triggers/LedgeApproach" to="." method="_on_LedgeApproach_body_entered"]
+[connection signal="body_entered" from="Interactions/Ledge" to="Interactions/Ledge" method="_on_body_entered"]
+[connection signal="body_exited" from="Interactions/Ledge" to="Interactions/Ledge" method="_on_body_exited"]
+[connection signal="mouse_entered" from="Interactions/Ledge" to="Interactions/Ledge" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interactions/Ledge" to="Interactions/Ledge" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Interactions/Ledge/InteractionUI/InteractionIndicator" to="Interactions/Ledge" method="_on_InteractionIndicator_mouse_entered"]
+[connection signal="mouse_exited" from="Interactions/Ledge/InteractionUI/InteractionIndicator" to="Interactions/Ledge" method="_on_InteractionIndicator_mouse_exited"]
 
-[editable path="Interactions/Orb"]
+[editable path="Interactions/Stones"]
+
+[editable path="Interactions/Beast/Interaction"]
+
+[editable path="Interactions/Camp"]
 
 [editable path="Player"]

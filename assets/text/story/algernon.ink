@@ -5,7 +5,7 @@
 //*****************************    VARIABLES    ********************************
 
 // All possible items
-LIST items = Nothing, Revolver, M1911, Scanner, Gear, Rations, Water, Drugs, Dirty_Orb, Clean_Orb
+LIST items = Nothing, Revolver, Drugs, Gear, Stone, Rations, Water, Rope, Harpoon_Kit, Rope_Dart, M1911, Scanner
 // Current Player inventory (update from character inventories based on who's currently playable)
 LIST player_inventory = (Nothing)
 // Character Inventories
@@ -27,9 +27,13 @@ VAR stage_cue = ""
 
 // ProloguePlanet
 VAR intro_complete = false
-VAR has_orb = false
 VAR looked_back = false
-VAR time_passed = false
+VAR has_stone = false
+VAR animal_encountered = false
+VAR ledge_approached = false
+VAR animal_gone = false
+VAR climbed_ledge = false
+VAR looked_ahead = false
 // PrologueShip
 VAR welcomed_home = false
 
@@ -37,14 +41,32 @@ VAR welcomed_home = false
 //************************    INVENTORY COMBINATIONS    ************************
 
 
-== combine_water_dirtyorb ==
+== open_gear ==
 
-    It's clean now.
-    ~ player_inventory -= Dirty_Orb
-    ~ player_inventory += Clean_Orb
+    Algernon rummages through his pack and takes inventory.
+    ~ player_inventory -= Gear
+    ~ player_inventory += Rations
+    ~ player_inventory += Water
+    ~ player_inventory += Rope
+    ~ player_inventory += Harpoon_Kit
+         * [-x-] -> END
+
+== combine_rope_harpoonkit ==
+
+    Algernon: "I've always maintained that rock climbing is an utter waste of time."
+    ~ player_inventory -= Rope 
+    ~ player_inventory -= Harpoon_Kit
+    ~ player_inventory += Rope_Dart
          * [-x-] -> END
 
 //*******************************    STORY    **********************************
+
+== testing ==
+
+    ~ algernon_inventory = (Revolver, Drugs, Gear)
+    ~ player_inventory = algernon_inventory
+    ~ current_scene = "ProloguePlanet"
+    -> END
 
 
 == opening ==
@@ -109,10 +131,11 @@ VAR welcomed_home = false
 
 == prologue_al ==
 
-    ~ algernon_inventory = (Revolver, Gear, Rations, Water, Drugs)
+    ~ algernon_inventory = (Revolver, Drugs, Gear)
     ~ player_inventory = algernon_inventory
     ~ current_scene = "ProloguePlanet"
     -> start
+
 
     = start
 
@@ -124,6 +147,7 @@ VAR welcomed_home = false
             * [-x-]
             ~ intro_complete = true
             -> END
+
 
 
     = look_back
@@ -138,54 +162,84 @@ VAR welcomed_home = false
 
 
 
-    = item_use
+    = collect_stone
 
-        Algernon scoops it up and peers at it more closely. This doesn't yield much in
-        the way of fresh data,  but it does looks rather pretty so he stuffs it into
-        his pocket before moving on.
+        Stone collected.
 
-            ~ player_inventory += Dirty_Orb
-            ~ has_orb = true
-            * [-x-] -> END
-
-
-
-    = time_forward
-
-        Algernon glances around at his darkening surroundings.
-        ~ time_passed = true
-
-            * [Just what I need.] Algernon: "Lago must have forgotten 'erratic solar cycles' in his
-            list of horrible things about this place."
-                ~ player_speed = 150
-                `
-                -> time_forward_choice1
-
-            * [No big deal.] Algernon: "No matter, dimly perceived danger is my favorite sort!"
-                `
-                -> time_forward_choice2
+            * [-x-]
+            ~ player_inventory += Stone
+            ~ has_stone = true
+            -> END
 
 
 
-    = time_forward_choice1
+    = animal_encounter
 
-        As he quickens his pace, the fading light seems to do the same.
+        Animal encounter!
 
-            * [-x-] -> END
-
-
-
-    = time_forward_choice2
-
-        As if in response, the rocky masses along the horizon grow menacing shadowy
-        forms in the strange, sudden twilight.
-
-            * [-x-] -> END
+            * [-x-]
+            ~ animal_encountered = true
+            -> END
 
 
+
+    = beast_rock
+
+        Rock thrown.
+
+            * [-x-]
+            ~ player_inventory -= Stone
+            ~ stage_cue = "rock_thrown"
+            ~ animal_gone = true
+            -> END
+
+
+
+    = ledge_approach
+
+        A big ledge! Open the backpack in the inventory by selecting it twice,
+        then combine the rope and harpoon kit by selecting one then the other.
+        Finally, use the new item on the ledge to continue.
+
+            * [-x-]
+            ~ ledge_approached = true
+            -> END
+
+
+    = harpoon
+
+        The blades sink into the wood with a satisfying thud, but it's quickly
+        followed by the sharp sound of air under pressure escaping. Guess the 
+        pneumatics are shot.
+
+            * [-x-]
+            ~ player_inventory -= Rope_Dart
+            -> END
+    
+
+    = climb
+
+        After a few clumsy attempts, Algernon manages to scramble over the ledge.
+
+            * [-x-]
+            ~ climbed_ledge = true
+            ~ player_inventory += Rope
+            ~ stage_cue = "climb_ledge"
+            -> END
+
+
+    = too_dark
+
+        The path ahead melts into a hazy mass of rock and shadow. Time to set up camp.
+
+            * [-x-]
+            ~ looked_ahead = true
+            -> END
 
     = end
 
+        ~ stage_cue = "camp"
+        
         Algernon trudges recklessly through the gritty darkness until an imposing
         prominence of deeper blackness looms suddenly ahead. Algernon approaches
         brightly through squinted eyes and gritted teeth and spreads his arms wide.
@@ -278,7 +332,6 @@ VAR welcomed_home = false
     ~ algernon_inventory = player_inventory
     ~ ren_inventory = (M1911, Scanner)
     ~ player_inventory = ren_inventory
-    ~ player_speed = 100
     -> start
 
     = start

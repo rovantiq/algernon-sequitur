@@ -24,7 +24,7 @@ __meta__ = {
 
 [node name="InteractionIndicator" type="Label" parent="InteractionUI"]
 margin_left = -17.7499
-margin_top = 9.98041
+margin_top = 25.0
 margin_right = 18.2501
 margin_bottom = 37.9804
 grow_horizontal = 2
@@ -43,10 +43,11 @@ __meta__ = {
 
 [node name="OptionHBoxContainer" type="HBoxContainer" parent="InteractionUI"]
 margin_left = -0.0586395
-margin_top = -8.95438
+margin_top = -6.1311
 margin_right = -0.0586395
-margin_bottom = -8.95438
+margin_bottom = -6.1311
 grow_horizontal = 2
+grow_vertical = 0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false

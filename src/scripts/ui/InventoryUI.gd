@@ -18,13 +18,15 @@ var combo: Array = []
 var item_dict: Dictionary = {
 	"Revolver": ["res://assets/art/icons/revolver.svg", "Bella."],
 	"Drugs": ["res://assets/art/icons/drugs.svg", "Not much left..."],
-	"Water": ["res://assets/art/icons/water.svg", "Some water."],
-	"Dirty Orb": ["res://assets/art/icons/gold-shell.svg", "Interesting, but covered in grit."],
-	"Clean Orb": ["res://assets/art/icons/gold-shell.svg", "Maybe some sort of key?"],
-	"Rations": ["res://assets/art/icons/opened-food-can.svg", "Ren insisted."],
 	"Gear": ["res://assets/art/icons/backpack.svg", "Always be prepared!"],
-	"M1911": ["res://assets/art/icons/colt-m1911.svg", "Winona."],
-	"Scanner": ["res://assets/art/icons/laser-blast.svg", "Ren's diagnostic scanner. Essential kit."]
+	"Stone": ["res://assets/art/icons/rock.svg", "An exquisite geologic specimen."],
+	"Rations": ["res://assets/art/icons/opened-food-can.svg", "Ren insisted."],
+	"Water": ["res://assets/art/icons/water.svg", "Some water."],
+	"Rope": ["res://assets/art/icons/rope-coil.svg", "Profoundly useful."],
+	"Harpoon Kit": ["res://assets/art/icons/harpoon.svg", "A small harpoon and pneumatic firing apparatus."],
+	"Rope Dart": ["res://assets/art/icons/rope-dart.svg", "Makes climbing a breeze..."],
+	"M1911": ["res://assets/art/icons/m1911.svg", "Winona."],
+	"Scanner": ["res://assets/art/icons/laser.svg", "A (nearly) universal environmental and diagnostics scanner. Essential kit."]
 }
 
 
@@ -142,7 +144,9 @@ func _select_item() -> void:
 
 
 func _check_combo() -> void:
-	if combo.has("Water") and combo.has("Dirty Orb"):
-		StoryRunner.play_story("combine_water_dirtyorb")
+	if combo.has("Gear") and combo[0] == combo[1]:
+		StoryRunner.play_story("open_gear")
+	elif combo.has("Rope") and combo.has("Harpoon Kit"):
+		StoryRunner.play_story("combine_rope_harpoonkit")
 	else:
 		StoryRunner.show_text("That doesn't accomplish anything.")

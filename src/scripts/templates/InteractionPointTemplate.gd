@@ -1,8 +1,8 @@
 extends "res://src/scripts/ui/interactions/InteractionPoint.gd"
 
 #  ##########################################
-#   INSTANCE AN INTERACTION POINT, THEN MAKE 
-#   A COPY OF THIS SCRIPT TO ATTACH AND
+#   INSTANCE AN INTERACTION POINT, THEN SAVE 
+#   A NEW COPY OF THIS SCRIPT TO ATTACH AND
 #   ADJUST THE FOLLOWING AS NEEDED
 #  ##########################################
 
@@ -11,19 +11,14 @@ extends "res://src/scripts/ui/interactions/InteractionPoint.gd"
 
 
 func _ready() -> void:
-	_set_name("Name")
-	options = ["look", "talk", "use", "go", "inv"]
+#	_set_name("Name")
+	options = ["look", "use", "inv"]        #["look", "talk", "use", "go", "inv"]
 
 
 func look_pressed(look) -> void:
 	_show_text(look, ["text1", "text2"])
 #	_play_story(look, "knot")
 #	_clear_option(look, "look", "text")
-
-func talk_pressed(talk) -> void:
-	_show_text(talk, ["text1", "text2"])
-#	_play_story(talk, "knot")
-#	_clear_option(talk, "talk", "text")
 
 
 func use_pressed(use) -> void:
@@ -39,6 +34,12 @@ func item_pressed(item) -> void:
 #		_show_text(item, ["text1"])
 	else:
 		_show_text(item, ["text1", "text2"])
+
+
+func talk_pressed(talk) -> void:
+	_show_text(talk, ["text1", "text2"])
+#	_play_story(talk, "knot")
+#	_clear_option(talk, "talk", "text")
 
 
 func go_pressed(go) -> void:

@@ -1,23 +1,22 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/ui/themes/interaction_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/scripts/ui/interactions/InteractionIndicator.gd" type="Script" id=2]
 
 [node name="SimpleInteractionUI" type="Control"]
-visible = false
+rect_scale = Vector2( 0.25, 0.25 )
 theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="InteractionIndicator" type="Label" parent="."]
-margin_top = 10.0
-margin_right = 97.0
-margin_bottom = 78.0
+margin_bottom = 28.0
 size_flags_horizontal = 4
 theme = ExtResource( 1 )
-text = "Object"
 align = 1
 valign = 1
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

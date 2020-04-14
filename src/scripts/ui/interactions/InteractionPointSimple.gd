@@ -17,19 +17,13 @@ var mouse_hover = false
 var indicator_text: = ""
 
 
-func _ready() -> void:                              # sets text that appears on the indicator
-	_set_name("name")
+#func _ready() -> void:                              
+#	_set_name("name")                            # optionally sets text that appears on the indicator in code
 
 
-func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept") or (Input.is_action_just_pressed("left_click") and mouse_hover == true):
-		if interaction_ui.visible == true and story_ui.visible == false and inventory_ui.visible:
-			_show_text(["I'm simple!"])
-
-
-# ###############################
-#   STATIC FUNCTIONS BELOW
-# ###############################
+# ############################## #
+#     STATIC FUNCTIONS BELOW     #
+# ############################## #
 
 
 
@@ -73,12 +67,12 @@ func _on_body_entered(body: PhysicsBody2D) -> void:
 				StoryRunner.current_interaction_ui.visible = false
 		StoryRunner.current_interaction_ui = interaction_ui
 		inside = true
-		interaction_ui.visible = true
+		interaction_indicator.visible = true
 
 
 func _on_body_exited(_body: PhysicsBody2D) -> void:
 	inside = false
-	interaction_ui.visible = false
+	interaction_indicator.visible = false
 	if StoryRunner.current_interaction_ui == interaction_ui:
 		StoryRunner.current_interaction_ui = null
 
@@ -93,7 +87,7 @@ func _on_mouse_exited() -> void:
 
 func _on_StoryRunner_start_story() -> void:
 	if inside == true:
-		interaction_ui.visible = false
+		interaction_indicator.visible = false
 
 
 func _on_StoryRunner_end_story() -> void:

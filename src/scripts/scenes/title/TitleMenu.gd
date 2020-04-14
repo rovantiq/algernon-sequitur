@@ -20,7 +20,7 @@ func _ready() -> void:
 
 
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_released("ui_accept"):
+	if Input.is_action_just_released("ui_accept") or Input.is_action_just_released("ui_cancel") or Input.is_action_just_released("ui_select"):
 		if options.visible == false and loading == false:
 			options.visible = true
 			new_button.grab_focus()

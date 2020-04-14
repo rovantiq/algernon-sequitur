@@ -13,7 +13,6 @@ onready var audio = $DoorFX
 
 
 func _ready() -> void:
-	_set_name("Ren's" + "\n" + "Quarters")
 	options = ["look", "go"]
 
 

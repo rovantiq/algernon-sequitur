@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://src/scripts/sets/Ship/Ship.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/environments/top/objects/vehicles/ship.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://src/tilesets/top/ship/ship-floors.tres" type="TileSet" id=22]
 [ext_resource path="res://assets/art/environments/top/objects/vehicles/shuttle-large.png" type="Texture" id=23]
 [ext_resource path="res://src/templates/DoubleDoors.tscn" type="PackedScene" id=24]
+[ext_resource path="res://src/templates/SimpleInteractionPoint.tscn" type="PackedScene" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 39, 15 )
@@ -32,7 +33,10 @@ extents = Vector2( 39, 15 )
 extents = Vector2( 16, 3 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 58.6116, 61.36 )
+extents = Vector2( 14, 17 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 32, 18 )
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 16 )
@@ -112,9 +116,22 @@ position = Vector2( 35, 112 )
 rotation = -1.5708
 collision_mask = 0
 
+[node name="SimpleInteractionUI" parent="LowerLevel/HeadDoor/Interaction" index="3"]
+visible = false
+
 [node name="AlgernonsDoor" parent="LowerLevel" instance=ExtResource( 4 )]
 position = Vector2( -80, 259 )
 collision_mask = 0
+
+[node name="SimpleInteractionUI" parent="LowerLevel/AlgernonsDoor/Interaction" index="3"]
+margin_left = -45.0
+margin_top = -7.0
+margin_right = -45.0
+margin_bottom = -7.0
+
+[node name="InteractionIndicator" parent="LowerLevel/AlgernonsDoor/Interaction/SimpleInteractionUI" index="0"]
+text = "Al's Old
+Room"
 
 [node name="RensDoor" type="StaticBody2D" parent="LowerLevel"]
 position = Vector2( 80, 259 )
@@ -129,28 +146,30 @@ position = Vector2( -2.38419e-07, -1.01328e-06 )
 shape = SubResource( 2 )
 
 [node name="InteractionPoint" parent="LowerLevel/RensDoor" instance=ExtResource( 6 )]
+z_index = 100
 script = ExtResource( 13 )
 
 [node name="CollisionShape2D" parent="LowerLevel/RensDoor/InteractionPoint" index="0"]
-position = Vector2( -1.3884, -29.36 )
+position = Vector2( -2.74181e-06, -1.52588e-05 )
 shape = SubResource( 3 )
 
 [node name="InteractionUI" parent="LowerLevel/RensDoor/InteractionPoint" index="1"]
-margin_top = 49.2769
-margin_bottom = 49.2769
+margin_top = 14.0
+margin_bottom = 14.0
 
 [node name="InteractionIndicator" parent="LowerLevel/RensDoor/InteractionPoint/InteractionUI" index="0"]
-visible = false
 margin_left = -19.4359
 margin_top = -19.2578
 margin_right = 16.5641
 margin_bottom = 8.7422
+text = "Ren's
+Quarters"
 
 [node name="OptionHBoxContainer" parent="LowerLevel/RensDoor/InteractionPoint/InteractionUI" index="1"]
-margin_left = -2.15695
-margin_top = 27.976
-margin_right = -2.15695
-margin_bottom = 27.976
+margin_left = 0.0
+margin_top = 83.9999
+margin_right = 0.0
+margin_bottom = 83.9999
 
 [node name="DoorFX" type="AudioStreamPlayer2D" parent="LowerLevel/RensDoor/InteractionPoint"]
 stream = ExtResource( 18 )
@@ -189,6 +208,9 @@ position = Vector2( 48, -387 )
 rotation = 3.14159
 collision_mask = 0
 
+[node name="SimpleInteractionUI" parent="CaptainsQuarters/HeadDoor/Interaction" index="3"]
+visible = false
+
 [node name="Walls" type="TileMap" parent="CaptainsQuarters"]
 tile_set = ExtResource( 8 )
 cell_size = Vector2( 32, 32 )
@@ -216,16 +238,40 @@ cell_size = Vector2( 1, 1 )
 collision_layer = 2
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( -39780416, 20, 0, -38141962, 1610612736, 0, -35586087, -1610612736, 0, -35651567, -1073741824, 0, 8323131, -1073741819, 0, 16777256, -1073741807, 0, 16777312, -1610612721, 0, 18874408, 1610612752, 0, 18874432, 1610612749, 0, 18874464, -1610612722, 0, 19464064, 8, 0, 19464127, 8, 0, 27787136, 1610612744, 0, 29425584, 1610612753, 0, 29425592, 1610612751, 0 )
+tile_data = PoolIntArray( -39780416, 20, 0, -38141962, 1610612736, 0, -35586087, -1610612736, 0, -35651567, -1073741824, 0, 8323131, -1073741819, 0, 16777256, -1073741807, 0, 16777312, -1610612721, 0, 18874408, 1610612752, 0, 18874432, 1610612749, 0, 18874464, -1610612722, 0, 19464064, 8, 0, 19464127, 8, 0, 24641408, 1610612744, 0, 28770176, -2147483633, 0, 28770232, -1610612721, 0, 29425536, 1610612750, 0, 29425565, 1073741837, 0, 29425592, -1610612722, 0 )
 
 [node name="DoorToShuttleBay" parent="UpperLevel" instance=ExtResource( 4 )]
 position = Vector2( -112, 61 )
 collision_mask = 0
 
+[node name="SimpleInteractionUI" parent="UpperLevel/DoorToShuttleBay/Interaction" index="3"]
+margin_left = -62.0
+margin_top = -11.0
+margin_right = -62.0
+margin_bottom = -11.0
+
+[node name="InteractionIndicator" parent="UpperLevel/DoorToShuttleBay/Interaction/SimpleInteractionUI" index="0"]
+text = "Up - Shuttle Bay
+
+Down -  Main Deck"
+
 [node name="DoorToQuarters" parent="UpperLevel" instance=ExtResource( 4 )]
 position = Vector2( -35, -432 )
 rotation = 1.5708
 collision_mask = 0
+
+[node name="Interaction" parent="UpperLevel/DoorToQuarters" index="2"]
+rotation = -1.5708
+
+[node name="SimpleInteractionUI" parent="UpperLevel/DoorToQuarters/Interaction" index="3"]
+margin_left = -30.9999
+margin_top = 26.0001
+margin_right = -30.9999
+margin_bottom = 26.0001
+
+[node name="InteractionIndicator" parent="UpperLevel/DoorToQuarters/Interaction/SimpleInteractionUI" index="0"]
+text = "Captain's
+Quarters"
 
 [node name="DoubleDoorsBridge" parent="UpperLevel" instance=ExtResource( 24 )]
 position = Vector2( 0, -205 )
@@ -255,6 +301,44 @@ collision_layer = 2
 collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -1245185, -1610612701, 0, -1310720, -1073741821, 0, -1310719, -1073741821, 0, -1310718, 1610612771, 0, -1179650, -1610612701, 0, -1179649, -1610612702, 0, -1245182, 1610612770, 0, -1245181, 1610612771, 0, -1114114, 1610612739, 0, -1179645, 3, 0, -1048578, 1610612739, 0, -1114109, 3, 0, -983042, 35, 0, -983041, 34, 0, -1048574, -1073741790, 0, -1048573, -1073741789, 0, -917506, 2, 0, -917505, 1610612737, 0, -983038, 3, 0, -851970, 1610612739, 0, -917502, 3, 0, -786434, 1610612739, 0, -786433, -1073741794, 0, -851966, 3, 0, -720898, -1073741822, 0, -720897, -1610612704, 0, -786430, 3, 0, -655361, 1610612739, 0, -720894, 3, 0, -589825, 1610612739, 0, -655358, 3, 0, -524289, 1610612739, 0, -589822, 3, 0, -458753, 1610612739, 0, -524286, 3, 0, -393217, 1610612739, 0, -458750, 3, 0, -327681, 1610612739, 0, -393214, 3, 0, -262145, 1610612739, 0, -327678, 3, 0, -196609, 1610612739, 0, -262142, 3, 0, -131073, 1610612739, 0, -196606, 3, 0, -65537, 1610612739, 0, -131070, -1073741823, 0, -131069, -1073741821, 0, -131068, -1073741821, 0, -131067, -1073741821, 0, -131066, -1610612734, 0, -4, 2, 0, -3, -1073741821, 0, -2, -1610612734, 0, -1, 1610612739, 0, -65530, 3, 0, 65532, 1610612739, 0, 65534, 1073741827, 0, 65535, 536870915, 0, 2, -2147483647, 0, 3, -2147483645, 0, 4, -1610612735, 0, 6, 3, 0, 131068, 1610612739, 0, 131070, 1073741825, 0, 131071, -536870911, 0, 65538, -1073741792, 0, 65539, -2147483613, 0, 65540, 1073741826, 0, 65541, -1610612733, 0, 65542, 1610612738, 0, 196604, 1610612739, 0, 131074, -1610612707, 0, 131075, -2147483614, 0, 131076, -2147483613, 0, 262140, 1610612739, 0, 196610, -1073741807, 0, 196612, -2147483614, 0, 196613, -2147483613, 0, 327676, 1610612767, 0, 327677, 1610612764, 0, 327679, 536870951, 0, 262146, -1073741807, 0, 262148, -2147483634, 0, 262149, 3, 0, 393212, 1610612739, 0, 393215, -536870895, 0, 327682, -1073741807, 0, 327685, 3, 0, 458748, 1610612739, 0, 458751, -536870895, 0, 393218, -1073741809, 0, 393221, 3, 0, 524284, 1610612739, 0, 524287, -536870895, 0, 458757, 3, 0, 589820, 1610612739, 0, 589823, -536870895, 0, 524290, -2147483633, 0, 524293, 3, 0, 655356, 1610612767, 0, 655357, 1073741853, 0, 655358, 1073741853, 0, 655359, -1610612703, 0, 589826, -1073741807, 0, 589829, 3, 0, 720892, 1610612739, 0, 720895, -1073741795, 0, 655362, -2147483611, 0, 655363, -1610612727, 0, 655364, -1610612727, 0, 655365, 13, 0, 786428, 1610612739, 0, 786431, -2147483618, 0, 720901, 3, 0, 851964, 1610612739, 0, 786434, 1, 0, 786435, -1610612735, 0, 786437, 3, 0, 917500, 1610612739, 0, 917503, -1073741794, 0, 851970, 3, 0, 851971, 1610612739, 0, 851973, 3, 0, 983036, 1610612739, 0, 983039, -2147483619, 0, 917506, 3, 0, 917507, -1073741822, 0, 917508, -1610612733, 0, 917509, 1610612738, 0, 1048572, -1073741822, 0, 1048573, -1610612733, 0, 1048574, -1610612733, 0, 1048575, -1610612704, 0, 983042, 3, 0, 1114111, 1610612739, 0, 1048578, 3, 0, 1179647, 1610612739, 0, 1114114, 3, 0, 1245183, 1610612739, 0, 1179650, 3, 0, 1310719, 1610612739, 0, 1245186, 3, 0, 1376255, 1610612739, 0, 1310722, 3, 0, 1441791, 1610612739, 0, 1376258, 3, 0, 1507327, 1610612739, 0, 1441794, 3, 0, 1572863, 1610612739, 0, 1507330, 3, 0, 1638399, 1610612739, 0, 1572866, 3, 0, 1703935, 1610612739, 0, 1638402, 3, 0, 1769471, 1610612739, 0, 1703938, 3, 0, 1835007, -1073741822, 0, 1769472, -1610612733, 0, 1769473, -1610612733, 0, 1769474, 1610612738, 0 )
+
+[node name="ToLowerCargo" parent="UpperLevel" instance=ExtResource( 25 )]
+position = Vector2( 144, 0 )
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="UpperLevel/ToLowerCargo" index="0"]
+position = Vector2( -12, -15 )
+
+[node name="SimpleInteractionUI" parent="UpperLevel/ToLowerCargo" index="1"]
+margin_left = 16.0
+margin_top = -8.0
+margin_right = 16.0
+margin_bottom = -8.0
+
+[node name="InteractionIndicator" parent="UpperLevel/ToLowerCargo/SimpleInteractionUI" index="0"]
+text = "Up - Main Deck
+
+Down - Cargo Bay"
+
+[node name="ToLowerCrew" parent="UpperLevel" instance=ExtResource( 25 )]
+position = Vector2( 110, 383 )
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="UpperLevel/ToLowerCrew" index="0"]
+position = Vector2( -12, -15 )
+shape = SubResource( 12 )
+
+[node name="SimpleInteractionUI" parent="UpperLevel/ToLowerCrew" index="1"]
+margin_left = 19.0
+margin_top = -13.0
+margin_right = 19.0
+margin_bottom = -13.0
+
+[node name="InteractionIndicator" parent="UpperLevel/ToLowerCrew/SimpleInteractionUI" index="0"]
+text = "Up - Main Deck
+
+Down - Crew Cabins
+& Passenger Dorm"
 
 [node name="ShuttleBay" type="Node2D" parent="."]
 visible = false
@@ -442,10 +526,34 @@ max_distance = 1000.0
 [connection signal="body_entered" from="Transitions/Fore" to="." method="_on_Fore_body_entered"]
 [connection signal="body_entered" from="Transitions/Aft" to="." method="_on_Aft_body_entered"]
 
+[editable path="LowerLevel/HeadDoor"]
+
+[editable path="LowerLevel/HeadDoor/Interaction/SimpleInteractionUI"]
+
+[editable path="LowerLevel/AlgernonsDoor"]
+
+[editable path="LowerLevel/AlgernonsDoor/Interaction/SimpleInteractionUI"]
+
 [editable path="LowerLevel/RensDoor/InteractionPoint"]
+
+[editable path="CaptainsQuarters/HeadDoor"]
 
 [editable path="UpperLevel/DoorToShuttleBay"]
 
+[editable path="UpperLevel/DoorToShuttleBay/Interaction/SimpleInteractionUI"]
+
+[editable path="UpperLevel/DoorToQuarters"]
+
+[editable path="UpperLevel/DoorToQuarters/Interaction/SimpleInteractionUI"]
+
 [editable path="UpperLevel/DoubleDoorsBridge"]
+
+[editable path="UpperLevel/ToLowerCargo"]
+
+[editable path="UpperLevel/ToLowerCargo/SimpleInteractionUI"]
+
+[editable path="UpperLevel/ToLowerCrew"]
+
+[editable path="UpperLevel/ToLowerCrew/SimpleInteractionUI"]
 
 [editable path="RensQuarters/Exit"]

@@ -72,9 +72,10 @@ func _check_story_state() -> void:
 		StoryRunner.temp_timer(1)
 		yield(StoryRunner, "timeout")
 		StoryRunner.fade_in()
-		yield(StoryRunner, "animation_finished")
-		StoryRunner.play_story("prologue_ren")
-		yield(StoryRunner, "end_story")
+#		yield(StoryRunner, "animation_finished")
+#		StoryRunner.play_story("prologue_ren")
+#		yield(StoryRunner, "end_story")
+		StoryRunner.play_story("testing2")
 		StoryRunner.ui_active = false
 	else:
 		_set_current_floor("upper")

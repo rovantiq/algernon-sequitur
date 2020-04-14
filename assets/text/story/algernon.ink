@@ -59,7 +59,8 @@ VAR welcomed_home = false
     ~ player_inventory += Rope_Dart
          * [-x-] -> END
 
-//*******************************    STORY    **********************************
+//*******************************    TESTING    **********************************
+
 
 == testing ==
 
@@ -69,31 +70,36 @@ VAR welcomed_home = false
     -> END
 
 
+== testing2 ==
+
+    ~ algernon_inventory = player_inventory
+    ~ ren_inventory = (M1911, Scanner)
+    ~ player_inventory = ren_inventory
+    -> END
+
+
+//*******************************    STORY    **********************************
+
+
 == opening ==
 
     = one
 
         An aging shuttle sits alone in a vast, empty landscape. Inside, two men wearing hats
-        stare somberly out through the expanse to a dark semi-sphere in the distance, 
-        half-obscured by dust-filled air. The taller, thinner man in the passenger seat, 
-        wearing a wide-brimmed hat and mustache, speaks first.
+        stare somberly through the expansive landscape ahead to a distant dust storm on the 
+        horizon. The cloud must have been miles across but took up little of the view; it
+        was vaguely semi-sphere shaped and held a vague semisphere of deeper darkness at its
+        center. The man in the passenger seat, who wears a wide-brimmed hat and mustache,
+        speaks first.
         `
         “Well.”
         `
-        “Well,” says the man in the driver’s seat, wearing a simple military cap.
+        “Well,” says the man in the driver seat, wearing a simple military cap.
         `
-        The ground quakes and the air a few hundred yards ahead is suddenly opaque with fine, 
-        purple-grey dust.
+        After a few more moments of silence, the driver adds: “You want me to drop a grave
+        marker off on my way back?” 
         `
-        “Cutting it a little close, eh partner?” says the wide-brimmed man.
-        `
-        “She can still take a good reading,” says the other, patting the panel of dials on 
-        in front of them. After a few more moments of silence, he adds: “You want me to dump
-        a grave marker off on my way back through?”
-        `
-        “Algernon the Intrepid, Hero of the common man! He really took one for humanity’s team
-        when, on this very shithole, he made his last stand against the very embodiment of the
-        unknown.”
+        “Algernon the Intrepid, plumbing The Depths of the Unknown to the bitter end.”
         `
         “Al the Mad Jackass wandered off here for no reason, never to be heard from again.”
         `
@@ -106,10 +112,10 @@ VAR welcomed_home = false
 
     = two
 
-        Algernon’s mustache curls in a little smile below his brim and red, tired eyes.
-        “Don’t do it partner, I probably won’t come if I see ya. I'll stash the comm right
-        here so I can shout if things somehow go different than expected. Besides, she’d
-        lose her shit if you told her they had to come back for me.”
+        Algernon’s mustache curls in a little smile below the brim of his hat and his red,
+        tired eyes. “Don’t do it partner, I probably won’t come, assuming I even see you.
+        I'll stash the transmitter here so I can shout if things somehow go different than
+        expected. Anyway she’d lose her shit if you told her they had to come back for me.”
         `
         “She’d do it, though.”
         `
@@ -123,8 +129,8 @@ VAR welcomed_home = false
         “Well.”
         `
         Algernon closes the door, gives the wall panel a double-tap with his palm and steps
-        back a few paces. Ren takes a breath and initiates the takeoff sequence. They wave
-        goodbye and a few minutes later the shuttle is leaving atmosphere.
+        back a few paces. Ren initiates the takeoff sequence, they wave goodbye and a few
+        minutes later the shuttle is leaving atmosphere.
 
             * [-x-] -> END
 
@@ -240,78 +246,7 @@ VAR welcomed_home = false
 
         ~ stage_cue = "camp"
         
-        Algernon trudges recklessly through the gritty darkness until an imposing
-        prominence of deeper blackness looms suddenly ahead. Algernon approaches
-        brightly through squinted eyes and gritted teeth and spreads his arms wide.
-        `
-        Algernon: "Here we are, my lovely!"
-        `
-        He squints his eyes against the darkness and feels around the metallic
-        surface for a few moments, finding nothing but unbroken smoothness in every
-        direction.
-        `
-        Algernon: "...Shit."
-        `
-        He sighs heavily and rests 
-        both himself and his pack on the ground. He stays that way, staring far away
-        and barely moving, for some time.
-
-            * [\->] -> end2
-        // Will eventually need stage cues here
-
-
-    = end2
-
-        Eventually the familiar, H-shaped pain begins to throb in the back of his skull,
-        and the sound of growing whispers emanate from behind his eardrums.
-        `
-        Algernon: "Here we go. I was starting to worry that I'd spend an evening in
-        peace!" His words carry a manic tinge, the sound of slipping sanity.
-        `
-        An ephemeral, dripping personage begins to takes shape clearly in front of
-        Algernon's eyes, either ignorant of--or unconcerned with--any laws governing
-        visible light. It materializes making a bizarre combination of gibbering and
-        chuckles, still from within Algernon's head.
-        `
-        "What the fuck?!" Algernon tries to shove himself through the wall at his back
-        but only succeeds in kicking up dust.
-
-            * [\->] -> end3
-
-
-
-    = end3
-
-        The figure, now basically formed above the waist and perpetually melting onto
-        the ground below, bobs and weaves through the air almost drunkenly, wearing
-        an enormous and serene ear-to-ear smile. It begins an interminable chant in
-        a raspy sing-song, or at least it seems to: its mouth never moves but its
-        movements match the timing of the voice in his brain.
-        `
-        Apparition: "He-ere! He-ere!"
-        `
-        Algernon: "Nope! I was sufficiently tormented with voices, thank
-        you. Think I'll go for one more decent night's sleep."
-        `
-        Algernon frantically fishes out the last of the precious capsules he'd saved
-        for the end and swallows them as quickly as he can.
-        ~ player_inventory -= Drugs
-            * [\->] -> end4
-
-
-
-    = end4
-
-        Apparition: "Yes, yes, star-dust for Algernonnnn."
-        `
-        The drugs begin their work as quickly as ever, and the nightmare around him
-        softens mercifully. Algernon stares wild-eyed at the thing, and before his
-        faculties begin to fade a sickening revelation takes shape. What was once
-        only whispers and pain is now visible, and seemingly cognizant. It knows
-        his name. He imagines some horrible parasite burrowing through his synapses
-        these past months, growing and learning how to speak and learning HIM, from
-        the inside out. He is vaguely aware of vomiting as his head lolls to the
-        side and things go fuzzy.
+        Algernon sets up camp for the night.
 
             * [-x-]
                 ~ scene_transition = "PrologueShip"
@@ -424,10 +359,10 @@ VAR welcomed_home = false
         This is not a common urge for Ren, but it is the only non-violent outlet he can
         think of for his current energy.
         `
-        He decides to start tonight in his cabin, though it might help to try and clear
-        his head first. Ren's preferred activity for clearing the mind has long been
-        perimeter checks; might help to check out the state of things around the ship,
-        take inventory of what needs patching up.
+        He decides to start later on tonight in his cabin, once he clears his head. Ren
+        usually found perimeter checks the most effective way to calm his moods, a remnant
+        from more violent times. He pats the diagnostic scanner in his pocket and plans his
+        route around the ship.
 
             * [-x-]
             ~ welcomed_home = true
@@ -438,12 +373,11 @@ VAR welcomed_home = false
 
     = end
 
-        Ren stares at the screen in front of him for a few seconds, blinks, and 
-        begins typing at a steady pace.
+        Ren sits at the desk, brings up the notepad interface, and looks at the blank screen
+        for a few moments before beginning to type awkwardly on the desk's surface.
         `
-        "I first met Algernon five years ago..."
         `
-        (To be continued)
+        To be continued...
 
             * [-x-]
             ~ stage_cue = "quit"

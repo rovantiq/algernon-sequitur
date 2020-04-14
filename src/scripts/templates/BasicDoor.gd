@@ -3,6 +3,7 @@ extends Area2D
 
 onready var story_ui = StoryRunner.story_ui
 onready var inventory_ui = StoryRunner.inventory_ui
+onready var ui = $SimpleInteractionUI/InteractionIndicator
 
 onready var anim = $AnimationPlayer
 
@@ -20,15 +21,19 @@ func _input(_event: InputEvent) -> void:
 
 func _on_body_entered(_body: Node) -> void:
 	inside = true
+	ui.visible = true
 
 
 func _on_body_exited(_body: Node) -> void:
 	inside = false
+	ui.visible = false
 
 
 func _on_mouse_entered() -> void:
 	mouse_hover = true
+	ui.visible = true
 
 
 func _on_mouse_exited() -> void:
 	mouse_hover = false
+	ui.visible = false

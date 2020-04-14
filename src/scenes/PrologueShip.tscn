@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/scripts/scenes/prologue - ship/PrologueShip.gd" type="Script" id=1]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/Starfield1.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/player/PlayerSideScroll.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/characters/Mooney/MooneyTop.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/art/characters/side/ren.png" type="Texture" id=10]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/engineering.gd" type="Script" id=11]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/EndPrologue.gd" type="Script" id=12]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/Starfield2.gd" type="Script" id=13]
 [ext_resource path="res://src/player/PlayerTopDown.tscn" type="PackedScene" id=14]
@@ -26,9 +27,12 @@ shader_param/direction = Vector2( 0, 0 )
 shader_param/speed_scale = 2.0
 
 [sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 28, 15 )
+
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 32.4323, 100.333 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 7.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Ship/UpperLevel/MooneyTop:position")
@@ -65,7 +69,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.1, 1.7, 3.3, 4.9, 6.5, 6.9, 7 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Ship/UpperLevel/EnriTop:position")
 tracks/0/interp = 1
@@ -101,7 +105,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.1, 0.5 )
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 length = 12.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Ship/UpperLevel/EnriTop:position")
@@ -183,13 +187,24 @@ script = ExtResource( 13 )
 
 [node name="Ship" parent="." instance=ExtResource( 4 )]
 
-[node name="MooneyTop" parent="Ship/UpperLevel" index="4" instance=ExtResource( 9 )]
+[node name="MooneyTop" parent="Ship/UpperLevel" index="2" instance=ExtResource( 9 )]
 position = Vector2( 0, 78 )
 rotation = 3.14159
 
-[node name="EnriTop" parent="Ship/UpperLevel" index="5" instance=ExtResource( 5 )]
+[node name="EnriTop" parent="Ship/UpperLevel" index="3" instance=ExtResource( 5 )]
 position = Vector2( 25, 50 )
 rotation = 2.30383
+
+[node name="Engineering" parent="Ship/UpperLevel" index="11" instance=ExtResource( 7 )]
+position = Vector2( 0, 849 )
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" parent="Ship/UpperLevel/Engineering" index="0"]
+position = Vector2( 0, -27 )
+shape = SubResource( 3 )
+
+[node name="InteractionIndicator" parent="Ship/UpperLevel/Engineering/InteractionUI" index="0"]
+text = "Engineering"
 
 [node name="RensQuarters" parent="Ship" index="5"]
 position = Vector2( 137.704, 575.646 )
@@ -200,7 +215,7 @@ script = ExtResource( 12 )
 
 [node name="CollisionShape2D" parent="Ship/RensQuarters/EndPrologue" index="0"]
 position = Vector2( 6.10352e-05, 0.664307 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="InteractionIndicator" parent="Ship/RensQuarters/EndPrologue/InteractionUI" index="0"]
 visible = false
@@ -228,21 +243,21 @@ position = Vector2( -29.3562, 78 )
 limit_bottom = 850
 
 [node name="AnimationPlayer1" type="AnimationPlayer" parent="."]
-anims/cap_leaves = SubResource( 4 )
+anims/cap_leaves = SubResource( 5 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
-anims/enri_approaches = SubResource( 5 )
-anims/enri_leaves = SubResource( 6 )
+anims/enri_approaches = SubResource( 6 )
+anims/enri_leaves = SubResource( 7 )
 
 [editable path="Ship"]
 
 [editable path="Ship/LowerLevel/RensDoor/InteractionPoint"]
 
-[editable path="Ship/UpperLevel/DoorToQuarters"]
-
 [editable path="Ship/UpperLevel/MooneyTop"]
 
 [editable path="Ship/UpperLevel/EnriTop"]
+
+[editable path="Ship/UpperLevel/Engineering"]
 
 [editable path="Ship/RensQuarters/EndPrologue"]
 

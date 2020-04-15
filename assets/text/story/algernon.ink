@@ -2,7 +2,17 @@
 # title: The Algernon Sequiter
 
 
-//*****************************    VARIABLES    ********************************
+
+
+//********************************************************************************
+//********************************************************************************
+//*******************************    VARIABLES    ********************************
+//********************************************************************************
+//********************************************************************************
+
+
+
+
 
 // All possible items
 LIST items = Nothing, Revolver, Drugs, Gear, Stone, Rations, Water, Rope, Harpoon_Kit, Rope_Dart, M1911, Scanner
@@ -38,7 +48,17 @@ VAR looked_ahead = false
 VAR welcomed_home = false
 
 
-//************************    INVENTORY COMBINATIONS    ************************
+
+
+
+//********************************************************************************
+//********************************************************************************
+//*************************    INVENTORY COMBINATIONS    *************************
+//********************************************************************************
+//********************************************************************************
+
+
+
 
 
 == open_gear ==
@@ -59,7 +79,35 @@ VAR welcomed_home = false
     ~ player_inventory += Rope_Dart
          * [-x-] -> END
 
-//*******************************    TESTING    **********************************
+
+
+
+
+//********************************************************************************
+//********************************************************************************
+//*********************************    STORY    **********************************
+//********************************************************************************
+//********************************************************************************
+/*
+TABLE OF CONTENTS:
+
+    PROLOGUE-AL
+    PROLOGUE-REN
+    CH.1
+
+*/
+
+
+== example_knot
+
+    = example_stitch
+
+        Lorem Ipsum.
+
+            * [\->] 
+            #~ variable = value
+            -> END
+            * [-x-] -> END
 
 
 == testing ==
@@ -75,10 +123,11 @@ VAR welcomed_home = false
     ~ algernon_inventory = player_inventory
     ~ ren_inventory = (M1911, Scanner)
     ~ player_inventory = ren_inventory
+    ~ current_scene = "PrologueShip"
     -> END
 
 
-//*******************************    STORY    **********************************
+
 
 
 == opening ==
@@ -135,6 +184,17 @@ VAR welcomed_home = false
             * [-x-] -> END
 
 
+
+
+
+//********************************************************************************
+//********************************   PROLOGUE-AL   *******************************
+//********************************************************************************
+
+
+
+
+
 == prologue_al ==
 
     ~ algernon_inventory = (Revolver, Drugs, Gear)
@@ -146,14 +206,13 @@ VAR welcomed_home = false
     = start
 
         Algernon watches the receding shuttle for a while before adjusting the straps
-        of his pack and speaking to the emptiness around him.
+        of his pack and announcing his intentions to the surrounding wilderness.
         `
-        Algernon: "Time to get on with it, the suspense is killing me."
+        Algernon: "Well, time to get on with it!"
 
             * [-x-]
             ~ intro_complete = true
             -> END
-
 
 
     = look_back
@@ -168,9 +227,35 @@ VAR welcomed_home = false
 
 
 
+
+
+    = notice_stones
+
+        A curious, purposefully-arranged pile of stones to the side of the path catches
+        Algernon’s eye.
+        `
+        \*** When you see an indicator for an interaction, press ACCEPT to see the
+        available options. Press ACCEPT again to select the highlighted option.
+        Try the LOOK and USE options on the nearby pile of stones.***
+
+            * [-x-]
+            -> END
+    
+
+    = look_stones
+
+        The arrangement appears to have taken no small amount of time and concentration.
+        The crown jewel is a prefectly smooth and symmetrical geologic wonder; Algernon
+        cannot help but imagine it being flung singing through the air.
+
+            + [-x-]
+            -> END
+
+
     = collect_stone
 
-        Stone collected.
+        The stone sits in Algernon's grip as if it was made for his hand. He slips it into
+        his pocket with preternatural satisfaction.
 
             * [-x-]
             ~ player_inventory += Stone
@@ -179,14 +264,42 @@ VAR welcomed_home = false
 
 
 
+
+
     = animal_encounter
 
-        Animal encounter!
+        The way is blocked by an unfamiliar beast feeding on something in the path.
+        Algernon eyes the animal warily, and the animal does the same right back.
+        It seems be asking for a projectile to the head, by Algernon's reckoning.
+        `
+        \*** Other common options include TALK and USE WITH. Get rid of the animal
+        using the available options. ***
 
             * [-x-]
             ~ animal_encountered = true
             -> END
 
+
+
+    = beast_look
+
+        text
+            + [-x-]
+            -> END
+
+
+    = beast_use
+
+        text
+            * [-x-]
+            -> END
+
+
+    = beast_talk
+
+        text
+            * [-x-]
+            -> END
 
 
     = beast_rock
@@ -198,6 +311,15 @@ VAR welcomed_home = false
             ~ stage_cue = "rock_thrown"
             ~ animal_gone = true
             -> END
+    
+
+    = beast_gun
+
+        text
+            * [-x-]
+            -> END
+
+
 
 
 
@@ -234,6 +356,17 @@ VAR welcomed_home = false
             -> END
 
 
+
+
+
+    = getting_late
+
+        Getting dark...
+
+            * [-x-]
+            -> END
+
+
     = too_dark
 
         The path ahead melts into a hazy mass of rock and shadow. Time to set up camp.
@@ -242,21 +375,49 @@ VAR welcomed_home = false
             ~ looked_ahead = true
             -> END
 
+
+    = look_clearing
+
+        A good spot.
+
+            * [-x-]
+            -> END
+
+
+    = go_clearing
+
+        Algernon sets up camp for the night.
+
+            * [-x-]
+            -> END
+
+
     = end
 
         ~ stage_cue = "camp"
         
-        Algernon sets up camp for the night.
+        Algernon begins to hear the familiar whispering behind his ears. At first it's
+        like most nights but sharper somehow, and a little nauseating. He swallows a
+        capsule preemptively and closes his eyes, trying to filter out the sounds as
+        he'd practiced.
+        `
+        Before long he is overcome with a new and terrible fear, and spends the next
+        half-hour chasing glimpses of shadowy figures darting in and out of his
+        peripheral vision with a flashlight. By the time he succumbs to chemical
+        slumber, any remaining doubts he had regarding the connection between this
+        planet and his affliction were gone.
 
             * [-x-]
                 ~ scene_transition = "PrologueShip"
-                ~ current_scene = "PrologueShip"
                 -> END
 
 
 
 
 
+//********************************************************************************
+//*******************************   PROLOGUE-REN   *******************************
+//********************************************************************************
 
 
 
@@ -267,7 +428,9 @@ VAR welcomed_home = false
     ~ algernon_inventory = player_inventory
     ~ ren_inventory = (M1911, Scanner)
     ~ player_inventory = ren_inventory
+    ~ current_scene = "PrologueShip"
     -> start
+
 
     = start
 
@@ -307,6 +470,7 @@ VAR welcomed_home = false
             * [Stay silent] Ren: "..."
                 `
                 -> cap_leaves
+
 
     = start_choice2
 
@@ -367,7 +531,19 @@ VAR welcomed_home = false
             * [-x-]
             ~ welcomed_home = true
             ->END
-            // This could be a choice to go to his cabin right away or wander around first
+
+
+
+
+
+    = scan_interaction
+
+        Lorem ipsum.
+
+            * [-x-]
+            ->END
+
+
 
 
 
@@ -377,8 +553,92 @@ VAR welcomed_home = false
         for a few moments before beginning to type awkwardly on the desk's surface.
         `
         `
-        To be continued...
+        \*** To be continued... ***
 
             * [-x-]
             ~ stage_cue = "quit"
             ->END
+
+
+
+
+
+//********************************************************************************
+//********************************      CH.1      ********************************
+//********************************************************************************
+
+
+
+
+
+    == chapter1
+
+        = start
+
+            ->END
+
+
+
+
+
+//********************************************************************************
+//********************************************************************************
+//*********************************    NOTES    **********************************
+//********************************************************************************
+//********************************************************************************
+/*
+
+
+
+
+Planet - Rewrite as tutorial
+
+
+	* Trigger		    - see a pile of stones (explain/suggest "look" & "use")
+	* Interactions		- pick up stone
+				        - look at stones
+	* Trigger		    - animal encounter (explain/suggest "use with")
+
+	* Interactions		- throw rock to progress
+				        - (optional) shoot revolver instead
+				        - look at beast
+				        - use
+				        - talk to beast ("talk" example, try to scare it off)
+	* Trigger		    - Encounter ledge (explain opening inventory and using item on itself)
+	* Inventory		    - Open gear, revealing more items (explain item combinations)
+	* Inventory		    - Combine two of the revealed items (suggest final step?)
+	* Interaction		- Use combined item on the ledge
+	* Trigger		    - Getting dark.
+	* Trigger		    - Can't go further.
+	* Trigger		    - see clearing after turning back ("go" example)
+	* Interactions		- go to clearing and end
+				        - look at clearing
+	* End			    - Hearing whispers, subtle struggle with sanity; drugs to sleep
+
+
+
+Ship - Add interactions and rework intro as needed
+
+
+	* Chat with Mooney 	- look, talk
+	* Chat with Enri 	- look, talk
+	* Shuttles 		    - look, use, scan
+	* Mess 			    - look, use, scan
+	* Storage 		    - look, use (inventory supplies)
+	* Medical 		    - look, use, scan
+	* Engineering doors - look, use, scan
+	* Cargo 		    - look, use, scan (door?)
+	* Hoverbike 		- look, use, scan
+	* Lounge 	    	- look, use
+	* Al's old room 	- look, use
+	* Ren's room? 		- look, use
+	* Desk 			    - look, use
+
+
+
+
+
+
+He glances down at his pistol and thinks a thought for the thousandth time.
+
+*/

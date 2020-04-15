@@ -13,11 +13,11 @@
 
     * In-game icons ([Game-icons.net](https://game-icons.net)):
 
-        * [Overdose](https://game-icons.net/1x1/lorc/overdose.html), [Gold Shell](https://game-icons.net/1x1/lorc/gold-shell.html), [Hand](https://game-icons.net/1x1/lorc/hand.html), [Laser Blast](https://game-icons.net/1x1/lorc/laser-blast.html), [Magnifying Glass](https://game-icons.net/1x1/lorc/magnifying-glass.html), [Swap Bag](https://game-icons.net/1x1/lorc/swap-bag.html) [Knapsack](https://game-icons.net/1x1/lorc/knapsack.html), [Rock](https://game-icons.net/1x1/lorc/rock.html), [Harpoon](https://game-icons.net/1x1/lorc/aerodynamic-harpoon.html) - [Lorc](http://lorcblog.blogspot.com/) (CC-BY-3.0)
+        * [Overdose](https://game-icons.net/1x1/lorc/overdose.html), [Gold Shell](https://game-icons.net/1x1/lorc/gold-shell.html), [Hand](https://game-icons.net/1x1/lorc/hand.html), [Laser Blast](https://game-icons.net/1x1/lorc/laser-blast.html), [Magnifying Glass](https://game-icons.net/1x1/lorc/magnifying-glass.html), [Swap Bag](https://game-icons.net/1x1/lorc/swap-bag.html), [Knapsack](https://game-icons.net/1x1/lorc/knapsack.html), [Rock](https://game-icons.net/1x1/lorc/rock.html), [Harpoon](https://game-icons.net/1x1/lorc/aerodynamic-harpoon.html) by [Lorc](http://lorcblog.blogspot.com/) (CC-BY-3.0)
 
-        * [Backpack](https://game-icons.net/1x1/delapouite/backpack.html), [Exit door](https://game-icons.net/1x1/delapouite/exit-door.html), [Water flask](https://game-icons.net/1x1/delapouite/water-flask.html), [Food can](https://game-icons.net/1x1/delapouite/opened-food-can.html), [Rope coil](https://game-icons.net/1x1/delapouite/rope-coil.html), [Rope dart](https://game-icons.net/1x1/delapouite/rope-dart.html) - [Delapouite](http://delapouite.com/) (CC-BY-3.0)
+        * [Backpack](https://game-icons.net/1x1/delapouite/backpack.html), [Exit door](https://game-icons.net/1x1/delapouite/exit-door.html), [Water flask](https://game-icons.net/1x1/delapouite/water-flask.html), [Food can](https://game-icons.net/1x1/delapouite/opened-food-can.html), [Rope coil](https://game-icons.net/1x1/delapouite/rope-coil.html), [Rope dart](https://game-icons.net/1x1/delapouite/rope-dart.html) by [Delapouite](http://delapouite.com/) (CC-BY-3.0)
 
-        * [Talk](https://game-icons.net/1x1/skoll/talk.html), [Revolver](https://game-icons.net/1x1/skoll/revolver.html), [M1911](https://game-icons.net/1x1/skoll/colt-m1911.html) - Skoll (CC-BY-3.0)
+        * [Talk](https://game-icons.net/1x1/skoll/talk.html), [Revolver](https://game-icons.net/1x1/skoll/revolver.html), [M1911](https://game-icons.net/1x1/skoll/colt-m1911.html) by Skoll (CC-BY-3.0)
 
 
 * SFX:

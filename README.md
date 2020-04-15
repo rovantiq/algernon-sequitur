@@ -13,16 +13,16 @@ This is my first time working on anything resembling an actual project, and I've
 ### Controls (Keyboard / Xbox / Mouse)
 
 
-* Movement:   Arrow keys / Left stick / Click to move
+* Movement: Arrow keys / Left stick / Left click
 
-* Accept:     Enter / A Button / LMB
+* Accept:   Enter / A Button / Left click
 
-* Cancel:     Esc / B Button / RMB
+* Cancel:   Esc / B Button / Right click
 
-* Inventory:  Space / Y Button / Click on character
+* Inventory:    Space / Y Button / Left click on character
     * While Inventory is open:
         * Press Accept on highlighted items to examine them
-        * Press Inventory again (or RMB if using mouse) on highlighted items to select for combination
+        * Press Inventory again (or right click, if using a mouse) on highlighted items to select them for combination
 
 * Press Cancel during text to speed it up
 

@@ -7,17 +7,17 @@ func _ready() -> void:
 
 
 func look_pressed(look) -> void:
-	_show_text(look, ["That's well within harpooning distance."])
+	_play_story(look, "prologue_al.ledge_look")
 
 
 func use_pressed(use) -> void:
-	_show_text(use, ["Can't reach."])
+	_play_story(use, "prologue_al.ledge_use")
 
 
 func item_pressed(item) -> void:
 	if item.text == "Rope Dart":
 		options = ["go"]
-		_play_story_and_end(item, "prologue_al.harpoon")
+		_play_story_and_end(item, "prologue_al.ledge_harpoon")
 	else:
 		_show_text(item, ["Nope."])
 

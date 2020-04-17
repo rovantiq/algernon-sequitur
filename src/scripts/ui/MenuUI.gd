@@ -2,8 +2,12 @@ extends Control
 
 
 
+
 onready var load_button: = $VBoxContainer/LoadButton
 onready var resume_button: = $VBoxContainer/ResumeButton
+onready var controls: = get_parent().get_node("Controls")
+onready var back_button: = get_parent().get_node("Controls/CenterContainer/VBoxContainer/BackButton")
+
 
 var in_control = false
 
@@ -58,6 +62,16 @@ func _on_TitleButton_pressed() -> void:
 	StoryRunner.change_scene("MenuTitle", "TitleMenu")
 	visible = false
 	in_control = false
+
+
+func _on_ControlsButton_pressed():
+	controls.visible = true
+	back_button.grab_focus()
+
+
+func _on_BackButton_pressed():
+	controls.visible = false
+	resume_button.grab_focus()
 
 
 func _on_QuitButton_pressed() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://assets/art/characters/side/algernon.png" type="Texture" id=1]
 [ext_resource path="res://src/scripts/scenes/prologue - planet/ProloguePlanet.gd" type="Script" id=2]
@@ -21,6 +21,8 @@
 [ext_resource path="res://src/scripts/scenes/prologue - planet/interactions/Campsite.gd" type="Script" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=12]
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -147,7 +149,7 @@ tracks/7/keys = {
 [node name="Prologue-Planet" type="Node2D"]
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_vertical_guides_": [ 1921.0 ]
+"_edit_vertical_guides_": [ 2029.0 ]
 }
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -216,8 +218,14 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/LookBack"]
 shape = SubResource( 1 )
 
+[node name="NoticeStones" type="Area2D" parent="Triggers"]
+position = Vector2( 664, 221 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/NoticeStones"]
+shape = SubResource( 12 )
+
 [node name="AnimalEncounter" type="Area2D" parent="Triggers"]
-position = Vector2( 807.343, 243 )
+position = Vector2( 821, 221 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/AnimalEncounter"]
@@ -265,7 +273,7 @@ position = Vector2( -188, -10 )
 script = ExtResource( 13 )
 
 [node name="CollisionShape2D" parent="Interactions/Beast/Interaction" index="0"]
-position = Vector2( 32, 0 )
+position = Vector2( 32, 18 )
 shape = SubResource( 7 )
 
 [node name="InteractionUI" parent="Interactions/Beast/Interaction" index="1"]
@@ -289,9 +297,9 @@ position = Vector2( 88, 0 )
 shape = SubResource( 8 )
 
 [node name="InteractionUI" type="Control" parent="Interactions/Ledge"]
-margin_left = 0.170593
+margin_left = 88.0002
 margin_top = -172.0
-margin_right = 0.170593
+margin_right = 88.0002
 margin_bottom = -172.0
 mouse_filter = 2
 theme = ExtResource( 15 )
@@ -332,6 +340,7 @@ __meta__ = {
 
 [node name="Camp" parent="Interactions" instance=ExtResource( 5 )]
 position = Vector2( 2714, 77 )
+collision_mask = 0
 script = ExtResource( 19 )
 
 [node name="CollisionShape2D" parent="Interactions/Camp" index="0"]
@@ -366,6 +375,7 @@ stream = ExtResource( 17 )
 anims/TimeAdvances = SubResource( 10 )
 anims/WaitingDarkness = SubResource( 11 )
 [connection signal="body_entered" from="Triggers/LookBack" to="." method="_on_LookBack_body_entered"]
+[connection signal="body_entered" from="Triggers/NoticeStones" to="." method="_on_NoticeStones_body_entered"]
 [connection signal="body_entered" from="Triggers/AnimalEncounter" to="." method="_on_AnimalEncounter_body_entered"]
 [connection signal="body_entered" from="Triggers/End" to="." method="_on_End_body_entered"]
 [connection signal="body_entered" from="Triggers/LedgeApproach" to="." method="_on_LedgeApproach_body_entered"]

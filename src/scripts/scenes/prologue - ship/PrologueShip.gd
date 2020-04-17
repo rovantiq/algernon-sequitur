@@ -63,6 +63,8 @@ func _stage_cue(_name, value) -> void:
 		enri.rotation_degrees = 90
 		enri.get_node("AnimationPlayer").play("Sit")
 	if value == "quit":
+		StoryRunner.fade_out()
+		yield(StoryRunner, "animation_finished")
 		get_tree().quit()
 
 

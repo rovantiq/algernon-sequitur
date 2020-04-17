@@ -1,0 +1,265 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/ui/themes/style_boxes/choice_button.tres" type="StyleBox" id=1]
+[ext_resource path="res://src/ui/menu/MenuButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/text/fonts/Jost-400-Book.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 23.0
+content_margin_right = 25.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 25.0
+content_margin_right = 25.0
+content_margin_top = 25.0
+content_margin_bottom = 25.0
+bg_color = Color( 0, 0, 0, 0.882353 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.752941 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 4 )
+Button/colors/font_color = Color( 0.854902, 0.780392, 0.152941, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.215686, 0.776471, 0.184314, 1 )
+Button/colors/font_color_pressed = Color( 0.156863, 0.913725, 0.113725, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = ExtResource( 1 )
+Button/styles/focus = SubResource( 1 )
+Button/styles/hover = ExtResource( 1 )
+Button/styles/normal = ExtResource( 1 )
+Button/styles/pressed = ExtResource( 1 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = -3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Label/styles/normal = SubResource( 2 )
+Panel/styles/panel = SubResource( 3 )
+Panel/styles/panelf = null
+Panel/styles/panelnc = null
+VBoxContainer/constants/separation = 0
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="Controls" type="Panel"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 5 )
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 222.0
+margin_top = 21.0
+margin_right = 1698.0
+margin_bottom = 1059.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/VBoxContainer"]
+margin_right = 1476.0
+margin_bottom = 657.0
+columns = 4
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_top = 23.0
+margin_right = 257.0
+margin_bottom = 123.0
+align = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 23.0
+margin_right = 628.0
+margin_bottom = 123.0
+custom_colors/font_color = Color( 0.854902, 0.780392, 0.152941, 1 )
+text = "Keyboard                "
+align = 1
+
+[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 632.0
+margin_right = 1004.0
+margin_bottom = 147.0
+custom_colors/font_color = Color( 0.854902, 0.780392, 0.152941, 1 )
+text = "Controller                
+(Xbox)"
+align = 1
+
+[node name="Label4" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 1008.0
+margin_right = 1458.0
+margin_bottom = 147.0
+custom_colors/font_color = Color( 0.854902, 0.780392, 0.152941, 1 )
+text = "Mouse
+(experimental)               "
+align = 1
+
+[node name="Label13" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_top = 151.0
+margin_right = 257.0
+margin_bottom = 251.0
+custom_colors/font_color = Color( 0.215686, 0.776471, 0.184314, 1 )
+text = "MOVE"
+align = 1
+
+[node name="Label14" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 151.0
+margin_right = 628.0
+margin_bottom = 251.0
+text = "Arrow keys"
+align = 1
+
+[node name="Label15" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 632.0
+margin_top = 151.0
+margin_right = 1004.0
+margin_bottom = 251.0
+text = "Left stick"
+align = 1
+
+[node name="Label16" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 1008.0
+margin_top = 151.0
+margin_right = 1458.0
+margin_bottom = 251.0
+text = "Left click"
+align = 1
+
+[node name="Label5" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_top = 255.0
+margin_right = 257.0
+margin_bottom = 355.0
+custom_colors/font_color = Color( 0.215686, 0.776471, 0.184314, 1 )
+text = "ACCEPT"
+align = 1
+
+[node name="Label6" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 255.0
+margin_right = 628.0
+margin_bottom = 355.0
+text = "Enter key"
+align = 1
+
+[node name="Label7" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 632.0
+margin_top = 255.0
+margin_right = 1004.0
+margin_bottom = 355.0
+text = "A Button"
+align = 1
+
+[node name="Label8" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 1008.0
+margin_top = 255.0
+margin_right = 1458.0
+margin_bottom = 355.0
+text = "Left click"
+align = 1
+
+[node name="Label9" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_top = 359.0
+margin_right = 257.0
+margin_bottom = 459.0
+custom_colors/font_color = Color( 0.215686, 0.776471, 0.184314, 1 )
+text = "CANCEL"
+align = 1
+
+[node name="Label10" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 359.0
+margin_right = 628.0
+margin_bottom = 459.0
+text = "Escape key"
+align = 1
+
+[node name="Label11" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 632.0
+margin_top = 359.0
+margin_right = 1004.0
+margin_bottom = 459.0
+text = "B Button"
+align = 1
+
+[node name="Label12" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 1008.0
+margin_top = 359.0
+margin_right = 1458.0
+margin_bottom = 459.0
+text = "Right click"
+align = 1
+
+[node name="Label17" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_top = 486.0
+margin_right = 257.0
+margin_bottom = 633.0
+custom_colors/font_color = Color( 0.215686, 0.776471, 0.184314, 1 )
+text = "INVENTORY/
+SELECT"
+align = 1
+
+[node name="Label18" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 510.0
+margin_right = 628.0
+margin_bottom = 610.0
+text = "Spacebar"
+align = 1
+
+[node name="Label19" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 632.0
+margin_top = 510.0
+margin_right = 1004.0
+margin_bottom = 610.0
+text = "Y Button"
+align = 1
+
+[node name="Label20" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 1008.0
+margin_top = 463.0
+margin_right = 1458.0
+margin_bottom = 657.0
+text = "Left click character to open
+inventory, right click on
+items in inventory to select"
+align = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 657.0
+margin_right = 1476.0
+margin_bottom = 945.0
+text = "* ACCEPT interacts with things, makes choices, and examines inventory items
+* CANCEL backs out of stuff, speeds up text, and opens the options menu
+* INVENTORY/SELECT opens the inventory and also selects items inside for use or combination
+--- To use an inventory item, select it twice with INVENTORY/SELECT
+--- To combine inventory items, select them both with INVENTORY/SELECT"
+
+[node name="BackButton" parent="CenterContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 945.0
+margin_right = 1476.0
+margin_bottom = 1038.0
+text = "Back"

@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 func look_pressed(look) -> void:
-	_show_text(look, ["text1", "text2"])
+	_play_story(look, "prologue_al.look_clearing")
 
 
 func go_pressed(go) -> void:

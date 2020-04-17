@@ -40,14 +40,25 @@ func _process(_delta: float) -> void:
 
 func _stage_cue(_name, value) -> void:
 	if value == "rock_thrown":
-#		get_node("Interactions/Beast").queue_free()
-		get_node("Interactions/Beast").position.y = 300
+		get_node("Interactions/Beast").visible = false
+		get_node("Interactions/Beast").collision_mask = 0
+		right_limit = 2030
+	elif value == "beast_shot":
+		get_node("Interactions/Beast").visible = false
+		get_node("Interactions/Beast").collision_mask = 0
 		right_limit = 2030
 	elif value == "climb_ledge":
+		StoryRunner.fade_out()
+		yield(StoryRunner, "animation_finished")
 		player.position = Vector2(2125, 70)
 		player.get_node("Camera2D").limit_bottom = 120
 		left_limit = 2110
 		right_limit = 2850
+		StoryRunner.fade_in()
+		yield(StoryRunner, "animation_finished")
+		StoryRunner.play_story("prologue_al.getting_late")
+	elif value == "looking_for_camp":
+		get_node("Interactions/Camp").collision_mask = 1
 	elif value == "camp":
 		StoryRunner.fade_out()
 
@@ -56,7 +67,7 @@ func _check_story_state() -> void:
 	if story.variables_state.get("looked_back") == 1:
 		look_back.queue_free()
 	if story.variables_state.get("intro_complete") == 0:
-		StoryRunner.temp_timer(1)
+#		StoryRunner.temp_timer(1)
 #		yield(StoryRunner, "timeout")
 #		StoryRunner.play_story("opening")
 #		yield(StoryRunner, "end_story")
@@ -90,6 +101,11 @@ func _on_LookBack_body_entered(_body: PhysicsBody2D) -> void:
 		StoryRunner.play_story("prologue_al.look_back")
 
 
+func _on_NoticeStones_body_entered(_body):
+	if story.variables_state.get("noticed_stones") == 0:
+		StoryRunner.play_story("prologue_al.notice_stones")
+
+
 func _on_AnimalEncounter_body_entered(_body):
 	if story.variables_state.get("animal_encountered") == 0:
 		StoryRunner.play_story("prologue_al.animal_encounter")
@@ -103,4 +119,3 @@ func _on_LedgeApproach_body_entered(_body):
 func _on_End_body_entered(_body: Node) -> void:
 	if story.variables_state.get("looked_ahead") == 0:
 		StoryRunner.play_story("prologue_al.too_dark")
-

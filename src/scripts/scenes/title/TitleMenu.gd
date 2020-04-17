@@ -5,6 +5,8 @@ onready var options: = $Options
 onready var title_card: = $TitleCard
 onready var load_button: = $Options/LoadButton
 onready var new_button: = $Options/NewButton
+onready var back_button: = $Controls/CenterContainer/VBoxContainer/BackButton
+onready var controls: = $Controls
 
 var loading: = false
 
@@ -46,6 +48,16 @@ func _on_LoadButton_pressed() -> void:
 	title_card.visible = false
 	options.visible = false
 	StoryRunner.change_scene("load", StoryRunner.story.variables_state.get("current_scene"))
+
+
+func _on_ControlsButton_pressed():
+	controls.visible = true
+	back_button.grab_focus()
+
+
+func _on_BackButton_pressed():
+	controls.visible = false
+	new_button.grab_focus()
 
 
 func _on_QuitButton_pressed() -> void:

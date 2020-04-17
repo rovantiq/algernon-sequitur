@@ -10,7 +10,7 @@
 [ext_resource path="res://src/player/PlayerSideScroll.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/characters/Mooney/MooneyTop.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/art/characters/side/ren.png" type="Texture" id=10]
-[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/engineering.gd" type="Script" id=11]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/Engineering.gd" type="Script" id=11]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/EndPrologue.gd" type="Script" id=12]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/Starfield2.gd" type="Script" id=13]
 [ext_resource path="res://src/player/PlayerTopDown.tscn" type="PackedScene" id=14]

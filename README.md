@@ -5,26 +5,9 @@
 
 This is a rough prototype example for interactive fiction / adventure games using open-source software and Creative Commons / public domain assets. I wanted to try out a simple framework for story-driven games using all FOSS pipelines in Linux, so I started this little 2 scene project. It uses a blend of top-down and side-scroller perpectives. The control scheme and interaction logic were designed primarily with controller in mind so the point and click mechanics aren't ideal.
 
-This is my first time working on anything resembling an actual project, and I've essentially been using it as a central repository to dump my experiments while I attempt to learn the various pipelines of game dev; as a result, the whole thing is gauranteed to be messy, inefficient, full of odd choices & poorly documented. Having said that, if someone interested in making adventure games begins taking their first steps in Godot and happens to find their way here, I'd like to think they might find a few ideas helpful for getting started.
+This is my first project and it's been a testing ground for all my experiments while I try to learn various aspects/pipelines of game dev, so the code and design structure is messy, inefficient, full of odd choices & poorly documented. Having said that, if someone interested in making adventure games begins taking their first steps in Godot and happens to find their way here, I'd like to think they might find a few things helpful for getting started.
 
 
-
-
-### Controls (Keyboard / Xbox / Mouse)
-
-
-* Movement: Arrow keys / Left stick / Left click
-
-* Accept:   Enter / A Button / Left click
-
-* Cancel:   Esc / B Button / Right click
-
-* Inventory:    Space / Y Button / Left click on character
-    * While Inventory is open:
-        * Press Accept on highlighted items to examine them
-        * Press Inventory again (or right click, if using a mouse) on highlighted items to select them for combination
-
-* Press Cancel during text to speed it up
 
 
 ### License

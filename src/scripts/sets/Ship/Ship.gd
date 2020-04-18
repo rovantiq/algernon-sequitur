@@ -13,31 +13,26 @@ onready var transition_aft: = $Transitions/Aft
 
 
 var current_floor: = ""
-var transition_pause: = false
+
 
 
 func _on_ShuttleBay_body_entered(_body: Node) -> void:
-	if transition_pause == false:
-		if current_floor == "bay":
-			bay.visible = false
-			for child in bay.get_children():
-				child.collision_mask = 0
-			upper.visible = true
-			for child in upper.get_children():
-				child.collision_mask = 1
-			current_floor = "upper"
-		elif current_floor == "upper":
-			upper.visible = false
-			for child in upper.get_children():
-				child.collision_mask = 0
-			bay.visible = true
-			for child in bay.get_children():
-				child.collision_mask = 1
-			current_floor = "bay"
-	transition_pause = true
-	StoryRunner.temp_timer(1)
-	yield(StoryRunner, "timeout")
-	transition_pause = false
+	if current_floor == "bay":
+		bay.visible = false
+		for child in bay.get_children():
+			child.collision_mask = 0
+		upper.visible = true
+		for child in upper.get_children():
+			child.collision_mask = 1
+		current_floor = "upper"
+	elif current_floor == "upper":
+		upper.visible = false
+		for child in upper.get_children():
+			child.collision_mask = 0
+		bay.visible = true
+		for child in bay.get_children():
+			child.collision_mask = 1
+		current_floor = "bay"
 
 
 func _on_CaptainsQuarters_body_entered(_body: Node) -> void:
@@ -95,4 +90,3 @@ func _on_Aft_body_entered(_body: Node) -> void:
 		for child in upper.get_children():
 			child.collision_mask = 1
 		current_floor = "upper"
-

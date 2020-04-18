@@ -22,8 +22,6 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-[sub_resource type="RectangleShape2D" id=12]
-
 [sub_resource type="RectangleShape2D" id=2]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -31,21 +29,23 @@
 [sub_resource type="RectangleShape2D" id=4]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 26, 7 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 32, 25 )
+extents = Vector2( 26, 7 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 25, 10 )
+extents = Vector2( 32, 25 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 108, 10 )
+extents = Vector2( 25, 10 )
 
 [sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 108, 10 )
+
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 37, 8 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 length = 60.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("ParallaxBackground/Sky:modulate")
@@ -144,7 +144,7 @@ tracks/7/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.815686, 0.815686, 0.815686, 1 ), Color( 0.454902, 0.454902, 0.454902, 1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 
 [node name="Prologue-Planet" type="Node2D"]
 script = ExtResource( 2 )
@@ -222,28 +222,28 @@ shape = SubResource( 1 )
 position = Vector2( 664, 221 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/NoticeStones"]
-shape = SubResource( 12 )
+shape = SubResource( 2 )
 
 [node name="AnimalEncounter" type="Area2D" parent="Triggers"]
 position = Vector2( 821, 221 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/AnimalEncounter"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="End" type="Area2D" parent="Triggers"]
 position = Vector2( 2831, 67 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/End"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="LedgeApproach" type="Area2D" parent="Triggers"]
 position = Vector2( 1963, 243 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/LedgeApproach"]
 position = Vector2( 0, -1 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Interactions" type="Node" parent="."]
 
@@ -252,7 +252,7 @@ position = Vector2( 680, 254 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" parent="Interactions/Stones" index="0"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="InteractionIndicator" parent="Interactions/Stones/InteractionUI" index="0"]
 text = "Pile of
@@ -266,7 +266,7 @@ collision_layer = 8
 texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Beast"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Interaction" parent="Interactions/Beast" instance=ExtResource( 5 )]
 position = Vector2( -188, -10 )
@@ -274,7 +274,7 @@ script = ExtResource( 13 )
 
 [node name="CollisionShape2D" parent="Interactions/Beast/Interaction" index="0"]
 position = Vector2( 32, 18 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="InteractionUI" parent="Interactions/Beast/Interaction" index="1"]
 margin_left = 57.0
@@ -294,7 +294,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Ledge"]
 position = Vector2( 88, 0 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="InteractionUI" type="Control" parent="Interactions/Ledge"]
 margin_left = 88.0002
@@ -340,17 +340,18 @@ __meta__ = {
 
 [node name="Camp" parent="Interactions" instance=ExtResource( 5 )]
 position = Vector2( 2714, 77 )
+input_pickable = false
 collision_mask = 0
 script = ExtResource( 19 )
 
 [node name="CollisionShape2D" parent="Interactions/Camp" index="0"]
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="InteractionIndicator" parent="Interactions/Camp/InteractionUI" index="0"]
 text = "Clearing"
 
 [node name="Player" parent="." instance=ExtResource( 11 )]
-position = Vector2( 83, 229 )
+position = Vector2( 81, 229 )
 z_index = 50
 
 [node name="Sprite" parent="Player" index="1"]
@@ -372,8 +373,8 @@ volume_db = -20.0
 stream = ExtResource( 17 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/TimeAdvances = SubResource( 10 )
-anims/WaitingDarkness = SubResource( 11 )
+anims/TimeAdvances = SubResource( 11 )
+anims/WaitingDarkness = SubResource( 12 )
 [connection signal="body_entered" from="Triggers/LookBack" to="." method="_on_LookBack_body_entered"]
 [connection signal="body_entered" from="Triggers/NoticeStones" to="." method="_on_NoticeStones_body_entered"]
 [connection signal="body_entered" from="Triggers/AnimalEncounter" to="." method="_on_AnimalEncounter_body_entered"]

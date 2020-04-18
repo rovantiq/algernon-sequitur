@@ -239,7 +239,7 @@ texture = ExtResource( 10 )
 volume_db = 3.0
 
 [node name="PlayerTop" parent="." instance=ExtResource( 14 )]
-position = Vector2( -29.3562, 78 )
+position = Vector2( -30.3562, 78 )
 
 [node name="Camera2D" parent="PlayerTop" index="2"]
 limit_bottom = 850

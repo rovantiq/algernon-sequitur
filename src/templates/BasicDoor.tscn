@@ -99,10 +99,10 @@ anims/open = SubResource( 3 )
 stream = ExtResource( 3 )
 
 [node name="SimpleInteractionUI" parent="Interaction" instance=ExtResource( 4 )]
-margin_left = -3.90676
-margin_top = -13.3074
-margin_right = -3.90676
-margin_bottom = -13.3074
+visible = false
+
+[node name="InteractionIndicator" parent="Interaction/SimpleInteractionUI" index="0"]
+visible = false
 [connection signal="mouse_entered" from="." to="Interaction" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="Interaction" method="_on_mouse_exited"]
 [connection signal="body_entered" from="Interaction" to="Interaction" method="_on_body_entered"]

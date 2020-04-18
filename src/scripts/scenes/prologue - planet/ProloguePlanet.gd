@@ -54,11 +54,13 @@ func _stage_cue(_name, value) -> void:
 		player.get_node("Camera2D").limit_bottom = 120
 		left_limit = 2110
 		right_limit = 2850
+		StoryRunner.ui_active = true
 		StoryRunner.fade_in()
 		yield(StoryRunner, "animation_finished")
 		StoryRunner.play_story("prologue_al.getting_late")
 	elif value == "looking_for_camp":
 		get_node("Interactions/Camp").collision_mask = 1
+		get_node("Interactions/Camp").input_pickable = true
 	elif value == "camp":
 		StoryRunner.fade_out()
 

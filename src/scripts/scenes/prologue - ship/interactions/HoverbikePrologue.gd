@@ -1,10 +1,7 @@
 extends "res://src/scripts/ui/interactions/InteractionPoint.gd"
 
-#  ##########################################
-#   INSTANCE AN INTERACTION POINT, THEN SAVE 
-#   A NEW COPY OF THIS SCRIPT TO ATTACH AND
-#   ADJUST THE FOLLOWING AS NEEDED
-#  ##########################################
+
+var scanned = false
 
 
 func _ready() -> void:
@@ -12,35 +9,28 @@ func _ready() -> void:
 
 
 func look_pressed(look) -> void:
-	_play_story(look, "knot")
+	_play_story(look, "prologue_ren.hoverbike_look")
 #	_show_text(look, ["text1", "text2"])
 #	_clear_option(look, "look", "knot")
 
 
 func use_pressed(use) -> void:
-	_play_story(use, "knot")
+	_play_story(use, "prologue_ren.hoverbike_use")
 #	_show_text(use, ["text1", "text2"])
 #	_play_story_and_destroy("next story knot")
 
 
 func item_pressed(item) -> void:
-	if item.text == "correct item":
-		_play_story(item, "knot")
+	if item.text == "Scanner":
+		if scanned == false:
+			_play_story(item, "prologue_ren.hoverbike_scan")
+			scanned = true
+		else:
+			_show_text(item, ["Already scanned this one."])
 #	elif item.text == "another item":
 #		_show_text(item, ["text1"])
 	else:
-		_show_text(item, ["text1", "text2"])
-
-
-func talk_pressed(talk) -> void:
-	_play_story(talk, "knot")
-#	_show_text(talk, ["text1", "text2"])
-#	_clear_option(talk, "talk", "knot")
-
-
-func go_pressed(go) -> void:
-	_transition(go, "new_scene")
-
+		_show_text(item, ["Nope"])
 
 
 #  Available methods:

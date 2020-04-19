@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://src/scripts/scenes/prologue - ship/PrologueShip.gd" type="Script" id=1]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/Starfield1.gd" type="Script" id=2]
@@ -11,10 +11,22 @@
 [ext_resource path="res://src/characters/Mooney/MooneyTop.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/art/characters/side/ren.png" type="Texture" id=10]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/Engineering.gd" type="Script" id=11]
-[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/EndPrologue.gd" type="Script" id=12]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/DeskPrologue.gd" type="Script" id=12]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/Starfield2.gd" type="Script" id=13]
 [ext_resource path="res://src/player/PlayerTopDown.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/art/environments/top/backgrounds/starfield/starfield2.png" type="Texture" id=15]
+[ext_resource path="res://assets/sound/sfx/footsteps/hard_1_step1_session.wav" type="AudioStream" id=16]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/MooneyPrologue.gd" type="Script" id=17]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/EnriPrologue.gd" type="Script" id=18]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/HoverbikePrologue.gd" type="Script" id=19]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/CargoDoorPrologue.gd" type="Script" id=20]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/DormPrologue.gd" type="Script" id=21]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/MessPrologue.gd" type="Script" id=22]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/StoragePrologue.gd" type="Script" id=23]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/MedPrologue.gd" type="Script" id=24]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/ShuttleBayPrologue.gd" type="Script" id=25]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/ShuttlePrologue.gd" type="Script" id=26]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/CruiserPrologue.gd" type="Script" id=27]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 6 )
@@ -27,12 +39,45 @@ shader_param/direction = Vector2( 0, 0 )
 shader_param/speed_scale = 2.0
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 28, 16 )
+extents = Vector2( 31, 53 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 32.4323, 100.333 )
+extents = Vector2( 28, 32 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 57, 51 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 20, 13 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 28, 16 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 41, 25 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 45, 18 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 28, 28 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 17, 16 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 31, 18 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 120, 72 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 40, 68 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 17, 10 )
+
+[sub_resource type="Animation" id=10]
 length = 7.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Ship/UpperLevel/MooneyTop:position")
@@ -69,7 +114,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.1, 1.7, 3.3, 4.9, 6.5, 6.9, 7 )
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Ship/UpperLevel/EnriTop:position")
 tracks/0/interp = 1
@@ -105,7 +150,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.1, 0.5 )
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=12]
 length = 12.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Ship/UpperLevel/EnriTop:position")
@@ -114,10 +159,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 6.1, 6.6, 8, 8.2, 8.3, 8.6, 8.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 6.1, 6.6, 8, 8.2, 8.3, 8.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 78 ), Vector2( 0, 78 ), Vector2( 0, -415 ), Vector2( -20, -431 ), Vector2( -20, -431 ), Vector2( -37, -431 ), Vector2( -42, -431 ), Vector2( -52, -416 ), Vector2( -52, -395 ) ]
+"values": [ Vector2( 0, 78 ), Vector2( 0, 78 ), Vector2( 0, -415 ), Vector2( -20, -431 ), Vector2( -20, -431 ), Vector2( -37, -431 ), Vector2( -42, -431 ), Vector2( -52, -416 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Ship/UpperLevel/EnriTop:rotation_degrees")
@@ -138,7 +183,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 9 ),
+"times": PoolRealArray( 0, 8.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -150,8 +195,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"clips": PoolStringArray( "Idle", "Walk", "Walk", "Idle", "Walk" ),
-"times": PoolRealArray( 0, 0.2, 5.5, 6.5, 8 )
+"clips": PoolStringArray( "Idle", "Walk", "Walk", "Idle", "Walk", "[stop]" ),
+"times": PoolRealArray( 0, 0.2, 5.5, 6.5, 8, 8.6 )
 }
 tracks/4/type = "animation"
 tracks/4/path = NodePath("Ship/UpperLevel/DoorToQuarters/Interaction/AnimationPlayer")
@@ -167,8 +212,7 @@ tracks/4/keys = {
 [node name="Prologue-Ship" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ -750.919 ],
-"_edit_vertical_guides_": [ 341.77, 172.753 ]
+"_edit_horizontal_guides_": [ -750.919 ]
 }
 
 [node name="Starfield" type="Node2D" parent="."]
@@ -187,46 +231,269 @@ script = ExtResource( 13 )
 
 [node name="Ship" parent="." instance=ExtResource( 4 )]
 
+[node name="HoverbikeInteraction" parent="Ship/LowerLevel" index="2" instance=ExtResource( 7 )]
+position = Vector2( -144, -214 )
+z_index = 101
+collision_mask = 0
+script = ExtResource( 19 )
+
+[node name="CollisionShape2D" parent="Ship/LowerLevel/HoverbikeInteraction" index="0"]
+shape = SubResource( 3 )
+
+[node name="InteractionUI" parent="Ship/LowerLevel/HoverbikeInteraction" index="1"]
+margin_top = -7.0
+margin_bottom = -7.0
+
+[node name="InteractionIndicator" parent="Ship/LowerLevel/HoverbikeInteraction/InteractionUI" index="0"]
+text = "Ren's
+Hoverbike"
+
+[node name="OptionHBoxContainer" parent="Ship/LowerLevel/HoverbikeInteraction/InteractionUI" index="1"]
+margin_top = -12.0
+margin_bottom = -12.0
+
+[node name="CargoDoor" parent="Ship/LowerLevel" index="9" instance=ExtResource( 7 )]
+position = Vector2( 98, -239 )
+script = ExtResource( 20 )
+
+[node name="CollisionShape2D" parent="Ship/LowerLevel/CargoDoor" index="0"]
+position = Vector2( -4, 11 )
+shape = SubResource( 4 )
+
+[node name="InteractionUI" parent="Ship/LowerLevel/CargoDoor" index="1"]
+margin_left = 17.0
+margin_top = -34.0
+margin_right = 17.0
+margin_bottom = -34.0
+
+[node name="InteractionIndicator" parent="Ship/LowerLevel/CargoDoor/InteractionUI" index="0"]
+margin_left = -92.0
+margin_top = 4.0
+margin_right = 40.0
+margin_bottom = 61.0
+text = "Cargo Door
+Controls"
+
+[node name="OptionHBoxContainer" parent="Ship/LowerLevel/CargoDoor/InteractionUI" index="1"]
+margin_left = -28.0
+margin_top = -8.0
+margin_right = -28.0
+margin_bottom = -8.0
+
+[node name="Dorm" parent="Ship/LowerLevel" index="10" instance=ExtResource( 7 )]
+position = Vector2( -98, 139 )
+script = ExtResource( 21 )
+
+[node name="CollisionShape2D" parent="Ship/LowerLevel/Dorm" index="0"]
+shape = SubResource( 5 )
+
+[node name="InteractionUI" parent="Ship/LowerLevel/Dorm" index="1"]
+margin_left = 9.0
+margin_top = -14.0
+margin_right = 9.0
+margin_bottom = -14.0
+
+[node name="InteractionIndicator" parent="Ship/LowerLevel/Dorm/InteractionUI" index="0"]
+text = "Dorm"
+
+[node name="Enri" parent="Ship/CaptainsQuarters" index="4" instance=ExtResource( 7 )]
+position = Vector2( -45, -350 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape2D" parent="Ship/CaptainsQuarters/Enri" index="0"]
+position = Vector2( 1, 0 )
+shape = SubResource( 19 )
+
+[node name="InteractionUI" parent="Ship/CaptainsQuarters/Enri" index="1"]
+margin_top = 7.0
+margin_bottom = 7.0
+
+[node name="InteractionIndicator" parent="Ship/CaptainsQuarters/Enri/InteractionUI" index="0"]
+text = "Enri"
+
+[node name="OptionHBoxContainer" parent="Ship/CaptainsQuarters/Enri/InteractionUI" index="1"]
+margin_top = 68.0
+margin_bottom = 68.0
+grow_vertical = 1
+
 [node name="MooneyTop" parent="Ship/UpperLevel" index="2" instance=ExtResource( 9 )]
 position = Vector2( 0, 78 )
 rotation = 3.14159
+
+[node name="AudioStreamPlayer2D" parent="Ship/UpperLevel/MooneyTop" index="3"]
+stream = ExtResource( 16 )
 
 [node name="EnriTop" parent="Ship/UpperLevel" index="3" instance=ExtResource( 5 )]
 position = Vector2( 25, 50 )
 rotation = 2.30383
 
-[node name="Engine" parent="Ship/UpperLevel" index="11" instance=ExtResource( 7 )]
+[node name="Engine" parent="Ship/UpperLevel" index="13" instance=ExtResource( 7 )]
 position = Vector2( 0, 849 )
 collision_mask = 0
 script = ExtResource( 11 )
 
 [node name="CollisionShape2D" parent="Ship/UpperLevel/Engine" index="0"]
 position = Vector2( 0, -27 )
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 
 [node name="InteractionIndicator" parent="Ship/UpperLevel/Engine/InteractionUI" index="0"]
 text = "Engine
 Module"
 
+[node name="Mess" parent="Ship/UpperLevel" index="14" instance=ExtResource( 7 )]
+position = Vector2( 84, 234 )
+script = ExtResource( 22 )
+
+[node name="CollisionShape2D" parent="Ship/UpperLevel/Mess" index="0"]
+position = Vector2( 4, -14 )
+shape = SubResource( 13 )
+
+[node name="InteractionIndicator" parent="Ship/UpperLevel/Mess/InteractionUI" index="0"]
+text = "Mess
+Hall"
+
+[node name="Storage" parent="Ship/UpperLevel" index="15" instance=ExtResource( 7 )]
+position = Vector2( -81, 157 )
+script = ExtResource( 23 )
+
+[node name="CollisionShape2D" parent="Ship/UpperLevel/Storage" index="0"]
+position = Vector2( -3, 5 )
+shape = SubResource( 14 )
+
+[node name="InteractionUI" parent="Ship/UpperLevel/Storage" index="1"]
+margin_top = 25.0
+margin_bottom = 25.0
+
+[node name="InteractionIndicator" parent="Ship/UpperLevel/Storage/InteractionUI" index="0"]
+margin_left = -48.0
+margin_top = 4.0
+margin_right = 47.0
+margin_bottom = 44.0
+text = "Storage"
+
+[node name="OptionHBoxContainer" parent="Ship/UpperLevel/Storage/InteractionUI" index="1"]
+margin_left = -1.52588e-05
+margin_top = 60.0
+margin_right = -1.52588e-05
+margin_bottom = 60.0
+grow_vertical = 1
+
+[node name="Medical" parent="Ship/UpperLevel" index="16" instance=ExtResource( 7 )]
+position = Vector2( -76, 393 )
+script = ExtResource( 24 )
+
+[node name="CollisionShape2D" parent="Ship/UpperLevel/Medical" index="0"]
+position = Vector2( 1, 12 )
+shape = SubResource( 15 )
+
+[node name="InteractionUI" parent="Ship/UpperLevel/Medical" index="1"]
+margin_left = 2.0
+margin_top = -24.0
+margin_right = 2.0
+margin_bottom = -24.0
+
+[node name="InteractionIndicator" parent="Ship/UpperLevel/Medical/InteractionUI" index="0"]
+margin_left = -68.0
+margin_top = -32.0
+margin_right = -1.0
+margin_bottom = 25.0
+text = "Med
+Bay"
+
+[node name="OptionHBoxContainer" parent="Ship/UpperLevel/Medical/InteractionUI" index="1"]
+margin_left = -32.0
+margin_top = -52.0
+margin_right = -32.0
+margin_bottom = -52.0
+
+[node name="MooneyInteraction" parent="Ship/UpperLevel" index="17" instance=ExtResource( 7 )]
+position = Vector2( 0, -573 )
+collision_layer = 8
+script = ExtResource( 17 )
+
+[node name="CollisionShape2D" parent="Ship/UpperLevel/MooneyInteraction" index="0"]
+shape = SubResource( 7 )
+
+[node name="InteractionUI" parent="Ship/UpperLevel/MooneyInteraction" index="1"]
+margin_top = -30.0
+margin_bottom = -30.0
+
+[node name="InteractionIndicator" parent="Ship/UpperLevel/MooneyInteraction/InteractionUI" index="0"]
+text = "The
+Captain"
+
+[node name="OptionHBoxContainer" parent="Ship/UpperLevel/MooneyInteraction/InteractionUI" index="1"]
+margin_left = -24.0
+margin_top = -60.0001
+margin_right = 26.0
+margin_bottom = -10.0001
+
+[node name="BayControls" parent="Ship/ShuttleBay" index="5" instance=ExtResource( 7 )]
+position = Vector2( -97, -123 )
+collision_mask = 0
+script = ExtResource( 25 )
+
+[node name="CollisionShape2D" parent="Ship/ShuttleBay/BayControls" index="0"]
+shape = SubResource( 16 )
+
+[node name="InteractionUI" parent="Ship/ShuttleBay/BayControls" index="1"]
+margin_top = -20.0
+margin_bottom = -20.0
+
+[node name="InteractionIndicator" parent="Ship/ShuttleBay/BayControls/InteractionUI" index="0"]
+text = "Control
+Panel"
+
+[node name="BigShuttle" parent="Ship/ShuttleBay" index="6" instance=ExtResource( 7 )]
+position = Vector2( -9, 95 )
+z_index = 100
+collision_mask = 0
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" parent="Ship/ShuttleBay/BigShuttle" index="0"]
+position = Vector2( 0, -18 )
+shape = SubResource( 17 )
+
+[node name="InteractionIndicator" parent="Ship/ShuttleBay/BigShuttle/InteractionUI" index="0"]
+text = "Shuttle"
+
+[node name="SmallShuttle" parent="Ship/ShuttleBay" index="7" instance=ExtResource( 7 )]
+position = Vector2( 53, -103 )
+z_index = 100
+collision_mask = 0
+script = ExtResource( 27 )
+
+[node name="CollisionShape2D" parent="Ship/ShuttleBay/SmallShuttle" index="0"]
+shape = SubResource( 18 )
+
+[node name="InteractionIndicator" parent="Ship/ShuttleBay/SmallShuttle/InteractionUI" index="0"]
+text = "Cruiser"
+
 [node name="RensQuarters" parent="Ship" index="5"]
 position = Vector2( 137.704, 575.646 )
 
-[node name="EndPrologue" parent="Ship/RensQuarters" index="4" instance=ExtResource( 7 )]
-position = Vector2( 115.708, 36.5529 )
+[node name="Desk" parent="Ship/RensQuarters" index="4" instance=ExtResource( 7 )]
+position = Vector2( 116.296, 36.354 )
 script = ExtResource( 12 )
 
-[node name="CollisionShape2D" parent="Ship/RensQuarters/EndPrologue" index="0"]
-position = Vector2( 6.10352e-05, 0.664307 )
-shape = SubResource( 4 )
+[node name="CollisionShape2D" parent="Ship/RensQuarters/Desk" index="0"]
+position = Vector2( -4.00002, 0 )
+shape = SubResource( 9 )
 
-[node name="InteractionIndicator" parent="Ship/RensQuarters/EndPrologue/InteractionUI" index="0"]
-visible = false
+[node name="InteractionUI" parent="Ship/RensQuarters/Desk" index="1"]
+margin_left = -1.0
+margin_top = -13.0
+margin_right = -1.0
+margin_bottom = -13.0
 
-[node name="OptionHBoxContainer" parent="Ship/RensQuarters/EndPrologue/InteractionUI" index="1"]
-margin_left = -44.647
-margin_top = -48.9716
-margin_right = 52.353
-margin_bottom = -48.9716
+[node name="InteractionIndicator" parent="Ship/RensQuarters/Desk/InteractionUI" index="0"]
+text = "Desk"
+
+[node name="OptionHBoxContainer" parent="Ship/RensQuarters/Desk/InteractionUI" index="1"]
+margin_left = -48.0
+margin_top = -47.9999
+margin_right = 49.0
+margin_bottom = 2.00006
 
 [node name="PlayerSide" parent="Ship/RensQuarters" index="7" instance=ExtResource( 8 )]
 visible = false
@@ -245,15 +512,23 @@ position = Vector2( -30.3562, 78 )
 limit_bottom = 850
 
 [node name="AnimationPlayer1" type="AnimationPlayer" parent="."]
-anims/cap_leaves = SubResource( 5 )
+anims/cap_leaves = SubResource( 10 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
-anims/enri_approaches = SubResource( 6 )
-anims/enri_leaves = SubResource( 7 )
+anims/enri_approaches = SubResource( 11 )
+anims/enri_leaves = SubResource( 12 )
 
 [editable path="Ship"]
 
+[editable path="Ship/LowerLevel/HoverbikeInteraction"]
+
 [editable path="Ship/LowerLevel/RensDoor/InteractionPoint"]
+
+[editable path="Ship/LowerLevel/CargoDoor"]
+
+[editable path="Ship/LowerLevel/Dorm"]
+
+[editable path="Ship/CaptainsQuarters/Enri"]
 
 [editable path="Ship/UpperLevel/MooneyTop"]
 
@@ -261,7 +536,21 @@ anims/enri_leaves = SubResource( 7 )
 
 [editable path="Ship/UpperLevel/Engine"]
 
-[editable path="Ship/RensQuarters/EndPrologue"]
+[editable path="Ship/UpperLevel/Mess"]
+
+[editable path="Ship/UpperLevel/Storage"]
+
+[editable path="Ship/UpperLevel/Medical"]
+
+[editable path="Ship/UpperLevel/MooneyInteraction"]
+
+[editable path="Ship/ShuttleBay/BayControls"]
+
+[editable path="Ship/ShuttleBay/BigShuttle"]
+
+[editable path="Ship/ShuttleBay/SmallShuttle"]
+
+[editable path="Ship/RensQuarters/Desk"]
 
 [editable path="Ship/RensQuarters/PlayerSide"]
 

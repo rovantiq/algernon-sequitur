@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 func look_pressed(look) -> void:
-	_clear_option(look, "look", "Ren's current little corner of the galaxy.")
+	_show_text(look, ["Ren's current little corner of the galaxy."])
 
 
 func go_pressed(go) -> void:

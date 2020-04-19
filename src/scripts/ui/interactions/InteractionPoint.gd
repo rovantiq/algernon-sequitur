@@ -68,7 +68,8 @@ func _input(_event: InputEvent) -> void:
 					option_hbox.get_child(option_hbox.get_child_count() -1).grab_focus()
 			elif interaction_indicator.visible == true and item_container_active == false:
 				_clear()
-				z_index = 0
+				if z_index != 101:
+					z_index = 0
 				StoryRunner.ui_active = false
 				in_control = false
 
@@ -119,7 +120,8 @@ func item_pressed(item) -> void:
 
 func _add_buttons() -> void:
 	_clear()
-	z_index = 100
+	if z_index != 101:
+		z_index = 100
 	StoryRunner.ui_active = true
 	StoryRunner.interaction_ui_clicked = false
 	in_control = true
@@ -227,10 +229,27 @@ func _play_story(button, text) -> void:
 	button.grab_focus()
 
 
+func _cycle_stories(button, text) -> void:
+	if button != last_button:
+		count = 0
+	last_button = button
+	button.set_focus_mode(0)
+	StoryRunner.play_story(text[count])
+	yield(StoryRunner, "end_story")
+	StoryRunner.ui_active = true
+	if count < text.size() - 1:
+		count += 1
+	else:
+		count = 0
+	button.set_focus_mode(2)
+	button.grab_focus()
+
+
 func _play_story_and_end(button, text) -> void:
 	button.set_focus_mode(0)
 	_clear()
-	z_index = 0
+	if z_index != 101:
+		z_index = 0
 	StoryRunner.ui_active = false
 	in_control = false
 	StoryRunner.play_story(text)
@@ -245,7 +264,7 @@ func _play_story_and_destroy(button, text) -> void:
 
 
 func _clear_option(button, option, text) -> void:
-	StoryRunner.show_text(text)
+	StoryRunner.play_story(text)
 	option_hbox.remove_child(button)
 	options.erase(option)
 	button.queue_free()

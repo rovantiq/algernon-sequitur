@@ -12,7 +12,6 @@ onready var audio = $DoorFX
 
 
 func _ready() -> void:
-	_set_name("Exit")
 	options = ["go"]
 
 

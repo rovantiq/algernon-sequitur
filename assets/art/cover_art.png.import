@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sky2.png-aca14322b3216be014383b83f5b0e2a9.stex"
+path="res://.import/cover_art.png-77ffd3aa838c5503302fe66e3361054f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/environments/side/backgrounds/prologue-planet/Sky2.png"
-dest_files=[ "res://.import/Sky2.png-aca14322b3216be014383b83f5b0e2a9.stex" ]
+source_file="res://assets/art/cover_art.png"
+dest_files=[ "res://.import/cover_art.png-77ffd3aa838c5503302fe66e3361054f.stex" ]
 
 [params]
 

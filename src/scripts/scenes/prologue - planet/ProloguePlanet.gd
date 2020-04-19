@@ -58,6 +58,8 @@ func _stage_cue(_name, value) -> void:
 		StoryRunner.fade_in()
 		yield(StoryRunner, "animation_finished")
 		StoryRunner.play_story("prologue_al.getting_late")
+	elif value == "getting_late":
+		anim.play("TimeAdvances")
 	elif value == "looking_for_camp":
 		get_node("Interactions/Camp").collision_mask = 1
 		get_node("Interactions/Camp").input_pickable = true

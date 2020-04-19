@@ -359,11 +359,10 @@
 
                 ~ player_inventory -= Rope_Dart
 
-                The blades sink into the wood with a satisfying thud, but it's quickly
-                followed by the sharp sound of air under pressure quickly escaping.
-                Must be the pneumatics are shot. Algernon squints sourly skyward.
-                `
-                Algernon: Already this journey is tainted with sacrifice and injustice.
+                Algernon aims for an overhanging tree, and the blades sink into the wood
+                with a satisfying thud, but it's quickly followed by the sharp sound of
+                air under pressure quickly escaping. Not a good sound. Algernon squints
+                sourly skyward.
 
                     * [-x-]
                     -> END
@@ -375,7 +374,8 @@
                 ~ player_inventory += Rope
 
                 After a few clumsy attempts, Algernon manages to pull himself up the rope
-                and scramble over the ledge.
+                and scramble over the ledge. Once at the top, he inspects the device
+                somberly before working it out of the wood and salvaging the remains. 
 
                     * [-x-]
                     ~ stage_cue = "climb_ledge"
@@ -387,6 +387,8 @@
 
             = getting_late
 
+                ~ stage_cue = "getting_late"
+
                 The surroundings grow menacing angles as twilight sets in.
 
                     * [-x-]
@@ -397,8 +399,9 @@
 
                 ~ looked_ahead = true
                 ~ stage_cue = "looking_for_camp"
-                The path ahead melts into a hazy mass of rock and shadow. Better turn back and
-                find a spot to set up camp.
+
+                The path ahead melts into a hazy mass of rock and shadow. Better turn back
+                and find a spot to set up camp.
 
                     * [-x-]
                     -> END
@@ -426,8 +429,8 @@
                 
                 Algernon begins to hear the familiar whispering behind his ears. At first it's
                 like most nights but sharper somehow, and a little nauseating. He glances down
-                at his pistol and thinks a thought for the thousandth time, then swallows a
-                capsule preemptively and closes his eyes, trying to filter out the sounds as
+                at his pistol and thinks a thought for the thousandth time. Then he swallows a
+                capsule preemptively and closes his eyes, trying to filter out the sounds like
                 he'd practiced.
                 `
                 Before long he is overcome with a new and terrible fear, and spends the next
@@ -577,7 +580,7 @@
 
                 Ren: The bulkhead doors seperating the engine module from the cargo module. 
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
@@ -586,7 +589,7 @@
                 Ren: The ship is under heavy thrust, too much radiation to go inside. The
                 doors are on lockdown even if I was crazy enough to suicide by drive core.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
@@ -624,124 +627,119 @@
 
             = mooney_look
 
-                Lorem ipsum.
+                Ren: The captain, sitting in the pilot's chair where he spends most of his
+                time, far away with his ship and his music.
 
-                    * [-x-]
+                    + [-x-]
+                    ->END
+            
+            = mooney_look2
+
+                Ren: He says the music helps with his migraines. He was a jack-junkie in his
+                younger days, still has a working port & adapters for most common stuff.
+                Must have tried interfacing with some weird shit back then, he's a mess when
+                the migraines come around.
+
+                    + [-x-]
+                    ->END
+            
+            = mooney_look3
+
+                Ren: He goes by 'Mooney' but it's not his real name. Guess it's supposed to
+                be some kind of a call-sign, but it's a shit one so I just call him 'the
+                captain', or 'cap'. 
+
+                    + [-x-]
                     ->END
 
 
             = mooney_talk
 
-                Lorem ipsum.
+                Ren: "Hey cap."
+                `
+                Mooney: "Hey chief, what's up?"
 
+                    * [Ask about him.] Ren: "Just checking in. Wanna say again how much I appreciate
+                    you going out of your way for this crazy business of ours. Things good
+                    with you?" -> mooney_check_cap
+                    * [Ask about ship.] Ren: "Just doing the rounds, trying to keep myself busy.
+                    She's been flying right?" -> mooney_check_ship
+
+
+            = mooney_check_cap
+
+                Mooney: "Yeah chief, of course. You know she might not come out & say it but I will,
+                and she feels the same: we've been lucky to have you. Both of you. This next haul
+                puts us in the black, and without you two we'd probably be hauling produce and
+                cheap labor for another 10 years to pay it off. So that makes me feel alright,
+                but I'd rather be doing it with a full crew."
+                `
+                Ren: "Not bad, captain. Now all you gotta do is learn to talk like that without a
+                spaceship in your head."
+                `
+                Mooney grins, sheepish now that he's once again self-conscious. He compulsively
+                adjusts the cable in his dated interface port--as he does anytime attention is
+                called to it--and shifts his attention back to the comfort of his consoles.
+
+                    * [\->] -> mooney_end
+
+
+            = mooney_check_ship
+
+                Mooney: "No complaints. No new ones, anyway. Figure we'll put in the order for new
+                grapple assemblies when we load up in Pyks. ."
+                `
+                Ren: "And the new seal for the engine collar?""
+                `
+                Mooney: "Oh, right. You bet, chief."
+                `
+                Ren: "Well. I'll get back to it."
+
+                    * [\->] -> mooney_end
+
+
+            = mooney_end
+
+                Ren turns away. He imagines there must be a diagnostic port around the bridge somewhere,
+                but he'd never used it as the captain was a better source for the state of things in the
+                bridge. He spends most of his life there, with a direct link to the ship dangling behind
+                his ear.
+                
                     * [-x-]
                     ->END
 
 
-
             = enri_look
 
-                Lorem ipsum.
+                Enri is deep in a book.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
             = enri_talk
 
-                Lorem ipsum.
+                Enri stops Ren short with a warning look, as if to say: "What the fuck are you doing in
+                my room?"
 
                     * [-x-]
-                    ->END
-
-
-
-            = shuttle_bay_look
-
-                Lorem ipsum.
-
-                    * [-x-]
-                    ->END
-
-
-            = shuttle_bay_use
-
-                Lorem ipsum.
-
-                    * [-x-]
-                    ->END
-
-
-            = shuttle_bay_scan
-
-                Lorem ipsum.
-
-                    * [-x-]
-                    ->END
-
-
-
-            = big_shuttle_look
-
-                Lorem ipsum.
-
-                    * [-x-]
-                    ->END
-
-
-            = big_shuttle_use
-
-                Lorem ipsum.
-
-                    * [-x-]
-                    ->END
-
-
-            = big_shuttle_scan
-
-                Lorem ipsum.
-
-                    * [-x-]
-                    ->END
-
-
-
-            = small_shuttle_look
-
-                Lorem ipsum.
-
-                    * [-x-]
-                    ->END
-
-
-            = small_shuttle_use
-
-                Lorem ipsum.
-
-                    * [-x-]
-                    ->END
-
-
-            = small_shuttle_scan
-
-                Ren: I'll leave that to Enri. Feels like an invasion of privacy.
-
-                    + [-x-]
                     ->END
 
 
 
             = mess_look
 
-                Lorem ipsum.
+                The gathering space. Ren likes it here; Harrinwright cargo modules weren't known for their
+                comfort, but he figures the starboard view from the upper deck of a R0-D10 was as nice a
+                place to eat a meal while watching the stars as any he'd come across.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
             = mess_use
 
-                Lorem ipsum.
+                Ren opens and shuts a few cabinets pointlessly. He doesn't feel like eating.
 
                     * [-x-]
                     ->END
@@ -749,7 +747,7 @@
 
             = mess_scan
 
-                Lorem ipsum.
+                Ren plugs the scanner into the port. After a few minutes the readings come back clear.
 
                     * [-x-]
                     ->END
@@ -758,15 +756,17 @@
 
             = storage_look
 
-                Lorem ipsum.
+                Secure storage. Most of the weapons and portable equipment on the ship are kept here.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
             = storage_use
 
-                Lorem ipsum.
+                Ren briefly considers taking inventory, but his last count hadn't even been a week ago. 
+                Reviewing the inventory log, with one long column filled with his initials and the rest
+                with barely changing numbers, makes him feel uneasy.
 
                     * [-x-]
                     ->END
@@ -774,73 +774,158 @@
 
             = medical_look
 
-                Lorem ipsum.
+                The med bay. One of the beds is in disarray, while the others look as if they've never
+                been used.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
             = medical_use
 
-                Lorem ipsum.
+                Ren straightens up the messy bed, distancing himself from the related memories.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
             = medical_scan
 
-                Lorem ipsum.
+                Ren plugs the scanner into the port. After a few minutes the readings come back clear.
 
                     * [-x-]
+                    ->END
+
+
+
+            = shuttle_bay_look
+
+                The shuttle bay controls.
+
+                    + [-x-]
+                    ->END
+
+
+            = shuttle_bay_use
+
+                Space is better with spacesuits.
+
+                    + [-x-]
+                    ->END
+
+
+            = shuttle_bay_scan
+
+                Ren plugs the scanner into the port. After a few minutes the readings come back clear.
+
+                    * [-x-]
+                    ->END
+            
+
+
+            = big_shuttle_look
+
+                The Harrinwright base model shuttle. You hear plenty of complaints about them, but Ren has
+                long maintained it's only because they're so ubiquitous. The added price of including one
+                with the purchase of a Harrinwright cargo module was too reasonable to refuse. It's true
+                they can be ornery and fly like a brick but, when treated well, they will outlive most
+                people.
+
+                    + [-x-]
+                    ->END
+
+
+            = big_shuttle_use
+
+                Ren has nowhere he needs to go.
+
+                    + [-x-]
+                    ->END
+
+
+            = big_shuttle_scan
+
+                Ren plugs the scanner into the port. After a few minutes the readings come back clear.
+
+                    * [-x-]
+                    ->END
+            
+
+
+            = small_shuttle_look
+
+                Enri's Skjold Cobra cruiser.
+
+                    + [-x-]
+                    ->END
+
+
+            = small_shuttle_use
+
+                Ren had always wanted to give it a spin, but never asked; he was pretty sure Enri didn't
+                even let the captain fly it, and the captain could fly with the best of em when he put
+                his mind to it.
+
+                    + [-x-]
+                    ->END
+
+
+            = small_shuttle_scan
+
+                Running diagnostics on someone else's private shuttle doesn't sit well with Ren.
+                Feels like an invasion of privacy.
+
+                    + [-x-]
                     ->END
 
 
 
             = cargo_look
 
-                Lorem ipsum.
+                The cargo bay door. Looking pretty beat up.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
             = cargo_use
 
-                Lorem ipsum.
+                Ren imagines the carnage that would ensue if the the failsafes malfunctioned, allowing
+                the cargo door to unseal under heavy thrust.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
             = cargo_scan
 
-                Lorem ipsum.
+                Ren plugs the scanner into the port. After a few minutes the readings come back clear.
 
                     * [-x-]
                     ->END
 
 
 
-            hoverbike_look
+            = hoverbike_look
 
-                Lorem ipsum.
+                Ren's hoverbike. In a way it is Ren's oldest friend. He purchased a few years before
+                teaming up with Al.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
             = hoverbike_use
 
-                Lorem ipsum.
+                As much as he'd enjoy a ride right now, laps around the cargo bay would only end in tears.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
             = hoverbike_scan
 
-                Lorem ipsum.
+                Ren plugs the scanner into the port. After a few minutes the readings come back clear.
 
                     * [-x-]
                     ->END
@@ -849,17 +934,22 @@
 
             = dorm_look
 
-                Lorem ipsum.
+                The passenger dorms. It wasn't uncommon for this part of the ship to become an impromptu
+                hostel when the ship left a busy port. Ferrying passengers isn't a bad side hustle for
+                a cargo ship; if you're already heading somewhere for a job and people want to pay to
+                come ride along, it's an easy choice. It also made Ren and Al de-facto concierges. Ren
+                hated it, but Al loved a captive audience.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
             = dorm_use
 
-                Lorem ipsum.
+                The dorm hasn't been used in a while, and all the bunks are fastened securely to the
+                walls. Nothing needs doing here.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
@@ -868,7 +958,7 @@
 
                 Lorem ipsum.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
@@ -876,7 +966,7 @@
 
                 Lorem ipsum.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
@@ -885,7 +975,7 @@
 
                 Lorem ipsum.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
@@ -893,7 +983,7 @@
 
                 Lorem ipsum.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
@@ -901,21 +991,24 @@
 
             = desk_look
 
-                Lorem ipsum.
+                A small surface built into the wall with a standard desk-interface.
 
-                    * [-x-]
+                    + [-x-]
                     ->END
 
 
             = desk_use
 
-                Lorem ipsum.
+                Without meaning to Ren begins to remember his life in Ibico five years prior, shortly
+                before he first met Algernon.
 
-                    * [-x-]
+                    * [Try to write.]
+                    -> prologue_end
+                    + [Later.]
                     ->END
 
 
-            = end
+            = prologue_end
 
                 Ren sits at the desk, brings up the notepad interface, and looks at the blank screen.
                 Eventually he begins typing with slow and cumbersome movements on the desk's surface.
@@ -1011,7 +1104,7 @@
         Try the LOOK and USE options on the nearby pile of stones.***
 
 
-    (Wild beast trigger) \*** Other common options include TALK and USE WITH.
+        (Wild beast trigger) \*** Other common options include TALK and USE WITH.
         `
         Get rid of the animal using the available options. ***
         
@@ -1024,6 +1117,7 @@
         inventory.
         `
         Combine two of the items in the inventory to climb the ledge. ***
+
 
         (Inventory - combine rope/harpoon) \***  Now approach the ledge and use the new item to progress. ***
         

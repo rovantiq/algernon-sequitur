@@ -5,13 +5,13 @@
 [ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/CelestialBodies.png" type="Texture" id=3]
 [ext_resource path="res://src/scripts/scenes/prologue - planet/interactions/StonePile.gd" type="Script" id=4]
 [ext_resource path="res://src/templates/InteractionPoint.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/Foreground2.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/Foreground.png" type="Texture" id=6]
 [ext_resource path="res://assets/sound/sfx/ambient/prologue-planet/prologue_planet_ambient.ogg" type="AudioStream" id=7]
 [ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/BackgroundNear.png" type="Texture" id=8]
 [ext_resource path="res://assets/art/characters/side/creatures/wild-beast.png" type="Texture" id=9]
 [ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/Midground.png" type="Texture" id=10]
 [ext_resource path="res://src/player/PlayerSideScroll.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/Sky2.png" type="Texture" id=12]
+[ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/Sky.png" type="Texture" id=12]
 [ext_resource path="res://src/scripts/scenes/prologue - planet/interactions/WildBeast.gd" type="Script" id=13]
 [ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/BackgroundFar.png" type="Texture" id=14]
 [ext_resource path="res://src/ui/themes/interaction_theme.tres" type="Theme" id=15]
@@ -47,6 +47,7 @@ extents = Vector2( 37, 8 )
 
 [sub_resource type="Animation" id=11]
 length = 60.0
+step = 1.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("ParallaxBackground/Sky:modulate")
 tracks/0/interp = 1
@@ -54,10 +55,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 10, 20.1, 40.1, 60 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.858824, 0.733333, 0.733333, 1 ), Color( 0.447059, 0.282353, 0.282353, 1 ), Color( 0.117647, 0.0745098, 0.0745098, 1 ), Color( 0.0509804, 0.0313726, 0.0313726, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.0509804, 0.0313726, 0.0313726, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("ParallaxBackground/BackgroundFar:modulate")
@@ -66,10 +67,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 10, 20.1, 40.1, 60 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.858824, 0.733333, 0.733333, 1 ), Color( 0.447059, 0.282353, 0.282353, 1 ), Color( 0.117647, 0.0745098, 0.0745098, 1 ), Color( 0.0509804, 0.0313726, 0.0313726, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.0509804, 0.0313726, 0.0313726, 1 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("ParallaxBackground/BackgroundNear:modulate")
@@ -78,10 +79,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 10, 20.1, 40.1, 60 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.858824, 0.733333, 0.733333, 1 ), Color( 0.447059, 0.282353, 0.282353, 1 ), Color( 0.117647, 0.0745098, 0.0745098, 1 ), Color( 0.0509804, 0.0313726, 0.0313726, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.0509804, 0.0313726, 0.0313726, 1 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("ParallaxBackground/Midground:modulate")
@@ -90,10 +91,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 10, 20.1, 40.1, 60 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.858824, 0.733333, 0.733333, 1 ), Color( 0.447059, 0.282353, 0.282353, 1 ), Color( 0.117647, 0.0745098, 0.0745098, 1 ), Color( 0.0509804, 0.0313726, 0.0313726, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.0509804, 0.0313726, 0.0313726, 1 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("ParallaxBackground/Foreground:modulate")
@@ -102,10 +103,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 10, 20.1, 40.1, 60 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.858824, 0.733333, 0.733333, 1 ), Color( 0.447059, 0.282353, 0.282353, 1 ), Color( 0.117647, 0.0745098, 0.0745098, 1 ), Color( 0.0509804, 0.0313726, 0.0313726, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.0509804, 0.0313726, 0.0313726, 1 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath(".:modulate")
@@ -114,34 +115,22 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 10, 20.1, 40.1, 60 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.858824, 0.733333, 0.733333, 1 ), Color( 0.447059, 0.282353, 0.282353, 1 ), Color( 0.117647, 0.0745098, 0.0745098, 1 ), Color( 0.0509804, 0.0313726, 0.0313726, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.196078, 0.196078, 0.196078, 1 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("ParallaxBackground/CelestialBodies/CelestialBodies:position")
+tracks/6/path = NodePath("ParallaxBackground/CelestialBodies/CelestialBodies:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 20.1 ),
+"times": PoolRealArray( 0, 60 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -199, 0 ), Vector2( 400, 278 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("ParallaxBackground/CelestialBodies/CelestialBodies:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 10, 20.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.815686, 0.815686, 0.815686, 1 ), Color( 0.454902, 0.454902, 0.454902, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.529412, 0.529412, 0.529412, 1 ) ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -156,7 +145,7 @@ __meta__ = {
 
 [node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
 z_as_relative = false
-motion_scale = Vector2( 0, 0.02 )
+motion_scale = Vector2( 0, 0.01 )
 motion_offset = Vector2( 0, -150 )
 motion_mirroring = Vector2( 1440, 0 )
 
@@ -170,35 +159,38 @@ motion_scale = Vector2( 0, 0 )
 motion_offset = Vector2( -200, -100 )
 
 [node name="CelestialBodies" type="Sprite" parent="ParallaxBackground/CelestialBodies"]
-position = Vector2( -199, 0 )
+position = Vector2( -1032, -164 )
 z_as_relative = false
 texture = ExtResource( 3 )
 centered = false
 
 [node name="BackgroundFar" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.05, 0.05 )
+motion_scale = Vector2( 0.01, 0.01 )
 motion_offset = Vector2( 0, -130 )
 motion_mirroring = Vector2( 1440, 0 )
 
 [node name="BackgroundFar" type="Sprite" parent="ParallaxBackground/BackgroundFar"]
+position = Vector2( 0, -92 )
 texture = ExtResource( 14 )
 centered = false
 
 [node name="BackgroundNear" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.1, 0.1 )
+motion_scale = Vector2( 0.05, 0.05 )
 motion_offset = Vector2( 0, -105 )
 motion_mirroring = Vector2( 1440, 0 )
 
 [node name="BackgroundNear" type="Sprite" parent="ParallaxBackground/BackgroundNear"]
+position = Vector2( 0, -104 )
 texture = ExtResource( 8 )
 centered = false
 
 [node name="Midground" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.2, 0.2 )
+motion_scale = Vector2( 0.1, 0.1 )
 motion_offset = Vector2( 0, -100 )
 motion_mirroring = Vector2( 1440, 0 )
 
 [node name="Midground" type="Sprite" parent="ParallaxBackground/Midground"]
+position = Vector2( 1, -102 )
 texture = ExtResource( 10 )
 centered = false
 

@@ -20,7 +20,7 @@ onready var mooney = $Ship/UpperLevel/MooneyTop
 
 
 var story
-var left_boundary: = 145
+var left_boundary: = 150
 var right_boundary: = 250
 
 

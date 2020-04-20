@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://assets/art/characters/side/algernon.png" type="Texture" id=1]
 [ext_resource path="res://src/scripts/scenes/prologue - planet/ProloguePlanet.gd" type="Script" id=2]
@@ -16,9 +16,12 @@
 [ext_resource path="res://assets/art/environments/side/backgrounds/prologue-planet/BackgroundFar.png" type="Texture" id=14]
 [ext_resource path="res://src/ui/themes/interaction_theme.tres" type="Theme" id=15]
 [ext_resource path="res://src/scripts/ui/interactions/InteractionIndicator.gd" type="Script" id=16]
-[ext_resource path="res://assets/sound/sfx/gunshots/FX_gunshot1_session.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/sound/sfx/misc/harpoon.wav" type="AudioStream" id=17]
 [ext_resource path="res://src/scripts/scenes/prologue - planet/interactions/Ledge.gd" type="Script" id=18]
 [ext_resource path="res://src/scripts/scenes/prologue - planet/interactions/Campsite.gd" type="Script" id=19]
+[ext_resource path="res://assets/art/environments/side/objects/prologue-planet/tree.png" type="Texture" id=20]
+[ext_resource path="res://assets/art/environments/side/objects/prologue-planet/stones.png" type="Texture" id=21]
+[ext_resource path="res://assets/art/environments/side/objects/prologue-planet/tree-rope.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -46,6 +49,45 @@ extents = Vector2( 108, 10 )
 extents = Vector2( 37, 8 )
 
 [sub_resource type="Animation" id=11]
+resource_name = "HarpoonShot"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Tree:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1.68179 ),
+"update": 1,
+"values": [ ExtResource( 20 ), ExtResource( 22 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FX:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("FX:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 17 ) ]
+}
+
+[sub_resource type="Animation" id=12]
 length = 60.0
 step = 1.0
 tracks/0/type = "value"
@@ -133,13 +175,8 @@ tracks/6/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.529412, 0.529412, 0.529412, 1 ) ]
 }
 
-[sub_resource type="Animation" id=12]
-
 [node name="Prologue-Planet" type="Node2D"]
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_vertical_guides_": [ 2029.0 ]
-}
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -246,6 +283,10 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" parent="Interactions/Stones" index="0"]
 shape = SubResource( 6 )
 
+[node name="InteractionUI" parent="Interactions/Stones" index="1"]
+margin_top = -47.0
+margin_bottom = -47.0
+
 [node name="InteractionIndicator" parent="Interactions/Stones/InteractionUI" index="0"]
 text = "Pile of
 Stones"
@@ -331,7 +372,7 @@ __meta__ = {
 }
 
 [node name="Camp" parent="Interactions" instance=ExtResource( 5 )]
-position = Vector2( 2714, 77 )
+position = Vector2( 2531, 77 )
 input_pickable = false
 collision_mask = 0
 script = ExtResource( 19 )
@@ -343,7 +384,7 @@ shape = SubResource( 10 )
 text = "Clearing"
 
 [node name="Player" parent="." instance=ExtResource( 11 )]
-position = Vector2( 81, 229 )
+position = Vector2( 82, 229 )
 z_index = 50
 
 [node name="Sprite" parent="Player" index="1"]
@@ -355,18 +396,27 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Ground"]
 scale = Vector2( 3.23689, 7.82711 )
-polygon = PoolVector2Array( 0, 0, 650, 0, 650, -20, 910, -20, 650, 2, 0, 2 )
+polygon = PoolVector2Array( 0, 0, 650, 0, 650, -20.06, 910, -20.06, 650, 2, 0, 2 )
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -20.0
+autoplay = true
 
-[node name="FX" type="AudioStreamPlayer2D" parent="."]
+[node name="FX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/TimeAdvances = SubResource( 11 )
-anims/WaitingDarkness = SubResource( 12 )
+anims/HarpoonShot = SubResource( 11 )
+anims/TimeAdvances = SubResource( 12 )
+
+[node name="Stones" type="Sprite" parent="."]
+position = Vector2( 680, 234 )
+texture = ExtResource( 21 )
+
+[node name="Tree" type="Sprite" parent="."]
+position = Vector2( 2096, 152 )
+texture = ExtResource( 20 )
 [connection signal="body_entered" from="Triggers/LookBack" to="." method="_on_LookBack_body_entered"]
 [connection signal="body_entered" from="Triggers/NoticeStones" to="." method="_on_NoticeStones_body_entered"]
 [connection signal="body_entered" from="Triggers/AnimalEncounter" to="." method="_on_AnimalEncounter_body_entered"]

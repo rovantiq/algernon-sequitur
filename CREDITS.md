@@ -22,9 +22,29 @@
 
 * SFX:
  
-    * [Doors](https://freesound.org/people/Paul368/sounds/264063/) - [Paul368](https://freesound.org/people/Paul368/) (CC0)
+    * Doors
+        * https://freesound.org/people/Paul368/sounds/264063/ - [Paul368](https://freesound.org/people/Paul368/) (CC0)
 
-    * [Gunshot](https://freesound.org/people/CJDeets/sounds/476740/) - [CJDeets](https://freesound.org/people/CJDeets/) (CC-BY-3.0)
+    * Gunshot
+        * https://freesound.org/people/CJDeets/sounds/476740/ - [CJDeets](https://freesound.org/people/CJDeets/) (CC-BY-3.0)
+
+    * Rocks
+        * https://freesound.org/people/Fission9/sounds/488660/ - [Fission9](https://freesound.org/people/Fission9/) (CC0)
+
+    * Growling
+        * https://freesound.org/people/Christopherderp/sounds/342204/ - [Christopherderp](https://freesound.org/people/Christopherderp/) (CC0)
+        * https://freesound.org/people/JonCon_Library/sounds/481642/# - [JonCon_library](https://freesound.org/people/JonCon_Library/) (CC0)
+
+    * Harpoon
+        * https://freesound.org/people/calvarychurchatlanta/sounds/179996/# - [calvarychurchatlanta](https://freesound.org/people/calvarychurchatlanta/) (CC0)
+        * https://freesound.org/people/MHockett/sounds/249160/# - [MHockett](https://freesound.org/people/MHockett/) (CC0)
+        * https://freesound.org/people/robbeman/sounds/495645/# - [robbeman](https://freesound.org/people/robbeman/) (CC0)
+        * https://freesound.org/people/ChristianAnd/sounds/468854/# - [ChristianAnd](https://freesound.org/people/ChristianAnd/) (CC0)
+
+    * Scanner
+        * https://freesound.org/people/noirenex/sounds/159230/# - [noirenex](https://freesound.org/people/noirenex/) (CC0) 
+        * https://freesound.org/people/wubitog/sounds/188386/# - [wubitog](https://freesound.org/people/wubitog/) (CC0)
+        * https://freesound.org/people/spoonsandlessspoons/sounds/361332/# - [spoonsandlessspoons](https://freesound.org/people/spoonsandlessspoons/) (CC-BY-3.0)
 
     * Footsteps:
         * [Outdoor](https://freesound.org/search/?q=490951) - [Nox_Sound](https://freesound.org/people/Nox_Sound/) (CC0)

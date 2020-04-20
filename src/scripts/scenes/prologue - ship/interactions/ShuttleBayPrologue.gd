@@ -1,8 +1,6 @@
 extends "res://src/scripts/ui/interactions/InteractionPoint.gd"
 
 
-var scanned: = false
-
 func _ready() -> void:
 	options = ["look", "use", "inv"]      
 
@@ -19,9 +17,8 @@ func use_pressed(use) -> void:
 
 func item_pressed(item) -> void:
 	if item.text == "Scanner":
-		if scanned == false:
+		if StoryRunner.story.variables_state.get("bay_scanned") == 0:
 			_play_story(item, "prologue_ren.shuttle_bay_scan")
-			scanned = true
 		else:
 			_show_text(item, ["Already scanned this one."])
 	else:

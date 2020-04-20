@@ -34,20 +34,34 @@
 
     // Scene Tracking Variables
 
+
     // ProloguePlanet
+
     VAR intro_complete = false
     VAR looked_back = false
     VAR noticed_stones = false
     VAR has_stone = false
     VAR animal_encountered = false
-    VAR ledge_approached = false
     VAR animal_gone = false
     VAR animal_shot = false
+    VAR ledge_approached = false
+    VAR shot_harpoon = false
     VAR climbed_ledge = false
     VAR looked_ahead = false
-    // PrologueShip
-    VAR welcomed_home = false
 
+
+    // PrologueShip
+
+    VAR welcomed_home = false
+    VAR scans = 0
+    VAR engineering_scanned = false
+    VAR bridge_scanned = false
+    VAR mess_scanned = false
+    VAR med_scanned = false
+    VAR bay_scanned = false
+    VAR cargo_scanned = false
+    VAR shuttle_scanned = false
+    VAR hoverbike_scanned = false
 
 
 
@@ -237,12 +251,14 @@
 
             = collect_stone
 
+                ~ player_inventory += Stone
+                ~ has_stone = true
+                ~ stage_cue = "stone_taken"
+
                 The stone sits in Algernon's grip as if it was made for his hand. He slips it into
                 his pocket with a deep satisfaction.
 
                     * [-x-]
-                    ~ player_inventory += Stone
-                    ~ has_stone = true
                     -> END
 
 
@@ -358,11 +374,13 @@
             = ledge_harpoon
 
                 ~ player_inventory -= Rope_Dart
+                ~ shot_harpoon = true
+                ~ stage_cue = "harpoon_shot"
 
                 Algernon aims for an overhanging tree, and the blades sink into the wood
-                with a satisfying thud, but it's quickly followed by the sharp sound of
-                air under pressure quickly escaping. Not a good sound. Algernon squints
-                sourly skyward.
+                with a satisfying thud. It's soon followed by the sharp sound of
+                pressurized air escaping the launcher in his hands. Not a good sound.
+                Algernon tosses the broken remains and squints sourly skyward.
 
                     * [-x-]
                     -> END
@@ -374,8 +392,8 @@
                 ~ player_inventory += Rope
 
                 After a few clumsy attempts, Algernon manages to pull himself up the rope
-                and scramble over the ledge. Once at the top, he inspects the device
-                somberly before working it out of the wood and salvaging the remains. 
+                and scramble over the ledge. Once at the top, he collects the rope, works
+                the harpoon out of the tree, and returns them to his pack.
 
                     * [-x-]
                     ~ stage_cue = "climb_ledge"
@@ -595,6 +613,10 @@
 
             = engine_door_scan
 
+                ~ engineering_scanned = true
+                ~ stage_cue = "scanning"
+                ~ scans += 1
+
                 The scanner briefly fires a purple cone of light as Ren runs a quick rad
                 reading before plugging the it into the diagnostic port near the locking
                 collar controls.
@@ -700,6 +722,10 @@
 
             = mooney_end
 
+                ~ bridge_scanned = true
+                ~ stage_cue = "scanning"
+                ~ scans += 1
+
                 Ren turns away. He imagines there must be a diagnostic port around the bridge somewhere,
                 but he'd never used it as the captain was a better source for the state of things in the
                 bridge. He spends most of his life there, with a direct link to the ship dangling behind
@@ -747,6 +773,10 @@
 
             = mess_scan
 
+                ~ mess_scanned = true
+                ~ stage_cue = "scanning"
+                ~ scans += 1
+
                 Ren plugs the scanner into the port. After a few minutes the readings come back clear.
 
                     * [-x-]
@@ -791,6 +821,10 @@
 
             = medical_scan
 
+                ~ med_scanned = true
+                ~ stage_cue = "scanning"
+                ~ scans += 1
+
                 Ren plugs the scanner into the port. After a few minutes the readings come back clear.
 
                     * [-x-]
@@ -815,6 +849,10 @@
 
 
             = shuttle_bay_scan
+
+                ~ bay_scanned = true
+                ~ stage_cue = "scanning"
+                ~ scans += 1
 
                 Ren plugs the scanner into the port. After a few minutes the readings come back clear.
 
@@ -844,6 +882,10 @@
 
 
             = big_shuttle_scan
+
+                ~ shuttle_scanned = true
+                ~ stage_cue = "scanning"
+                ~ scans += 1
 
                 Ren plugs the scanner into the port. After a few minutes the readings come back clear.
 
@@ -899,6 +941,10 @@
 
             = cargo_scan
 
+                ~ cargo_scanned = true
+                ~ stage_cue = "scanning"
+                ~ scans += 1
+
                 Ren plugs the scanner into the port. After a few minutes the readings come back clear.
 
                     * [-x-]
@@ -924,6 +970,10 @@
 
 
             = hoverbike_scan
+
+                ~ hoverbike_scanned = true
+                ~ stage_cue = "scanning"
+                ~ scans += 1
 
                 Ren plugs the scanner into the port. After a few minutes the readings come back clear.
 

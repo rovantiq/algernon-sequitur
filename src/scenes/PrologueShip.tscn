@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://src/scripts/scenes/prologue - ship/PrologueShip.gd" type="Script" id=1]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/Starfield1.gd" type="Script" id=2]
@@ -15,7 +15,7 @@
 [ext_resource path="res://src/scripts/scenes/prologue - ship/Starfield2.gd" type="Script" id=13]
 [ext_resource path="res://src/player/PlayerTopDown.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/art/environments/top/backgrounds/starfield/starfield2.png" type="Texture" id=15]
-[ext_resource path="res://assets/sound/sfx/footsteps/hard_1_step1_session.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/sound/sfx/footsteps/hard1_step1.wav" type="AudioStream" id=16]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/MooneyPrologue.gd" type="Script" id=17]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/EnriPrologue.gd" type="Script" id=18]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/HoverbikePrologue.gd" type="Script" id=19]
@@ -27,6 +27,7 @@
 [ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/ShuttleBayPrologue.gd" type="Script" id=25]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/ShuttlePrologue.gd" type="Script" id=26]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/CruiserPrologue.gd" type="Script" id=27]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/View.gd" type="Script" id=28]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 6 )
@@ -47,37 +48,40 @@ extents = Vector2( 28, 32 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 57, 51 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 20, 13 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 28, 16 )
 
-[sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 41, 25 )
-
-[sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 45, 18 )
-
-[sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 28, 28 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 17, 16 )
-
-[sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 31, 18 )
-
-[sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 120, 72 )
-
-[sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 40, 68 )
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 23, 38 )
 
 [sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 45, 18 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 27, 42 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 17, 16 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 10, 40 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 31, 18 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 120, 72 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 40, 68 )
+
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 17, 10 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=17]
 length = 7.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Ship/UpperLevel/MooneyTop:position")
@@ -114,7 +118,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.1, 1.7, 3.3, 4.9, 6.5, 6.9, 7 )
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=18]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Ship/UpperLevel/EnriTop:position")
 tracks/0/interp = 1
@@ -150,7 +154,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.1, 0.5 )
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=19]
 length = 12.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Ship/UpperLevel/EnriTop:position")
@@ -216,6 +220,7 @@ __meta__ = {
 }
 
 [node name="Starfield" type="Node2D" parent="."]
+position = Vector2( 0, 568 )
 
 [node name="Base" type="Sprite" parent="Starfield"]
 material = SubResource( 1 )
@@ -302,7 +307,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" parent="Ship/CaptainsQuarters/Enri" index="0"]
 position = Vector2( 1, 0 )
-shape = SubResource( 19 )
+shape = SubResource( 6 )
 
 [node name="InteractionUI" parent="Ship/CaptainsQuarters/Enri" index="1"]
 margin_top = 7.0
@@ -327,6 +332,12 @@ stream = ExtResource( 16 )
 position = Vector2( 25, 50 )
 rotation = 2.30383
 
+[node name="LeftCollisionShape2D" parent="Ship/UpperLevel/DoorToBridge" index="2"]
+position = Vector2( -40.0081, 0.511654 )
+
+[node name="RightCollisionShape2D" parent="Ship/UpperLevel/DoorToBridge" index="3"]
+position = Vector2( 40.0055, 0.523781 )
+
 [node name="Engine" parent="Ship/UpperLevel" index="13" instance=ExtResource( 7 )]
 position = Vector2( 0, 849 )
 collision_mask = 0
@@ -334,31 +345,31 @@ script = ExtResource( 11 )
 
 [node name="CollisionShape2D" parent="Ship/UpperLevel/Engine" index="0"]
 position = Vector2( 0, -27 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="InteractionIndicator" parent="Ship/UpperLevel/Engine/InteractionUI" index="0"]
 text = "Engine
 Module"
 
 [node name="Mess" parent="Ship/UpperLevel" index="14" instance=ExtResource( 7 )]
-position = Vector2( 84, 234 )
+position = Vector2( 84, 264 )
 script = ExtResource( 22 )
 
 [node name="CollisionShape2D" parent="Ship/UpperLevel/Mess" index="0"]
-position = Vector2( 4, -14 )
-shape = SubResource( 13 )
+position = Vector2( 1, 2 )
+shape = SubResource( 8 )
 
 [node name="InteractionIndicator" parent="Ship/UpperLevel/Mess/InteractionUI" index="0"]
 text = "Mess
 Hall"
 
 [node name="Storage" parent="Ship/UpperLevel" index="15" instance=ExtResource( 7 )]
-position = Vector2( -81, 157 )
+position = Vector2( -81, 173 )
 script = ExtResource( 23 )
 
 [node name="CollisionShape2D" parent="Ship/UpperLevel/Storage" index="0"]
 position = Vector2( -3, 5 )
-shape = SubResource( 14 )
+shape = SubResource( 9 )
 
 [node name="InteractionUI" parent="Ship/UpperLevel/Storage" index="1"]
 margin_top = 25.0
@@ -383,14 +394,14 @@ position = Vector2( -76, 393 )
 script = ExtResource( 24 )
 
 [node name="CollisionShape2D" parent="Ship/UpperLevel/Medical" index="0"]
-position = Vector2( 1, 12 )
-shape = SubResource( 15 )
+position = Vector2( -15, 24 )
+shape = SubResource( 10 )
 
 [node name="InteractionUI" parent="Ship/UpperLevel/Medical" index="1"]
 margin_left = 2.0
-margin_top = -24.0
+margin_top = -27.0
 margin_right = 2.0
-margin_bottom = -24.0
+margin_bottom = -27.0
 
 [node name="InteractionIndicator" parent="Ship/UpperLevel/Medical/InteractionUI" index="0"]
 margin_left = -68.0
@@ -412,7 +423,7 @@ collision_layer = 8
 script = ExtResource( 17 )
 
 [node name="CollisionShape2D" parent="Ship/UpperLevel/MooneyInteraction" index="0"]
-shape = SubResource( 7 )
+shape = SubResource( 11 )
 
 [node name="InteractionUI" parent="Ship/UpperLevel/MooneyInteraction" index="1"]
 margin_top = -30.0
@@ -428,13 +439,29 @@ margin_top = -60.0001
 margin_right = 26.0
 margin_bottom = -10.0001
 
+[node name="View" parent="Ship/UpperLevel" index="18" instance=ExtResource( 7 )]
+position = Vector2( 119, 168 )
+script = ExtResource( 28 )
+
+[node name="CollisionShape2D" parent="Ship/UpperLevel/View" index="0"]
+shape = SubResource( 12 )
+
+[node name="InteractionUI" parent="Ship/UpperLevel/View" index="1"]
+margin_left = 19.0
+margin_top = -4.0
+margin_right = 19.0
+margin_bottom = -4.0
+
+[node name="InteractionIndicator" parent="Ship/UpperLevel/View/InteractionUI" index="0"]
+text = "Window"
+
 [node name="BayControls" parent="Ship/ShuttleBay" index="5" instance=ExtResource( 7 )]
 position = Vector2( -97, -123 )
 collision_mask = 0
 script = ExtResource( 25 )
 
 [node name="CollisionShape2D" parent="Ship/ShuttleBay/BayControls" index="0"]
-shape = SubResource( 16 )
+shape = SubResource( 13 )
 
 [node name="InteractionUI" parent="Ship/ShuttleBay/BayControls" index="1"]
 margin_top = -20.0
@@ -452,7 +479,7 @@ script = ExtResource( 26 )
 
 [node name="CollisionShape2D" parent="Ship/ShuttleBay/BigShuttle" index="0"]
 position = Vector2( 0, -18 )
-shape = SubResource( 17 )
+shape = SubResource( 14 )
 
 [node name="InteractionIndicator" parent="Ship/ShuttleBay/BigShuttle/InteractionUI" index="0"]
 text = "Shuttle"
@@ -464,7 +491,7 @@ collision_mask = 0
 script = ExtResource( 27 )
 
 [node name="CollisionShape2D" parent="Ship/ShuttleBay/SmallShuttle" index="0"]
-shape = SubResource( 18 )
+shape = SubResource( 15 )
 
 [node name="InteractionIndicator" parent="Ship/ShuttleBay/SmallShuttle/InteractionUI" index="0"]
 text = "Cruiser"
@@ -478,7 +505,7 @@ script = ExtResource( 12 )
 
 [node name="CollisionShape2D" parent="Ship/RensQuarters/Desk" index="0"]
 position = Vector2( -4.00002, 0 )
-shape = SubResource( 9 )
+shape = SubResource( 16 )
 
 [node name="InteractionUI" parent="Ship/RensQuarters/Desk" index="1"]
 margin_left = -1.0
@@ -508,15 +535,12 @@ volume_db = 3.0
 [node name="PlayerTop" parent="." instance=ExtResource( 14 )]
 position = Vector2( -30.3562, 78 )
 
-[node name="Camera2D" parent="PlayerTop" index="2"]
-limit_bottom = 850
-
 [node name="AnimationPlayer1" type="AnimationPlayer" parent="."]
-anims/cap_leaves = SubResource( 10 )
+anims/cap_leaves = SubResource( 17 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
-anims/enri_approaches = SubResource( 11 )
-anims/enri_leaves = SubResource( 12 )
+anims/enri_approaches = SubResource( 18 )
+anims/enri_leaves = SubResource( 19 )
 
 [editable path="Ship"]
 
@@ -534,6 +558,8 @@ anims/enri_leaves = SubResource( 12 )
 
 [editable path="Ship/UpperLevel/EnriTop"]
 
+[editable path="Ship/UpperLevel/DoorToBridge"]
+
 [editable path="Ship/UpperLevel/Engine"]
 
 [editable path="Ship/UpperLevel/Mess"]
@@ -543,6 +569,8 @@ anims/enri_leaves = SubResource( 12 )
 [editable path="Ship/UpperLevel/Medical"]
 
 [editable path="Ship/UpperLevel/MooneyInteraction"]
+
+[editable path="Ship/UpperLevel/View"]
 
 [editable path="Ship/ShuttleBay/BayControls"]
 

@@ -4,8 +4,7 @@ onready var player_top = get_parent().get_parent().get_parent().get_node("Player
 onready var lower = get_parent().get_parent().get_node("LowerLevel")
 onready var player_side = get_parent().get_node("PlayerSide")
 onready var rens_room = get_parent()
-onready var room_cam = get_parent().get_node("Camera2D")
-onready var ship_cam = get_parent().get_parent().get_parent().get_node("PlayerTop/Camera2D")
+onready var top_cam = get_parent().get_parent().get_parent().get_node("PlayerTop/Camera2D")
 onready var audio = $DoorFX
 
 
@@ -26,7 +25,7 @@ func go_pressed(go) -> void:
 	rens_room.visible = false
 	player_top.visible = true
 	lower.visible = true
-	ship_cam.current = true
+	top_cam.current = true
 	_clear()
 	z_index = 0
 	StoryRunner.fade_in()

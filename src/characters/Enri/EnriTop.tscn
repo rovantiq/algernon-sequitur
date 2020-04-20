@@ -1,8 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/art/characters/top/enri.png" type="Texture" id=1]
-[ext_resource path="res://assets/sound/sfx/footsteps/hard_1_step2_session.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/sound/sfx/footsteps/hard_1_step1_session.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sound/sfx/footsteps/hard1_step2.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/sound/sfx/footsteps/hard1_step1.wav" type="AudioStream" id=3]
+
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.33394

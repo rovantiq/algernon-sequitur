@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/art/characters/top/ren.png" type="Texture" id=1]
 [ext_resource path="res://src/scripts/player/PlayerTopDown.gd" type="Script" id=2]
-[ext_resource path="res://assets/sound/sfx/footsteps/hard_1_step1_session.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/sound/sfx/footsteps/hard_1_step2_session.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sound/sfx/footsteps/hard1_step1.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sound/sfx/footsteps/hard1_step2.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sound/sfx/misc/scanner.wav" type="AudioStream" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.93232
@@ -25,8 +26,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "walk"
+[sub_resource type="Animation" id=4]
 loop = true
 step = 0.005
 tracks/0/type = "value"
@@ -48,7 +48,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.11, 0.61 ),
+"times": PoolRealArray( 0.1, 0.6 ),
 "transitions": PoolRealArray( 1, 1.8025 ),
 "update": 1,
 "values": [ ExtResource( 3 ), ExtResource( 4 ) ]
@@ -60,7 +60,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.11, 0.61 ),
+"times": PoolRealArray( 0, 0.1, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, true ]
@@ -87,9 +87,9 @@ smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 2 )
-anims/walk = SubResource( 3 )
+anims/walk = SubResource( 4 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 5 )
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

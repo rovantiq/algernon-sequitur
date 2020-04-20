@@ -6,7 +6,6 @@ onready var lower = get_parent().get_parent()
 onready var player_side = get_parent().get_parent().get_parent().get_node("RensQuarters/PlayerSide")
 onready var rens_room = get_parent().get_parent().get_parent().get_node("RensQuarters")
 onready var room_cam = get_parent().get_parent().get_parent().get_node("RensQuarters/Camera2D")
-onready var ship_cam = get_parent().get_parent().get_parent().get_parent().get_node("PlayerTop/Camera2D")
 onready var audio = $DoorFX
 
 

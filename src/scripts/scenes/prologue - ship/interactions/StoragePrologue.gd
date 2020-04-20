@@ -1,6 +1,6 @@
 extends "res://src/scripts/ui/interactions/InteractionPoint.gd"
 
-#  ##########################################
+
 
 func _ready() -> void:
 	options = ["look", "use", "inv"]        #["look", "talk", "use", "go", "inv"]

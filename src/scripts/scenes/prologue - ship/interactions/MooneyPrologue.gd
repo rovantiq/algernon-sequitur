@@ -1,14 +1,13 @@
 extends "res://src/scripts/ui/interactions/InteractionPoint.gd"
 
-#  ##########################################
-#   INSTANCE AN INTERACTION POINT, THEN SAVE 
-#   A NEW COPY OF THIS SCRIPT TO ATTACH AND
-#   ADJUST THE FOLLOWING AS NEEDED
-#  ##########################################
-
 
 func _ready() -> void:
-	options = ["look", "talk",]        #["look", "talk", "use", "go", "inv"]
+	if StoryRunner.loaded == false:
+		yield(StoryRunner, "loaded")
+	if StoryRunner.story.variables_state.get("bridge_scanned") == 0:
+		options = ["look", "talk",]
+	else:
+		options = ["look"]
 
 
 func look_pressed(look) -> void:

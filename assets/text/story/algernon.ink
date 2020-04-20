@@ -657,10 +657,10 @@
             
             = mooney_look2
 
-                Ren: He says the music helps with his migraines. He was a jack-junkie in his
-                younger days, still has a working port & adapters for most common stuff.
-                Must have tried interfacing with some weird shit back then, he's a mess when
-                the migraines come around.
+                Ren: He says the music helps with his migraines. He was a patch-head in his
+                younger days, still has a working port & adapters for all the common stuff.
+                Comes in handy sometimes, but he must have interfaced with some weird shit
+                back then, he's a mess when the migraines come around.
 
                     + [-x-]
                     ->END
@@ -690,28 +690,28 @@
 
             = mooney_check_cap
 
-                Mooney: "Yeah chief, of course. You know she might not come out & say it but I will,
-                and she feels the same: we've been lucky to have you. Both of you. This next haul
-                puts us in the black, and without you two we'd probably be hauling produce and
-                cheap labor for another 10 years to pay it off. So that makes me feel alright,
-                but I'd rather be doing it with a full crew."
+                Mooney: "Yeah chief, of course. You know she might not come out & say it but I
+                will, and she feels the same: we've been lucky to have you. Both of you. This
+                next haul puts us in the black, and without you two we'd probably be hauling
+                produce and cheap labor for another 10 years to pay it off. So that makes me
+                feel alright, but I'd rather be doing it with a full crew."
                 `
-                Ren: "Not bad, captain. Now all you gotta do is learn to talk like that without a
-                spaceship in your head."
+                Ren: "Not bad, captain. Now all you gotta do is learn to talk like that
+                without a spaceship in your head."
                 `
-                Mooney grins, sheepish now that he's once again self-conscious. He compulsively
-                adjusts the cable in his dated interface port--as he does anytime attention is
-                called to it--and shifts his attention back to the comfort of his consoles.
+                Mooney grins, self-conscious once more. He adjusts the cable in his dated
+                interface port and shifts his attention back to the comfort of his consoles.
 
                     * [\->] -> mooney_end
 
 
             = mooney_check_ship
 
-                Mooney: "No complaints. No new ones, anyway. Figure we'll put in the order for new
-                grapple assemblies when we load up in Pyks. ."
+                Mooney: "No complaints. No new ones, anyway. Figure I'll schedule an appointment
+                for the last of the thruster refits when we load up in Pyks, since she'll be
+                paid off by the time we get back."
                 `
-                Ren: "And the new seal for the engine collar?""
+                Ren: "And the refurb for the engine collar. Right?"
                 `
                 Mooney: "Oh, right. You bet, chief."
                 `
@@ -777,7 +777,18 @@
                 ~ stage_cue = "scanning"
                 ~ scans += 1
 
-                Ren plugs the scanner into the port. After a few minutes the readings come back clear.
+                Ren slots in the scanner and leans against the counter, watching the stars outside the window
+                and the empty table and all of it looking lonely. He fills the seats by remembering them all
+                there together, celebrating after the Ptolo's treason charges were dropped. The judge had
+                ruled that their aid to the Toman geurrilas was unwitting. The fees were susbstantial, but all
+                told it was still one of their most lucrative jobs.
+                `
+                Once their assets were unfrozen, they immediately left orbit and got drunk. They had had to
+                keep Enri and Al apart for weeks or she would have killed him--or at least stabbed him again--
+                for getting everyone into that kind of trouble. But once it had all worked out, she actually
+                hugged him. Only time Ren ever saw it.
+                `
+                The scanner beeps, all clear.
 
                     * [-x-]
                     ->END
@@ -825,7 +836,11 @@
                 ~ stage_cue = "scanning"
                 ~ scans += 1
 
-                Ren plugs the scanner into the port. After a few minutes the readings come back clear.
+                The scanner scans. Ren had only visited the med-bay a handful of times in his first two
+                years of working on the ship, but it felt like he had spent more time in here with Al 
+                than anywhere the past few months.
+                `
+                Ren looks down and thinks of nothing until he hears a beep. All clear.
 
                     * [-x-]
                     ->END
@@ -854,7 +869,30 @@
                 ~ stage_cue = "scanning"
                 ~ scans += 1
 
-                Ren plugs the scanner into the port. After a few minutes the readings come back clear.
+                The scanner port is beside the bay door controls. Ren looks up and is reminded of many space-
+                walks. His skillset made him the natural choice for delicate and/or dangerous work, including
+                any sort of EVA. That suited Ren just fine. He had been filling that role in various jobs
+                before this one and they were rarely as comfortable.
+                `
+                Besides, he enjoyed working on Harrinwrights. They were practical, modular, and embraced the
+                DIY approach for most repairs. Freighter-class models usually consisted of three modules:
+                nav, base, engine. The nav module on this ship--the R0-D10nav, or R0-D10n--contained the bridge
+                & captain's quarters and is designed to be detached and flown independently, in atmo if
+                needed.
+                
+                    * [\->] -> shuttle_bay_scan2
+
+            = shuttle_bay_scan2
+
+                The base modules offer a ton of customization, but generally consist of cargo, crew
+                amenities, and a shuttle bay like the R0-D10 does. The engine module is necessary for long-
+                distance travel, or even moving the base module, as the nav's onboard thrust is only enough 
+                for itself. There were warp models that could get further faster than the Q2-W03, but it
+                was rock-solid reliable in the right hands and Ren would take that trade-off any day.
+                `
+                The scanner finishes with a tone of disappointment, complaining that the airlock's bacterial
+                sensors were unresponsive. Nothing new. If they were spreading exotic diseases from port to
+                port, they would not be the first to know
 
                     * [-x-]
                     ->END
@@ -887,7 +925,27 @@
                 ~ stage_cue = "scanning"
                 ~ scans += 1
 
-                Ren plugs the scanner into the port. After a few minutes the readings come back clear.
+                Ren sits in the passenger seat and plugs the scanner into the port under the dash panel. He
+                rarely sat in the passenger seat. The last time was probably the time the captain had come
+                along with them planetside. He had arranged a meeting with an old contact he hadn't talked
+                to in years, and wanted backup.
+                `
+                The situation was touch-and-go but an arrangement was eventually reached. The captain, in a
+                rare display of whimsy, abruptly decided to fly some manoevres before re-docking. Ren had
+                scoffed more than once as the captain began evasive actions meant for military fighters,
+                only to sit quietly shaking his head in disbelief a few moments later.
+
+                    * [\->] -> big_shuttle_scan2
+            
+
+            = big_shuttle_scan2
+
+                Algernon had often mocked the captain behind his back, syaing he was an "ineffectual leader,"
+                "punching above his weight, even is she is a bitch", and so on. Ren figured some of that
+                might be true, but he liked him well enough anyhow. In any case, Algernon didn't say much one
+                way or the other about the captain after that day.
+                `
+                The scan beeps approval. Old Reliable. Ren pockets the scanner and hops out of the cabin.
 
                     * [-x-]
                     ->END
@@ -933,7 +991,7 @@
             = cargo_use
 
                 Ren imagines the carnage that would ensue if the the failsafes malfunctioned, allowing
-                the cargo door to unseal under heavy thrust.
+                the cargo door to unseal under heavy thrust. He regrets it afterward.
 
                     + [-x-]
                     ->END
@@ -945,7 +1003,20 @@
                 ~ stage_cue = "scanning"
                 ~ scans += 1
 
-                Ren plugs the scanner into the port. After a few minutes the readings come back clear.
+                Ren inserts the scanner into the port next to the cargo door controls. There is some
+                damage on the door where two of the panels meet. He recalls prying several of the
+                panels off with Enri and Algernon. The exposed spaces were to be filled with class-4
+                controlled substances before being handed over to a contact of Algernon's outside
+                United Fed borders. Ren knew his share of questionable folk, but could never
+                imagine how Algernon met his.
+                `
+                They rarely relied on blatantly illegal activity, preferring grey areas and obscure
+                work more respectable outfits tended to avoid. This one was just too juicy, but Enri
+                wasn't taking chances. They spent two days in total unsealing and resealing the door.
+                The damaged seam was one of the last panels, and Algernon had rushed the work in
+                exasperation. Enri was furious, and Ren finished the work while they argued.
+                `
+                The scanner beeps approval, oblivious to all of it.
 
                     * [-x-]
                     ->END
@@ -954,8 +1025,7 @@
 
             = hoverbike_look
 
-                Ren's hoverbike. In a way it is Ren's oldest friend. He purchased a few years before
-                teaming up with Al.
+                Ren's trusty steed.
 
                     + [-x-]
                     ->END
@@ -975,7 +1045,26 @@
                 ~ stage_cue = "scanning"
                 ~ scans += 1
 
-                Ren plugs the scanner into the port. After a few minutes the readings come back clear.
+                The scanner rests loosely in a divet above the lev-engine. The bike has been sitting for
+                months, looking forlorn in spite of its good condition. In a way it is Ren's oldest
+                friend. He had purchased it a few years before meeting Algernon, during one of his
+                attempts at stability.
+                `
+                Having recently shunned violence, Ren made a modest life of agriculture for himself on
+                an independent crop-share moon. Needing a short-term goal, he had decided a powerful
+                ground vehicle would greatly improve his quality of life. It grew into an obsession by
+                the time it was delivered, and was ultimately only used for the occasional joy-riding
+                through neighboring expanses of flat, empty land.
+            
+                    * [\->] -> hoverbike_scan2
+
+            = hoverbike_scan2
+
+                Eventually he made the drive to the moon's main trading hub, mainly because he could.
+                While idling by the port, he learned his bike was a passable cargo-lift with the right
+                attachments. Ren's next fixation was a lift attachment and passage off-world.
+                `
+                The scan was clear. Ren still thinks it looks sad.
 
                     * [-x-]
                     ->END
@@ -1049,10 +1138,10 @@
 
             = desk_use
 
-                Without meaning to Ren begins to remember his life in Ibico five years prior, shortly
-                before he first met Algernon.
+                Ren considers the desk. He has already been recaliing life in Ibico, and the job
+                that introduced them.
 
-                    * [Try to write.]
+                    * [Type.]
                     -> prologue_end
                     + [Later.]
                     ->END
@@ -1060,8 +1149,8 @@
 
             = prologue_end
 
-                Ren sits at the desk, brings up the notepad interface, and looks at the blank screen.
-                Eventually he begins typing with slow and cumbersome movements on the desk's surface.
+                Ren sits, brings up the notepad interface, and stares at the display for a few
+                moments before beginning to type with stiff and deliberate movements.
 
                     * [-x-]
                     ~ stage_cue = "quit"
@@ -1098,81 +1187,32 @@
     /*
 
 
-    Planet - Rewrite as tutorial
-
-
-        * Trigger		    - see a pile of stones (explain/suggest "look" & "use")
-        * Interactions		- pick up stone
-                            - look at stones
-        * Trigger		    - animal encounter (explain/suggest "use with" & "talk")
-        * Interactions		- throw rock to progress
-                            - (optional) shoot revolver instead
-                            - look at beast
-                            - use
-                            - talk to beast ("talk" example, try to scare it off)
-        * Trigger		    - Encounter ledge (explain opening inventory and using item on itself)
-        * Inventory		    - Open gear, revealing more items (explain item combinations)
-        * Inventory		    - Combine two of the revealed items (suggest final step?)
-        * Interaction		- Use combined item on the ledge (explain/suggest "go")
-        * Interaction       - "Go" up the 
-        * Trigger		    - Getting dark.
-        * Trigger		    - Can't go further.
-        * Trigger		    - see clearing after turning back
-        * Interactions		- go to clearing and end
-                            - look at clearing
-        * End			    - Hearing whispers, subtle struggle with sanity; drugs to sleep
-
-
-
-    Ship - Add interactions and rework intro as needed
-
-
-        * Chat with Mooney 	- look, talk
-        * Chat with Enri 	- look, talk
-        * Shuttles 		    - look, use, scan
-        * Mess 			    - look, use, scan
-        * Storage 		    - look, use (inventory supplies)
-        * Medical 		    - look, use, scan
-        * Engineering doors - look, use, scan
-        * Cargo 		    - look, use, scan (door?)
-        * Hoverbike 		- look, use, scan
-        * Lounge 	    	- look, use
-        * Al's old room 	- look, use
-        * Ren's room? 		- look, use
-        * Desk 			    - look, use
-
-
 
     Tutorial messages:
 
 
-        (Pile of stones trigger) \*** When you see an indicator for an interaction, press ACCEPT to see
+        *(Pile of stones trigger) \*** When you see an indicator for an interaction, press ACCEPT to see
         the available options. Press ACCEPT again to select the highlighted option or
         press CANCEL to back out of the menu. Press CANCEL outside of the menu to
         access the game options and controls.
         `
         Try the LOOK and USE options on the nearby pile of stones.***
 
-
-        (Wild beast trigger) \*** Other common options include TALK and USE WITH.
+        *(Wild beast trigger) \*** Other common options include TALK and USE WITH.
         `
         Get rid of the animal using the available options. ***
         
-
-        (Ledge trigger) \*** Open the inventory by pressing SELECT. Highlight Algernon's backpack
+        *(Ledge trigger) \*** Open the inventory by pressing SELECT. Highlight Algernon's backpack
         and press SELECT two more times to use it. ***
 
-
-        (Inventory - open backpack) \*** You can combine items by pressing SELECT on two different items in the
+        *(Inventory - open backpack) \*** You can combine items by pressing SELECT on two different items in the
         inventory.
         `
         Combine two of the items in the inventory to climb the ledge. ***
 
+        *(Inventory - combine rope/harpoon) \***  Now approach the ledge and use the new item to progress. ***
 
-        (Inventory - combine rope/harpoon) \***  Now approach the ledge and use the new item to progress. ***
-        
-
-        (Ledge Interaction - use Rope-dart) \*** The final interaction option is GO. It represents a transition to
+        *(Ledge Interaction - use Rope-dart) \*** The final interaction option is GO. It represents a transition to
         a new screen or location. Use the ledge's GO option to climb up. ***
         
 

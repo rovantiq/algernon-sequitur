@@ -52,22 +52,22 @@ extents = Vector2( 57, 51 )
 extents = Vector2( 20, 13 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 28, 16 )
+extents = Vector2( 17, 16 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 23, 38 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 45, 18 )
+extents = Vector2( 10, 40 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 27, 42 )
+extents = Vector2( 45, 18 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 17, 16 )
+extents = Vector2( 27, 42 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 10, 40 )
+extents = Vector2( 28, 16 )
 
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 31, 18 )
@@ -338,18 +338,27 @@ position = Vector2( -40.0081, 0.511654 )
 [node name="RightCollisionShape2D" parent="Ship/UpperLevel/DoorToBridge" index="3"]
 position = Vector2( 40.0055, 0.523781 )
 
-[node name="Engine" parent="Ship/UpperLevel" index="13" instance=ExtResource( 7 )]
-position = Vector2( 0, 849 )
-collision_mask = 0
-script = ExtResource( 11 )
+[node name="MooneyInteraction" parent="Ship/UpperLevel" index="13" instance=ExtResource( 7 )]
+position = Vector2( 0, -573 )
+collision_layer = 8
+script = ExtResource( 17 )
 
-[node name="CollisionShape2D" parent="Ship/UpperLevel/Engine" index="0"]
-position = Vector2( 0, -27 )
+[node name="CollisionShape2D" parent="Ship/UpperLevel/MooneyInteraction" index="0"]
 shape = SubResource( 7 )
 
-[node name="InteractionIndicator" parent="Ship/UpperLevel/Engine/InteractionUI" index="0"]
-text = "Engine
-Module"
+[node name="InteractionUI" parent="Ship/UpperLevel/MooneyInteraction" index="1"]
+margin_top = -30.0
+margin_bottom = -30.0
+
+[node name="InteractionIndicator" parent="Ship/UpperLevel/MooneyInteraction/InteractionUI" index="0"]
+text = "The
+Captain"
+
+[node name="OptionHBoxContainer" parent="Ship/UpperLevel/MooneyInteraction/InteractionUI" index="1"]
+margin_left = -24.0
+margin_top = -60.0001
+margin_right = 26.0
+margin_bottom = -10.0001
 
 [node name="Mess" parent="Ship/UpperLevel" index="14" instance=ExtResource( 7 )]
 position = Vector2( 84, 264 )
@@ -363,13 +372,29 @@ shape = SubResource( 8 )
 text = "Mess
 Hall"
 
-[node name="Storage" parent="Ship/UpperLevel" index="15" instance=ExtResource( 7 )]
+[node name="View" parent="Ship/UpperLevel" index="15" instance=ExtResource( 7 )]
+position = Vector2( 119, 168 )
+script = ExtResource( 28 )
+
+[node name="CollisionShape2D" parent="Ship/UpperLevel/View" index="0"]
+shape = SubResource( 9 )
+
+[node name="InteractionUI" parent="Ship/UpperLevel/View" index="1"]
+margin_left = 19.0
+margin_top = -4.0
+margin_right = 19.0
+margin_bottom = -4.0
+
+[node name="InteractionIndicator" parent="Ship/UpperLevel/View/InteractionUI" index="0"]
+text = "Window"
+
+[node name="Storage" parent="Ship/UpperLevel" index="16" instance=ExtResource( 7 )]
 position = Vector2( -81, 173 )
 script = ExtResource( 23 )
 
 [node name="CollisionShape2D" parent="Ship/UpperLevel/Storage" index="0"]
 position = Vector2( -3, 5 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="InteractionUI" parent="Ship/UpperLevel/Storage" index="1"]
 margin_top = 25.0
@@ -389,13 +414,13 @@ margin_right = -1.52588e-05
 margin_bottom = 60.0
 grow_vertical = 1
 
-[node name="Medical" parent="Ship/UpperLevel" index="16" instance=ExtResource( 7 )]
+[node name="Medical" parent="Ship/UpperLevel" index="17" instance=ExtResource( 7 )]
 position = Vector2( -76, 393 )
 script = ExtResource( 24 )
 
 [node name="CollisionShape2D" parent="Ship/UpperLevel/Medical" index="0"]
 position = Vector2( -15, 24 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="InteractionUI" parent="Ship/UpperLevel/Medical" index="1"]
 margin_left = 2.0
@@ -417,43 +442,18 @@ margin_top = -52.0
 margin_right = -32.0
 margin_bottom = -52.0
 
-[node name="MooneyInteraction" parent="Ship/UpperLevel" index="17" instance=ExtResource( 7 )]
-position = Vector2( 0, -573 )
-collision_layer = 8
-script = ExtResource( 17 )
+[node name="Engine" parent="Ship/UpperLevel" index="18" instance=ExtResource( 7 )]
+position = Vector2( 0, 849 )
+collision_mask = 0
+script = ExtResource( 11 )
 
-[node name="CollisionShape2D" parent="Ship/UpperLevel/MooneyInteraction" index="0"]
-shape = SubResource( 11 )
-
-[node name="InteractionUI" parent="Ship/UpperLevel/MooneyInteraction" index="1"]
-margin_top = -30.0
-margin_bottom = -30.0
-
-[node name="InteractionIndicator" parent="Ship/UpperLevel/MooneyInteraction/InteractionUI" index="0"]
-text = "The
-Captain"
-
-[node name="OptionHBoxContainer" parent="Ship/UpperLevel/MooneyInteraction/InteractionUI" index="1"]
-margin_left = -24.0
-margin_top = -60.0001
-margin_right = 26.0
-margin_bottom = -10.0001
-
-[node name="View" parent="Ship/UpperLevel" index="18" instance=ExtResource( 7 )]
-position = Vector2( 119, 168 )
-script = ExtResource( 28 )
-
-[node name="CollisionShape2D" parent="Ship/UpperLevel/View" index="0"]
+[node name="CollisionShape2D" parent="Ship/UpperLevel/Engine" index="0"]
+position = Vector2( 0, -27 )
 shape = SubResource( 12 )
 
-[node name="InteractionUI" parent="Ship/UpperLevel/View" index="1"]
-margin_left = 19.0
-margin_top = -4.0
-margin_right = 19.0
-margin_bottom = -4.0
-
-[node name="InteractionIndicator" parent="Ship/UpperLevel/View/InteractionUI" index="0"]
-text = "Window"
+[node name="InteractionIndicator" parent="Ship/UpperLevel/Engine/InteractionUI" index="0"]
+text = "Engine
+Module"
 
 [node name="BayControls" parent="Ship/ShuttleBay" index="5" instance=ExtResource( 7 )]
 position = Vector2( -97, -123 )
@@ -560,17 +560,17 @@ anims/enri_leaves = SubResource( 19 )
 
 [editable path="Ship/UpperLevel/DoorToBridge"]
 
-[editable path="Ship/UpperLevel/Engine"]
+[editable path="Ship/UpperLevel/MooneyInteraction"]
 
 [editable path="Ship/UpperLevel/Mess"]
+
+[editable path="Ship/UpperLevel/View"]
 
 [editable path="Ship/UpperLevel/Storage"]
 
 [editable path="Ship/UpperLevel/Medical"]
 
-[editable path="Ship/UpperLevel/MooneyInteraction"]
-
-[editable path="Ship/UpperLevel/View"]
+[editable path="Ship/UpperLevel/Engine"]
 
 [editable path="Ship/ShuttleBay/BayControls"]
 

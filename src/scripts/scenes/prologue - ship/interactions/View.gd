@@ -26,7 +26,7 @@ func look_pressed(_look) -> void:
 
 
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_released("right_click"):
 		if viewing == true:
 			StoryRunner.fade_out()
 			yield(StoryRunner,"animation_finished")

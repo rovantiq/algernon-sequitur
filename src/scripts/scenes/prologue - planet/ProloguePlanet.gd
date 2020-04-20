@@ -30,7 +30,7 @@ var harpoon: = load("res://assets/sound/sfx/misc/harpoon.wav")
 var story
 
 var left_limit: = 50
-var right_limit = 3000#820
+var right_limit = 820
 
 
 

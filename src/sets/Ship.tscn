@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://src/scripts/sets/Ship/Ship.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/environments/top/objects/vehicles/ship.png" type="Texture" id=2]
@@ -30,51 +30,48 @@
 extents = Vector2( 15.5, 39.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16, 8 )
-
-[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16, 3 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 14, 17 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 30, 16 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 32, 16 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 16, 20 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 6, 16 )
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 16 )
+shader_param/direction = Vector2( 0, 0 )
+shader_param/speed_scale = 1.0
 
 [sub_resource type="ShaderMaterial" id=9]
 shader = ExtResource( 16 )
 shader_param/direction = Vector2( 0, 0 )
 shader_param/speed_scale = 1.0
 
-[sub_resource type="ShaderMaterial" id=10]
-shader = ExtResource( 16 )
-shader_param/direction = Vector2( 0, 0 )
-shader_param/speed_scale = 1.0
-
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 64, 0.38916 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=11]
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 22.227, 31.9557 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 16, 16 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 20.8333, 33.3335 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 22.059, 25 )
 
 [node name="Ship" type="Node2D"]
@@ -131,23 +128,6 @@ collision_mask = 0
 position = Vector2( -80, 259 )
 collision_mask = 0
 
-[node name="AlRoom" parent="LowerLevel" instance=ExtResource( 25 )]
-position = Vector2( -80, 246 )
-collision_mask = 0
-
-[node name="CollisionShape2D" parent="LowerLevel/AlRoom" index="0"]
-shape = SubResource( 2 )
-
-[node name="SimpleInteractionUI" parent="LowerLevel/AlRoom" index="1"]
-margin_left = -12.0
-margin_top = 20.0
-margin_right = -12.0
-margin_bottom = 20.0
-
-[node name="InteractionIndicator" parent="LowerLevel/AlRoom/SimpleInteractionUI" index="0"]
-text = "Al's Old
-Room"
-
 [node name="RensDoor" type="StaticBody2D" parent="LowerLevel"]
 position = Vector2( 80, 259 )
 collision_layer = 2
@@ -158,7 +138,7 @@ texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LowerLevel/RensDoor"]
 position = Vector2( -2.38419e-07, -1.01328e-06 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="InteractionPoint" parent="LowerLevel/RensDoor" instance=ExtResource( 6 )]
 z_index = 100
@@ -166,7 +146,7 @@ script = ExtResource( 13 )
 
 [node name="CollisionShape2D" parent="LowerLevel/RensDoor/InteractionPoint" index="0"]
 position = Vector2( -2.74181e-06, -1.52588e-05 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="InteractionUI" parent="LowerLevel/RensDoor/InteractionPoint" index="1"]
 margin_top = 15.0
@@ -310,7 +290,7 @@ position = Vector2( 130, -16 )
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="UpperLevel/ToLowerCargo" index="0"]
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="SimpleInteractionUI" parent="UpperLevel/ToLowerCargo" index="1"]
 margin_left = -1.0
@@ -328,7 +308,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" parent="UpperLevel/ToLowerCrew" index="0"]
 position = Vector2( -2, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="SimpleInteractionUI" parent="UpperLevel/ToLowerCrew" index="1"]
 margin_left = -4.0
@@ -346,7 +326,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" parent="UpperLevel/ToShuttleBay" index="0"]
 position = Vector2( 0, -23 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="SimpleInteractionUI" parent="UpperLevel/ToShuttleBay" index="1"]
 margin_left = -16.0
@@ -364,7 +344,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" parent="UpperLevel/ToQuarters" index="0"]
 position = Vector2( 1, 0 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="SimpleInteractionUI" parent="UpperLevel/ToQuarters" index="1"]
 margin_left = -38.0
@@ -434,13 +414,13 @@ visible = false
 position = Vector2( 137, 533 )
 
 [node name="View1" type="Sprite" parent="RensQuarters"]
-material = SubResource( 9 )
+material = SubResource( 8 )
 position = Vector2( 81, 15 )
 texture = ExtResource( 5 )
 script = ExtResource( 17 )
 
 [node name="View2" type="Sprite" parent="RensQuarters"]
-material = SubResource( 10 )
+material = SubResource( 9 )
 position = Vector2( 81, 15 )
 texture = ExtResource( 19 )
 script = ExtResource( 20 )
@@ -455,7 +435,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RensQuarters/Floor"]
 position = Vector2( 64, 62.4 )
-shape = SubResource( 11 )
+shape = SubResource( 10 )
 
 [node name="BackgroundFurniture" type="TileMap" parent="RensQuarters"]
 tile_set = ExtResource( 7 )
@@ -469,7 +449,7 @@ script = ExtResource( 14 )
 
 [node name="CollisionShape2D" parent="RensQuarters/Exit" index="0"]
 position = Vector2( 3, 6 )
-shape = SubResource( 12 )
+shape = SubResource( 11 )
 
 [node name="InteractionUI" parent="RensQuarters/Exit" index="1"]
 margin_left = -6.0
@@ -515,14 +495,14 @@ scale = Vector2( -0.719845, 0.531986 )
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transitions/ShuttleBay"]
-shape = SubResource( 13 )
+shape = SubResource( 12 )
 
 [node name="CaptainsQuarters" type="Area2D" parent="Transitions"]
 position = Vector2( -60, -436 )
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transitions/CaptainsQuarters"]
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 
 [node name="Fore" type="Area2D" parent="Transitions"]
 position = Vector2( 145.107, 6 )
@@ -531,7 +511,7 @@ collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transitions/Fore"]
 position = Vector2( -1.53748, 30.5557 )
-shape = SubResource( 15 )
+shape = SubResource( 14 )
 
 [node name="Aft" type="Area2D" parent="Transitions"]
 position = Vector2( 112, 401 )
@@ -540,7 +520,7 @@ collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transitions/Aft"]
 position = Vector2( 2.38419e-07, 5.5556 )
-shape = SubResource( 16 )
+shape = SubResource( 15 )
 
 [node name="AmbientSound" type="Node" parent="."]
 
@@ -564,10 +544,6 @@ max_distance = 1000.0
 [editable path="LowerLevel/HeadDoor"]
 
 [editable path="LowerLevel/AlgernonsDoor"]
-
-[editable path="LowerLevel/AlRoom"]
-
-[editable path="LowerLevel/AlRoom/SimpleInteractionUI"]
 
 [editable path="LowerLevel/RensDoor/InteractionPoint"]
 

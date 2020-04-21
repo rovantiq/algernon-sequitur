@@ -252,6 +252,8 @@ func _play_story_and_end(button, text) -> void:
 		z_index = 0
 	StoryRunner.ui_active = false
 	in_control = false
+	if item_container_active == true:
+		item_container_active = false
 	StoryRunner.play_story(text)
 
 

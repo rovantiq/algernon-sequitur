@@ -1,11 +1,5 @@
 extends "res://src/scripts/ui/interactions/InteractionPointSimple.gd"
 
-#  ##########################################
-#   INSTANCE AN INTERACTION POINT, MAKE IT
-#   LOCAL, THEN ATTACH A COPY OF THIS SCRIPT 
-#   AND ADJUST THE FOLLOWING AS NEEDED
-#  ##########################################
-
 
 
 
@@ -21,13 +15,3 @@ extends "res://src/scripts/ui/interactions/InteractionPointSimple.gd"
 
 
 
-#  Available methods:
-#  
-#  _show_text()
-#  _show_text_and_destroy()
-#  _play_story()
-#  _play_story_and_destroy()
-#  _set_name()
-#  _transition()
-#
-#  See "res://src/scripts/InteractionPoint.gd" for more info

@@ -1,18 +1,17 @@
 extends "res://src/scripts/ui/interactions/InteractionPoint.gd"
 
 
-
 func _ready() -> void:
 	options = ["look", "use", "inv"]
 
 
 func look_pressed(look) -> void:
-	_play_story(look, "prologue_ren.storage_look")
+	_play_story(look, "prologue_ren.al_room_look")
 
 
 
 func use_pressed(use) -> void:
-	_play_story(use, "prologue_ren.storage_use")
+	_play_story(use, "prologue_ren.al_room_use")
 
 
 

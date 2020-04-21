@@ -384,7 +384,7 @@ shape = SubResource( 10 )
 text = "Clearing"
 
 [node name="Player" parent="." instance=ExtResource( 11 )]
-position = Vector2( 82, 229 )
+position = Vector2( 86, 229 )
 z_index = 50
 
 [node name="Sprite" parent="Player" index="1"]

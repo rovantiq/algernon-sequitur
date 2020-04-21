@@ -150,7 +150,8 @@
                 Ren shakes his head. “I’m coming back to pick you up. Might take a week but you
                 have the supplies.”
 
-                    * [\->] -> two
+                    * [\->]
+                    -> two
 
             = two
 
@@ -164,17 +165,18 @@
                 “Yeah, reckon she would just so she could be loud about it later.”
                 `
                 Another short silence passes before Algernon opens the door, grabs his pack and
-                steps outside.”
+                steps outside.
                 `
                 “Well.”
                 `
                 “Well.”
                 `
                 Algernon closes the door, gives the wall panel a double-tap with his palm and steps
-                back a few paces. Ren initiates the takeoff sequence, they wave goodbye and a few
+                back a few paces. Ren initiates the takeoff sequence, they wave goodbye, and a few
                 minutes later the shuttle is leaving atmosphere.
 
-                    * [-x-] -> END
+                    * [-x-]
+                    -> END
 
 
 
@@ -513,11 +515,11 @@
                 `
                 Mooney: "Well...I just..."
                 `
-                Ren can't help but smirk a little in spite of his mood. The captain never was
-                any good at delicate moments, and Ren had never seen him try harder to pull
-                it off than right now.
+                Ren smirks a little, in spite of his mood. The captain never was any good at
+                delicate moments, and Ren had never seen him try harder to pull it off than
+                right now.
                 `
-                Mooney: "...I'm glad you're back."
+                Mooney: "...We're glad to have you back."
 
                     * [Show gratitude] Ren: "Thanks, Cap."
                         `
@@ -683,9 +685,13 @@
 
                     * [Ask about him.] Ren: "Just checking in. Wanna say again how much I appreciate
                     you going out of your way for this crazy business of ours. Things good
-                    with you?" -> mooney_check_cap
+                    with you?" 
+                    `
+                    -> mooney_check_cap
                     * [Ask about ship.] Ren: "Just doing the rounds, trying to keep myself busy.
-                    She's been flying right?" -> mooney_check_ship
+                    She's been flying right?"
+                    `
+                    -> mooney_check_ship
 
 
             = mooney_check_cap
@@ -701,8 +707,9 @@
                 `
                 Mooney grins, self-conscious once more. He adjusts the cable in his dated
                 interface port and shifts his attention back to the comfort of his consoles.
-
-                    * [\->] -> mooney_end
+                `
+                    * [\->]
+                    -> mooney_end
 
 
             = mooney_check_ship
@@ -716,14 +723,14 @@
                 Mooney: "Oh, right. You bet, chief."
                 `
                 Ren: "Well. I'll get back to it."
-
-                    * [\->] -> mooney_end
+                `
+                    * [\->]
+                    -> mooney_end
 
 
             = mooney_end
 
                 ~ bridge_scanned = true
-                ~ stage_cue = "scanning"
                 ~ scans += 1
 
                 Ren turns away. He imagines there must be a diagnostic port around the bridge somewhere,
@@ -880,7 +887,8 @@
                 & captain's quarters and is designed to be detached and flown independently, in atmo if
                 needed.
                 
-                    * [\->] -> shuttle_bay_scan2
+                    * [\->]
+                    -> shuttle_bay_scan2
 
             = shuttle_bay_scan2
 
@@ -931,11 +939,12 @@
                 to in years, and wanted backup.
                 `
                 The situation was touch-and-go but an arrangement was eventually reached. The captain, in a
-                rare display of whimsy, abruptly decided to fly some manoevres before re-docking. Ren had
+                rare display of whimsy, abruptly decided to fly some manoeuvres before re-docking. Ren had
                 scoffed more than once as the captain began evasive actions meant for military fighters,
                 only to sit quietly shaking his head in disbelief a few moments later.
 
-                    * [\->] -> big_shuttle_scan2
+                    * [\->]
+                    -> big_shuttle_scan2
             
 
             = big_shuttle_scan2
@@ -1056,7 +1065,8 @@
                 the time it was delivered, and was ultimately only used for the occasional joy-riding
                 through neighboring expanses of flat, empty land.
             
-                    * [\->] -> hoverbike_scan2
+                    * [\->]
+                    -> hoverbike_scan2
 
             = hoverbike_scan2
 
@@ -1095,7 +1105,7 @@
 
             = al_room_look
 
-                Lorem ipsum.
+                It's the guest room now.
 
                     + [-x-]
                     ->END
@@ -1103,7 +1113,7 @@
 
             = al_room_use
 
-                Lorem ipsum.
+                Ren decides to clean up some other time. It's too soon to erase all traces.
 
                     + [-x-]
                     ->END
@@ -1138,10 +1148,10 @@
 
             = desk_use
 
-                Ren considers the desk. He has already been recaliing life in Ibico, and the job
-                that introduced them.
+                Ren considers the desk. {scans >= 5: He has already been recalling life in Ibico, and the job}
+                    {scans >= 5: that introduced them.}
 
-                    * [Type.]
+                    * {scans >= 5}[Type.]
                     -> prologue_end
                     + [Later.]
                     ->END

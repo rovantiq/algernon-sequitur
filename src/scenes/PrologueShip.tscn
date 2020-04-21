@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://src/scripts/scenes/prologue - ship/PrologueShip.gd" type="Script" id=1]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/Starfield1.gd" type="Script" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/ShuttlePrologue.gd" type="Script" id=26]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/CruiserPrologue.gd" type="Script" id=27]
 [ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/View.gd" type="Script" id=28]
+[ext_resource path="res://src/scripts/scenes/prologue - ship/interactions/AlgernonRoom.gd" type="Script" id=29]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 6 )
@@ -41,6 +42,9 @@ shader_param/speed_scale = 2.0
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 31, 53 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 21, 29 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 28, 32 )
@@ -257,6 +261,27 @@ Hoverbike"
 margin_top = -12.0
 margin_bottom = -12.0
 
+[node name="AlgernonsRoom" parent="Ship/LowerLevel" index="5" instance=ExtResource( 7 )]
+position = Vector2( -79, 322 )
+script = ExtResource( 29 )
+
+[node name="CollisionShape2D" parent="Ship/LowerLevel/AlgernonsRoom" index="0"]
+position = Vector2( 0, -7 )
+shape = SubResource( 20 )
+
+[node name="InteractionUI" parent="Ship/LowerLevel/AlgernonsRoom" index="1"]
+margin_top = 9.0
+margin_bottom = 9.0
+
+[node name="InteractionIndicator" parent="Ship/LowerLevel/AlgernonsRoom/InteractionUI" index="0"]
+text = "Al's Old
+Room"
+
+[node name="OptionHBoxContainer" parent="Ship/LowerLevel/AlgernonsRoom/InteractionUI" index="1"]
+margin_top = 76.0
+margin_bottom = 76.0
+grow_vertical = 1
+
 [node name="CargoDoor" parent="Ship/LowerLevel" index="9" instance=ExtResource( 7 )]
 position = Vector2( 98, -239 )
 script = ExtResource( 20 )
@@ -451,6 +476,10 @@ script = ExtResource( 11 )
 position = Vector2( 0, -27 )
 shape = SubResource( 12 )
 
+[node name="InteractionUI" parent="Ship/UpperLevel/Engine" index="1"]
+margin_top = -18.0
+margin_bottom = -18.0
+
 [node name="InteractionIndicator" parent="Ship/UpperLevel/Engine/InteractionUI" index="0"]
 text = "Engine
 Module"
@@ -535,6 +564,9 @@ volume_db = 3.0
 [node name="PlayerTop" parent="." instance=ExtResource( 14 )]
 position = Vector2( -30.3562, 78 )
 
+[node name="Camera2D" parent="PlayerTop" index="2"]
+limit_bottom = 850
+
 [node name="AnimationPlayer1" type="AnimationPlayer" parent="."]
 anims/cap_leaves = SubResource( 17 )
 
@@ -545,6 +577,8 @@ anims/enri_leaves = SubResource( 19 )
 [editable path="Ship"]
 
 [editable path="Ship/LowerLevel/HoverbikeInteraction"]
+
+[editable path="Ship/LowerLevel/AlgernonsRoom"]
 
 [editable path="Ship/LowerLevel/RensDoor/InteractionPoint"]
 

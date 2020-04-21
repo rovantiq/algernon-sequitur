@@ -26,10 +26,14 @@ func _input(_event: InputEvent) -> void:
 			if Input.is_action_just_pressed("ui_cancel"):
 				resume_button.grab_focus()
 		elif in_control == true:
-			StoryRunner.curtain.color = Color("00000000")
-			StoryRunner.ui_active = false
-			visible = false
-			in_control = false
+			if controls.visible == true:
+				controls.visible = false
+				resume_button.grab_focus()
+			else:
+				StoryRunner.curtain.color = Color("00000000")
+				StoryRunner.ui_active = false
+				visible = false
+				in_control = false
 
 
 

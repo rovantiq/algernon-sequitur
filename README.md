@@ -3,9 +3,7 @@
 
 
 
-This is a rough prototype made with open-source software and Creative Commons / public domain assets. This is my first project, and an attempt to create a framework for "quick and dirty" adventure games. It also serves as a prologue for game which I may or may not eventually attempt to make. There are 2 scenes, which use a blend of side-scrolling and top-down perpectives. The control scheme and interaction logic were designed primarily with controller in mind so the mouse-based point-and-click mechanics still need work.
-
-Being a beginner, this project has been my testing ground while attempting to learn the various aspects/pipelines of game dev; it's generally messy, inefficient, full of odd choices & poorly documented. Having said that, if someone interested in making adventure games begins taking their first steps in Godot and happens to find their way here, I'd like to think they might find a few helpful ideas for getting started. If something here does turn out to be of interest to someone, I can be reached at rovantiq@protonmail.com for any questions, comments, feedback or advice.
+An adventure game prototype about a doomed space cowboy and some other folks he knows. Created with a FOSS pipeline and Creative Commons assets.
 
 
 
@@ -19,7 +17,7 @@ This project is licensed under MIT and, additionally, all original assets are li
 
 * Code, writing, sprites - Justin Sheathelm / rovantiq (MIT / [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/))
 
-* Cover art & backgrounds -  Alyssa Dobbs ([CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/))
+* Cover art & backgrounds -  [Yonder-Fox](https://www.deviantart.com/yonder-fox) ([CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/))
 
 * Font -  [Jost*](https://indestructibletype.com/Jost.html) by [indestructible type*](https://indestructibletype.com/Home.html) (OFL)
 

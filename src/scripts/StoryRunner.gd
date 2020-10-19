@@ -229,7 +229,7 @@ func _continue_story():
 	story_vbox.add_child(label)
 	while story.can_continue:
 		var text = story.continue()
-		if story_ui.type_timer.wait_time < story_ui.type_speed:
+		if type_timer.wait_time < story_ui.type_speed:
 			var text_array = []
 			for letter in text:
 				text_array.append(letter)
@@ -258,7 +258,7 @@ func _continue_story():
 
 func _choice_selected(index) -> void:
 	_clear()
-	story_ui.type_timer.wait_time = story_ui.type_speed
+	type_timer.wait_time = story_ui.type_speed
 	story.choose_choice_index(index)
 	_continue_story()
 
@@ -269,7 +269,7 @@ func _close_text() -> void:
 	story_ui.visible = false
 	_clear()
 	emit_signal("end_story")
-	story_ui.type_timer.wait_time = story_ui.type_speed
+	type_timer.wait_time = story_ui.type_speed
 
 
 func _clear() -> void:

@@ -11,8 +11,8 @@ var ready: = false
 
 var whitespace_character = "`"
 var is_typing: = false
-var type_speed: = 0.025
-var skip_speed: = 0.001
+var type_speed: = 0.001
+var skip_speed: = 0.0001
 
 
 func _init() -> void:

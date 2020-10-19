@@ -4,3 +4,6 @@
 margin_right = 1.0
 margin_bottom = 14.0
 grow_horizontal = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -19,7 +19,7 @@ This project is licensed under MIT and, additionally, all original assets are li
 
 * Code, writing, sprites - Justin Sheathelm / rovantiq (MIT / [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/))
 
-* Cover art & backgrounds -  Alyssa Dobbs ([CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/))
+* Cover art & backgrounds -  [YonderFox](https://www.deviantart.com/yonder-fox) ([CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/))
 
 * Font -  [Jost*](https://indestructibletype.com/Jost.html) by [indestructible type*](https://indestructibletype.com/Home.html) (OFL)
 
